@@ -28,13 +28,13 @@ head(cats)
 # code
 
 # 4 mean Hwt
-cat_sex <- data.frame(cats[cats$Sex == "F",])
-mean(cat_sex$Hwt)
-mean(cat_sex$Hwt)
+avg_hwt_f <- mean(cats[cats$Sex == "F", "Hwt"])
+print(avg_hwt_f)
+
 # 5 sum weight of female and male cats
-cat_female <- sum(cats[cats$Sex == "F", "Bwt"])
-cat_male <- sum(cats[cats$Sex == "M", "Bwt"])
-df <- data.frame(cat_female,cat_male)
-row.names(df) <- "Sum of weight"
-colnames(df) <- c("female","male")
-df
+sum_bwt_female <- sum(cats[cats$Sex == "F", "Bwt"])
+sum_bwt_male <- sum(cats[cats$Sex == "M", "Bwt"])
+df_sum_bwt <- data.frame(sum_bwt_female, sum_bwt_male)
+row.names(df_sum_bwt) <- "Sum of weight"
+colnames(df_sum_bwt) <- c("female", "male")
+print(df_sum_bwt)
