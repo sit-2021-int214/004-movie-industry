@@ -55,4 +55,5 @@ df_sum_bwt <- data.frame(sum_bwt_female, sum_bwt_male)
 row.names(df_sum_bwt) <- "total weight"
 colnames(df_sum_bwt) <- c("female cats", "male cats")
 
+# View(df_sum_bwt)
 print(df_sum_bwt)
