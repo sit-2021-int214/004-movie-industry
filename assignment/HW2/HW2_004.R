@@ -30,8 +30,11 @@ table(survey$Sex)
 # 4 Average age for each gender
 aggregate(survey$Age, list(survey$Sex), FUN=mean)
 
-# 5
-# code
+# 5 Average Wr.Hand of females
+WrF <- sum(survey$Wr.Hnd[which(survey$Sex == "Female")])
+AllF <- length(survey$Sex[survey$Sex == "Female"])
+mean_WrF <- round(WrF/AllF , digits = 2)
+cat("Average Female age:",mean_WrF)
 
 View(cats)
 # 1
@@ -40,8 +43,11 @@ View(cats)
 # 2
 # code
 
-# 3
-# code
+# 3 Average body weight of both male and female cats.
+avg_bwtm <- round(mean(cats[cats$Sex == "M" , "Bwt"]), digits = 2)
+avg_bwtf <- round(mean(cats[cats$Sex == "F" , "Bwt"]), digits = 2)
+cat("Average Bwt of Male cats : ", avg_bwtm ,"\n")
+cat("Average Bwt of Female cats : ", avg_bwtf)
 
 # 4 From the cats table, the average of female cat heart weight in grams
 avg_hwt_f <- mean(cats[cats$Sex == "F", "Hwt"])
