@@ -24,11 +24,11 @@ names(total_percentage) <- c("Left(%)", "Right(%)")
 
 print(total_percentage)
 
-# 3
-# code
+# 3 number of people in each gender
+table(survey$Sex)
 
-# 4
-# code
+# 4 Average age for each gender
+aggregate(survey$Age, list(survey$Sex), FUN=mean)
 
 # 5
 # code
