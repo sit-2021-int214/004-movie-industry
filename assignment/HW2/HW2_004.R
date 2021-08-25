@@ -37,11 +37,34 @@ mean_WrF <- round(WrF/AllF , digits = 2)
 cat("Average Female age:",mean_WrF)
 
 View(cats)
-# 1
-# code
+# 1 From the cats table, max and min heart weight of cats gender.
+maxCatM <- max(cats[cats$Sex == 'M',"Hwt"])
+maxCatF <- max(cats[cats$Sex == 'F',"Hwt"])
+minCatM <- min(cats[cats$Sex == 'M',"Hwt"])
+minCatF <- min(cats[cats$Sex == 'F',"Hwt"])
 
-# 2
-# code
+maxHW <- c(maxCatM,maxCatF)
+minHW <- c(minCatM,minCatF)
+
+catHW <- cbind(maxHW,minHW)
+row.names(catHW) <- c("Male","Female")
+catHW <- as.data.frame(catHW)
+
+# View(catHW)
+print(catHW)
+
+# 2 From the cats table, the percentage of cats gender with both male and female
+allMaleCat <- table(cats[cats$Sex == "M", "Sex"])
+allFemaleCat <- table(cats[cats$Sex == "F", "Sex"])
+allCat <- rbind(allMaleCat,allFemaleCat)
+
+allCat <- colSums(allCat)
+
+totalCatPercent <- round((allCat/sum(allCat)) * 100, digits = 2 )
+names(totalCatPercent) <- c("Female%", "Male%")
+totalCatPercent <- sort(totalCatPercent, decreasing = T)
+
+print(totalCatPercent)
 
 # 3 Average body weight of both male and female cats.
 avg_bwtm <- round(mean(cats[cats$Sex == "M" , "Bwt"]), digits = 2)
