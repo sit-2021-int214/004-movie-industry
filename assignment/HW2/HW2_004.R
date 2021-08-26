@@ -31,11 +31,10 @@ print(table(survey$Sex))
 # 4 Average age for each gender
 print(aggregate(survey$Age, list(survey$Sex), FUN = mean))
 
-# 5 Average Wr.Hand of females
-WrF <- sum(survey$Wr.Hnd[which(survey$Sex == "Female")])
-AllF <- length(survey$Sex[survey$Sex == "Female"])
-mean_WrF <- round(WrF/AllF , digits = 2)
-cat("Average Female age:",mean_WrF)
+# 5 Average Wr.Hand (span of writing hand, in cm) of females
+wrF <- mean(survey$Wr.Hnd[which(survey$Sex == "Female")])
+mean_WrF <- round(wrF, digits = 2)
+cat("Average span of female writing hand, in cm:",mean_WrF)
 
 View(cats)
 print(colSums(is.na(cats))) # count N/A in each column
