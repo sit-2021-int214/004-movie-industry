@@ -2,6 +2,7 @@ packages <- c("DescTools", "MASS")
 lapply(packages, library, character.only = T)
 
 View(survey)
+print(colSums(is.na(survey))) # count N/A in each column
 # 1 From the survey table, the number of male and female students that use left and right hands to write
 male_wHnd <- table(survey[survey$Sex == "Male", "W.Hnd"])
 female_wHnd <- table(survey[survey$Sex == "Female", "W.Hnd"])
@@ -9,7 +10,7 @@ df_wHnd <- rbind(male_wHnd, female_wHnd)
 total <- colSums(df_wHnd)
 df_wHnd <- rbind(df_wHnd, total)
 
-df_wHnd <- as.data.frame(df_wHnd) # matrix -> data frame
+df_wHnd <- as.data.frame(df_wHnd) # table -> data frame
 df_wHnd <- cbind.data.frame(df_wHnd, rowSums(df_wHnd))
 
 row.names(df_wHnd)[1:2] <- c("male", "female")
@@ -25,10 +26,10 @@ names(total_percentage) <- c("Left(%)", "Right(%)")
 print(total_percentage)
 
 # 3 number of people in each gender
-table(survey$Sex)
+print(table(survey$Sex))
 
 # 4 Average age for each gender
-aggregate(survey$Age, list(survey$Sex), FUN=mean)
+print(aggregate(survey$Age, list(survey$Sex), FUN = mean))
 
 # 5 Average Wr.Hand of females
 WrF <- sum(survey$Wr.Hnd[which(survey$Sex == "Female")])
@@ -37,6 +38,7 @@ mean_WrF <- round(WrF/AllF , digits = 2)
 cat("Average Female age:",mean_WrF)
 
 View(cats)
+print(colSums(is.na(cats))) # count N/A in each column
 # 1 From the cats table, max and min heart weight of cats gender.
 maxCatM <- max(cats[cats$Sex == 'M',"Hwt"])
 maxCatF <- max(cats[cats$Sex == 'F',"Hwt"])
