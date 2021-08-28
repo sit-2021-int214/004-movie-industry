@@ -25,11 +25,17 @@ names(total_percentage) <- c("Left(%)", "Right(%)")
 
 print(total_percentage)
 
-# 3 number of people in each gender
+# 3 From the survey table, the number of people in each gender
 print(table(survey$Sex))
 
-# 4 Average age for each gender
-print(aggregate(survey$Age, list(survey$Sex), FUN = mean))
+# 4 From the survey table, Dose the survey have gender 
+# "Gay", "Lesbian", "Bisexual", "Transgender", "Queer" or "Intersex"?
+paste("Gay :",unique(grepl("Gay", toupper(survey$Sex))))
+paste("Lesbian :",unique(grepl("Lesbian", toupper(survey$Sex))))
+paste("Bisexual :",unique(grepl("Bisexual", toupper(survey$Sex))))
+paste("Transgender :",unique(grepl("Transgender", toupper(survey$Sex))))
+paste("Queer :",unique(grepl("Queer", toupper(survey$Sex))))
+paste("Intersex :",unique(grepl("Intersex", toupper(survey$Sex))))
 
 # 5 Average Wr.Hand (span of writing hand, in cm) of females
 wrF <- mean(survey$Wr.Hnd[which(survey$Sex == "Female")])
