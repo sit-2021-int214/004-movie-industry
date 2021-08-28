@@ -28,14 +28,17 @@ print(total_percentage)
 # 3 From the survey table, the number of people in each gender
 print(table(survey$Sex))
 
-# 4 From the survey table, Dose the survey have gender 
-# "Gay", "Lesbian", "Bisexual", "Transgender", "Queer" or "Intersex"?
-paste("Gay :",unique(grepl("Gay", toupper(survey$Sex))))
-paste("Lesbian :",unique(grepl("Lesbian", toupper(survey$Sex))))
-paste("Bisexual :",unique(grepl("Bisexual", toupper(survey$Sex))))
-paste("Transgender :",unique(grepl("Transgender", toupper(survey$Sex))))
-paste("Queer :",unique(grepl("Queer", toupper(survey$Sex))))
-paste("Intersex :",unique(grepl("Intersex", toupper(survey$Sex))))
+# 4 From the survey table, the frequency percentage of students who smoke
+smoke_df <- as.data.frame(table(survey$Smoke))
+colnames(smoke_df) <- c("freq", "percentage")
+smoke_df <- smoke_df[order(factor(smoke_df$freq, levels = c("Never", "Occas", "Regul", "Heavy"))), ]
+row.names(smoke_df) <- c(1:length(smoke_df$freq))
+
+percentage <- round((smoke_df$percentage/sum(smoke_df$percentage)) * 100, digits = 3)
+smoke_df$percentage <- percentage
+
+# View(smoke_df)
+print(smoke_df)
 
 # 5 Average Wr.Hand (span of writing hand, in cm) of females
 wrF <- mean(survey$Wr.Hnd[which(survey$Sex == "Female")])
