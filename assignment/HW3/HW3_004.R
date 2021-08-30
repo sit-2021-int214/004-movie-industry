@@ -1,4 +1,4 @@
-packages <- c("DescTools", "MASS", "dplyr")
+packages <- c("DescTools", "MASS", "dplyr", "formattable")
 lapply(packages, library, character.only = T)
 
 View(survey)
@@ -20,7 +20,8 @@ df_wHnd_dplyr <- survey %>%
     group_by(Sex) %>%
     dplyr::select(Sex, W.Hnd) %>%
     filter(Sex == "Male" | Sex == "Female", W.Hnd == "Left" | W.Hnd == "Right") %>%
-    count(W.Hnd)
+    count(W.Hnd) %>%
+    dplyr::rename(amount = n)
 print(df_wHnd_dplyr)
 
 # 2 From the survey table, the percentage of students write with both left and right hands
@@ -31,7 +32,14 @@ names(total_percentage) <- c("Left(%)", "Right(%)")
 print(total_percentage)
 
 # Using dplyr
-# code here
+df_total_pct <- survey %>%
+    filter(!is.na(W.Hnd), !is.na(Sex)) %>%
+    group_by(W.Hnd) %>%
+    dplyr::select(W.Hnd) %>%
+    dplyr::rename(hand = W.Hnd) %>%
+    summarise(amount = sum(!is.na(hand))) %>%
+    mutate(pct = formattable::percent(amount/sum(amount)))
+print(df_total_pct)
 
 # 3 From the survey table, the number of people in each gender
 print(table(survey$Sex))
