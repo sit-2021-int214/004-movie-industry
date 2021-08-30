@@ -1,4 +1,4 @@
-packages <- c("DescTools", "MASS")
+packages <- c("DescTools", "MASS", "dplyr")
 lapply(packages, library, character.only = T)
 
 View(survey)
@@ -19,14 +19,23 @@ colnames(df_wHnd)[length(df_wHnd)] <- "total"
 # View(df_wHnd)
 print(df_wHnd)
 
+# Using dplyr
+# code here
+
 # 2 From the survey table, the percentage of students write with both left and right hands
 total_percentage <- round((total/sum(total)) * 100, digits = 2) # "total" from item 1
 names(total_percentage) <- c("Left(%)", "Right(%)")
 
 print(total_percentage)
 
+# Using dplyr
+# code here
+
 # 3 From the survey table, the number of people in each gender
 print(table(survey$Sex))
+
+# Using dplyr
+# code here
 
 # 4 From the survey table, the frequency percentage of students who smoke
 smoke_df <- as.data.frame(table(survey$Smoke))
@@ -40,10 +49,16 @@ smoke_df$percentage <- percentage
 # View(smoke_df)
 print(smoke_df)
 
+# Using dplyr
+# code here
+
 # 5 Average Wr.Hand (span of writing hand, in cm) of females
 wrF <- mean(survey$Wr.Hnd[which(survey$Sex == "Female")])
 mean_WrF <- round(wrF, digits = 2)
 cat("Average span of female writing hand, in cm:",mean_WrF)
+
+# Using dplyr
+# code here
 
 View(cats)
 print(colSums(is.na(cats))) # count N/A in each column
@@ -63,6 +78,9 @@ catHW <- as.data.frame(catHW)
 # View(catHW)
 print(catHW)
 
+# Using dplyr
+# code here
+
 # 2 From the cats table, the percentage of cats gender with both male and female
 allMaleCat <- table(cats[cats$Sex == "M", "Sex"])
 allFemaleCat <- table(cats[cats$Sex == "F", "Sex"])
@@ -76,6 +94,9 @@ totalCatPercent <- sort(totalCatPercent, decreasing = T)
 
 print(totalCatPercent)
 
+# Using dplyr
+# code here
+
 # 3 Average body weight of both male and female cats.
 avg_bwtm <- round(mean(cats[cats$Sex == "M" , "Bwt"]), digits = 2)
 avg_bwtf <- round(mean(cats[cats$Sex == "F" , "Bwt"]), digits = 2)
@@ -85,6 +106,9 @@ cat("Average Bwt of Female cats : ", avg_bwtf)
 # 4 From the cats table, the average of female cat heart weight in grams
 avg_hwt_f <- mean(cats[cats$Sex == "F", "Hwt"])
 print(avg_hwt_f)
+
+# Using dplyr
+# code here
 
 # 5 From the cats table, the total weight of female and male cats in kilograms
 sum_bwt_female <- sum(cats[cats$Sex == "F", "Bwt"])
@@ -96,3 +120,6 @@ colnames(df_sum_bwt) <- c("female cats", "male cats")
 
 # View(df_sum_bwt)
 print(df_sum_bwt)
+
+# Using dplyr
+# code here
