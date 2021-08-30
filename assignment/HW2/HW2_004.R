@@ -7,7 +7,6 @@ print(colSums(is.na(survey))) # count N/A in each column
 male_wHnd <- table(survey[survey$Sex == "Male", "W.Hnd"])
 female_wHnd <- table(survey[survey$Sex == "Female", "W.Hnd"])
 df_wHnd <- rbind(male_wHnd, female_wHnd)
-total <- colSums(df_wHnd)
 
 df_wHnd <- as.data.frame(df_wHnd) # table -> data frame
 
@@ -17,7 +16,8 @@ row.names(df_wHnd) <- c("male", "female")
 print(df_wHnd)
 
 # 2 From the survey table, the percentage of students write with both left and right hands
-total_percentage <- round((total/sum(total)) * 100, digits = 2) # "total" from item 1
+total <- colSums(df_wHnd) # "df_wHnd" from item 1
+total_percentage <- round((total/sum(total)) * 100, digits = 2)
 names(total_percentage) <- c("Left(%)", "Right(%)")
 
 print(total_percentage)
