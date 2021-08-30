@@ -38,7 +38,8 @@ df_total_pct <- survey %>%
     dplyr::select(W.Hnd) %>%
     dplyr::rename(hand = W.Hnd) %>%
     summarise(amount = sum(!is.na(hand))) %>%
-    mutate(pct = formattable::percent(amount/sum(amount)))
+    mutate(amount = formattable::percent(amount/sum(amount))) %>%
+    dplyr::rename(pct = amount)
 print(df_total_pct)
 
 # 3 From the survey table, the number of people in each gender
