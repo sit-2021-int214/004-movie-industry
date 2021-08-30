@@ -8,19 +8,20 @@ male_wHnd <- table(survey[survey$Sex == "Male", "W.Hnd"])
 female_wHnd <- table(survey[survey$Sex == "Female", "W.Hnd"])
 df_wHnd <- rbind(male_wHnd, female_wHnd)
 total <- colSums(df_wHnd)
-df_wHnd <- rbind(df_wHnd, total)
 
 df_wHnd <- as.data.frame(df_wHnd) # table -> data frame
-df_wHnd <- cbind.data.frame(df_wHnd, rowSums(df_wHnd))
 
-row.names(df_wHnd)[1:2] <- c("male", "female")
-colnames(df_wHnd)[length(df_wHnd)] <- "total"
+row.names(df_wHnd) <- c("male", "female")
 
 # View(df_wHnd)
 print(df_wHnd)
 
 # Using dplyr
-# code here
+survey %>% 
+    group_by(Sex) %>%
+    dplyr::select(Sex, W.Hnd) %>%
+    filter(Sex == "Male" | Sex == "Female", W.Hnd == "Left" | W.Hnd == "Right") %>%
+    count(W.Hnd)
 
 # 2 From the survey table, the percentage of students write with both left and right hands
 total_percentage <- round((total/sum(total)) * 100, digits = 2) # "total" from item 1
