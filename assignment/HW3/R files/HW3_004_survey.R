@@ -37,7 +37,7 @@ df_total_pct <- survey %>%
     filter(!is.na(W.Hnd), !is.na(Sex)) %>%
     group_by(W.Hnd) %>%
     dplyr::rename(hand = W.Hnd) %>%
-    summarise(amount = sum(!is.na(hand))) %>%
+    summarise(amount = n()) %>%
     mutate(amount = formattable::percent(amount/sum(amount))) %>%
     dplyr::rename(pct = amount)
 print(df_total_pct)
