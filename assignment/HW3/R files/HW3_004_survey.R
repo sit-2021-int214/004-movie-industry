@@ -69,4 +69,4 @@ mean_WrF <- round(wrF, digits = 2)
 cat("Average span of female writing hand, in cm:",mean_WrF)
 
 # Using dplyr
-# code here
+survey %>% filter(Sex == "Female") %>% summarise(Sex = "Female" , Avg_Wr.Hnd = round(mean(Wr.Hnd), digit =2))

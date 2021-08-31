@@ -43,6 +43,9 @@ avg_bwtm <- round(mean(cats[cats$Sex == "M" , "Bwt"]), digits = 2)
 avg_bwtf <- round(mean(cats[cats$Sex == "F" , "Bwt"]), digits = 2)
 cat("Average Bwt of Male cats : ", avg_bwtm ,"\n")
 cat("Average Bwt of Female cats : ", avg_bwtf)
+#Using dplyr
+cats %>% filter(Sex == "M") %>% summarise(Sex = "Male", Bwt = mean(Bwt)) 
+cats %>% filter(Sex == "F") %>% summarise(Sex = "Female" , Bwt = round(mean(Bwt), digits = 2))
 
 # 4 From the cats table, the average of female cat heart weight in grams
 avg_hwt_f <- mean(cats[cats$Sex == "F", "Hwt"])
