@@ -20,7 +20,12 @@ catHW <- as.data.frame(catHW)
 print(catHW)
 
 # Using dplyr
-# code here
+df_catHW <- cats %>%
+  dplyr::select(Sex,Hwt) %>%
+  group_by(Sex) %>%
+  filter(Sex == "F" | Sex == "M") %>%
+  summarise(maxHWT = max(Hwt),minHWT = min(Hwt))
+print(df_catHW)
 
 # 2 From the cats table, the percentage of cats gender with both male and female
 allMaleCat <- table(cats[cats$Sex == "M", "Sex"])
@@ -36,7 +41,13 @@ totalCatPercent <- sort(totalCatPercent, decreasing = T)
 print(totalCatPercent)
 
 # Using dplyr
-# code here
+df_totalCatPercent <- cats %>%
+  dplyr::select(Sex) %>%
+  group_by(Sex) %>%
+  filter(Sex == "F" | Sex == "M") %>%
+  summarise(pct = n()) %>%
+  mutate(pct = formattable::percent(pct/sum(pct)))
+print(df_totalCatPercent)
 
 # 3 Average body weight of both male and female cats.
 avg_bwtm <- round(mean(cats[cats$Sex == "M" , "Bwt"]), digits = 2)
