@@ -46,7 +46,8 @@ print(df_total_pct)
 print(table(survey$Sex))
 
 # Using dplyr
-# code here
+survey %>% count(Sex)
+
 
 # 4 From the survey table, the frequency percentage of students who smoke
 smoke_df <- as.data.frame(table(survey$Smoke))
@@ -61,7 +62,9 @@ smoke_df$percentage <- percentage
 print(smoke_df)
 
 # Using dplyr
-# code here
+survey %>% 
+    group_by(Smoke) %>%
+    count(Smoke)
 
 # 5 Average Wr.Hand (span of writing hand, in cm) of females
 wrF <- mean(survey$Wr.Hnd[which(survey$Sex == "Female")])
