@@ -42,11 +42,14 @@ df_total_pct <- survey %>%
     dplyr::rename(pct = amount)
 print(df_total_pct)
 
-# 3 From the survey table, the number of people in each gender
+# 3 From the survey table, the number of student in each gender 
 print(table(survey$Sex))
 
 # Using dplyr
-survey %>% count(Sex)
+df_sex <- survey %>%
+    filter(!is.na(Sex)) %>%
+    count(Sex)
+print(df_sex)
 
 # 4 From the survey table, the frequency percentage of students who smoke
 smoke_df <- as.data.frame(table(survey$Smoke))
