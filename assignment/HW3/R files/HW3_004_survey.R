@@ -48,7 +48,6 @@ print(table(survey$Sex))
 # Using dplyr
 survey %>% count(Sex)
 
-
 # 4 From the survey table, the frequency percentage of students who smoke
 smoke_df <- as.data.frame(table(survey$Smoke))
 colnames(smoke_df) <- c("freq", "percentage")
@@ -62,9 +61,14 @@ smoke_df$percentage <- percentage
 print(smoke_df)
 
 # Using dplyr
-survey %>% 
+df_smoke_pct <- survey %>% 
+    filter(!is.na(Smoke)) %>%
     group_by(Smoke) %>%
-    count(Smoke)
+    summarise(pct = n()) %>%
+    mutate(pct = formattable::percent(pct/sum(pct))) %>%
+    arrange(factor(Smoke, levels = c("Never", "Occas", "Regul", "Heavy"))) %>%
+    dplyr::rename(S.freq = Smoke)
+print(df_smoke_pct)
 
 # 5 Average Wr.Hand (span of writing hand, in cm) of females
 wrF <- mean(survey$Wr.Hnd[which(survey$Sex == "Female")])
@@ -72,4 +76,6 @@ mean_WrF <- round(wrF, digits = 2)
 cat("Average span of female writing hand, in cm:",mean_WrF)
 
 # Using dplyr
-survey %>% filter(Sex == "Female") %>% summarise(Sex = "Female" , Avg_Wr.Hnd = round(mean(Wr.Hnd), digit =2))
+survey %>% 
+    filter(Sex == "Female") %>% 
+    summarise(Sex = "Female" , Avg_Wr.Hnd = round(mean(Wr.Hnd), digits = 2))
