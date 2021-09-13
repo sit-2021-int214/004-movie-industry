@@ -1,11 +1,41 @@
 # 004-Movie Industry
-Datasets from: [kaggle](https://www.kaggle.com/danielgrijalvas/movies)
+Original Dataset from: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
 
-## Objective
+### About's Products Datasets
 
-## Process
+This dataset is about...
 
-## Result
+## Overview
+
+// Write Statement here
+Our group choose this dataset because...
+
+### Steps
+
+1. Define a question
+2. Observe...
+
+### Tools
+
+- R Language
+- R Studio Desktop
+
+## Table of Contents
+
+1. [Exploratory Data Analysis](#)
+2. [Data Visualization](#)
+
+## Resources
+
+### Important Files in Repository
+
+- [code_eda.R](#) : Exploratory Data Analysis
+- [products_original.csv](#): Original Dataset
+- [products_clean.csv](#): Clean Dataset
+
+### References
+
+// Link
 
 ## About Us
 งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
@@ -22,6 +52,3 @@ Datasets from: [kaggle](https://www.kaggle.com/danielgrijalvas/movies)
 ### Instructor
 - ATCHARA TRAN-U-RAIKUL
 - JATAWAT XIE (Git: [safesit23](https://github.com/safesit23))
-
-
-
