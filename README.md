@@ -32,7 +32,7 @@ Our group choose this dataset because...
 ### Important Files in Repository
 
 - Exploratory Data Analysis: [code_eda.R](#) 
-- Original Dataset: [movies_original.csv](./assignment/movie_industry/csv/movies_original.csv)
+- Original Dataset: [movies_original.csv](./movie_industry/csv/movies_original.csv)
 - Clean Dataset: [movies_clean.csv](#)
 
 ### References
