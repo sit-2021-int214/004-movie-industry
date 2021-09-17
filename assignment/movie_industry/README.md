@@ -1,4 +1,4 @@
-### Content  
+### Contents  
 
 There are 6820 movies in the dataset (220 movies per year, 1986-2016). Each movie has the following attributes:  
 
