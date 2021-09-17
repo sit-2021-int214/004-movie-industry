@@ -1,7 +1,7 @@
 # 004-Movie Industry
 Original Dataset from
-Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
-GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
+- Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
+- GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
 
 ### About's Products Datasets
 

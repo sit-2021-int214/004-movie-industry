@@ -35,5 +35,5 @@ There are 6820 movies in the dataset (220 movies per year, 1986-2016). Each movi
 ### About Dataset
 
 Original Dataset from
-Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
-GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
+- Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
+- GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
