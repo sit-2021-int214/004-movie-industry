@@ -1,5 +1,7 @@
 # 004-Movie Industry
-Original Dataset from: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
+Original Dataset from
+Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
+GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
 
 ### About's Products Datasets
 
@@ -30,8 +32,8 @@ Our group choose this dataset because...
 ### Important Files in Repository
 
 - [code_eda.R](#) : Exploratory Data Analysis
-- [products_original.csv](#): Original Dataset
-- [products_clean.csv](#): Clean Dataset
+- [movies_original.csv](#): Original Dataset
+- [movies_clean.csv](#): Clean Dataset
 
 ### References
 
