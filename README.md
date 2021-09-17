@@ -40,7 +40,8 @@ Our group choose this dataset because...
 // Link
 
 ## About Us
-งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
+The work is part of INT214 (Statistics for Information technology) <br/>
+semester 1/2021 School of Information Technology KMUTT
 
 ### Team: 39,42,46,48,53 Group
 | No. | Name              | Student ID   |
