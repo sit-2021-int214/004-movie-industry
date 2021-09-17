@@ -31,9 +31,9 @@ Our group choose this dataset because...
 
 ### Important Files in Repository
 
-- [code_eda.R](#) : Exploratory Data Analysis
-- [movies_original.csv](./assignment/movie_industry/csv/movies_original.csv): Original Dataset
-- [movies_clean.csv](#): Clean Dataset
+- Exploratory Data Analysis: [code_eda.R](#) 
+- Original Dataset: [movies_original.csv](./assignment/movie_industry/csv/movies_original.csv)
+- Clean Dataset: [movies_clean.csv](#)
 
 ### References
 
