@@ -1,6 +1,6 @@
 ### Contents  
 
-There are 7668 movies in the dataset. Each movie has the following attributes 
+There are 7668 movies in the dataset (1980 - 2020). Each movie has the following attributes 
 
 - budget: *the budget of a movie. Some movies don't have this, so it appears as 0*
 
