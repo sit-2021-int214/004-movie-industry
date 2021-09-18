@@ -19,8 +19,8 @@ Our group choose this dataset because...
 
 ### Tools
 
-- R Language
-- R Studio Desktop
+- R Studio Desktop (R Language)
+- Microsoft Excel
 
 ## Table of Contents
 
@@ -33,7 +33,8 @@ Our group choose this dataset because...
 
 - Exploratory Data Analysis: [code_eda.R](#) 
 - Original Dataset: [movies_original.csv](./movie_industry/csv/movies_original.csv)
-- Clean Dataset: [movies_clean.csv](#)
+- Clean Dataset: [movies_clean.csv]
+(./movie_industry/csv/movies_clean.csv)
 
 ### References
 
