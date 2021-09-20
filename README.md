@@ -5,8 +5,9 @@
 
 ### About the movie industry dataset
 
-// Write Statement here
-There are 7668 movies in the dataset (1980 - 2020) bra bra bra~
+This dataset about the movie industry was scraped from IMDb and published on [Kaggle](https://www.kaggle.com/danielgrijalvas/movies) 
+and [GitHub](https://github.com/danielgrijalva/movie-stats) by danielgrijalvas. <br>
+The dataset contains 7,668 movies from 1980 to 2020 (7,668 observations and 15 variables) more details [Click here](./movie_industry/README.md).
 
 ## Overview
 
@@ -50,7 +51,7 @@ Our group choose this dataset because...
 // Link
 
 ## About Us
-The work is part of INT214 (Statistics for Information technology) <br/>
+The work is part of INT214 (Statistics for Information technology) <br>
 semester 1/2021 School of Information Technology KMUTT
 
 ### Team: 39,42,46,48,53 Group
