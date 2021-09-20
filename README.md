@@ -1,5 +1,5 @@
 # 004-Movie Industry
-Original Dataset from
+### Original Dataset from
 - Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
 - GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
 
@@ -26,7 +26,7 @@ Our group choose this dataset because...
 - [R Studio Desktop](https://www.rstudio.com/)
 - [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel)
 
-### Language
+### Languages
 
 - [R language](https://www.r-project.org/)
 
