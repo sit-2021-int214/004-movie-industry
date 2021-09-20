@@ -3,7 +3,7 @@ Original Dataset from
 - Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
 - GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
 
-### About's Products Datasets
+### About the movie industry dataset
 
 This dataset is about...
 
@@ -15,7 +15,11 @@ Our group choose this dataset because...
 ### Steps
 
 1. Define a question
-2. Observe...
+2. Search datasets from Kaggle
+3. Retrieve the relevant dataset from Kaggle 
+4. Explore the dataset from the original dataset
+5. Data Cleaning and Data Transformation
+6. Exploratory Data Analysis
 
 ### Tools
 
@@ -24,8 +28,9 @@ Our group choose this dataset because...
 
 ## Table of Contents
 
-1. [Exploratory Data Analysis](#)
-2. [Data Visualization](#)
+1. [Define a question](#)
+2. [Exploratory Data Analysis](#)
+3. [Data Visualization](#)
 
 ## Resources
 
