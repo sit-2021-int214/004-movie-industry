@@ -12,7 +12,7 @@ There are 7668 movies in the dataset (1980 - 2020). Each movie has the following
 
 - genre: *main genre of the movie*
 
-- gross: *revenue of the movie*
+- gross: *revenue of the movie. Some movies don't have this, so it appears as 0*
 
 - name: *name of the movie*
 
@@ -22,9 +22,9 @@ There are 7668 movies in the dataset (1980 - 2020). Each movie has the following
 
 - runtime: *duration of the movie*
 
-- score: *IMDb user rating*
+- score: *IMDb user rating. Some movies don't have this, so it appears as 0*
 
-- votes: *number of user votes*
+- votes: *number of user votes. Some movies don't have this, so it appears as 0*
 
 - star: *main actor/actress*
 
