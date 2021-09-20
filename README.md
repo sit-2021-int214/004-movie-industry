@@ -23,8 +23,12 @@ Our group choose this dataset because...
 
 ### Tools
 
-- R Studio Desktop (R Language)
-- Microsoft Excel
+- [R Studio Desktop](https://www.rstudio.com/)
+- [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel)
+
+### Language
+
+- [R language](https://www.r-project.org/)
 
 ## Table of Contents
 
