@@ -13,8 +13,12 @@ by danielgrijalvas. The dataset contains 7,668 movies from 1980 to 2020 (7,668 o
 
 ## Overview
 
-
-Our group choose this dataset because this dataset contains 7,668 movies details (15 variables),there are alot of informations that we can discover from this dataset and "movies" is our favorite thing too. 
+From the beginning of the movie industry to today, many movies from different studios have been released every year. <br>
+The production and filming of one movie; a considerable budget is required. In terms of business, if we invest in something, <br>
+the expected from that investment is "profit." The film industry is the same. However, what is different is the factor that affects profit, <br> 
+such as feedback, ratings, reviews, film director, screenwriter, and many more. <br> 
+We chose this dataset to analyze because it contains the necessary data for analysis. <br>
+The amount of data dating back 40 years is more than 7000 rows, and importantly columns contain a variety of important topics and can be analyzed.
 
 ### Steps
 
