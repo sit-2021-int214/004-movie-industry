@@ -13,8 +13,8 @@ by danielgrijalvas. The dataset contains 7,668 movies from 1980 to 2020 (7,668 o
 
 ## Overview
 
-// Write Statement here
-Our group choose this dataset because...
+
+Our group choose this dataset because this dataset contains 7,668 movies details (15 variables),there are alot of informations that we can discover from this dataset and "movies" is our favorite thing too. 
 
 ### Steps
 
