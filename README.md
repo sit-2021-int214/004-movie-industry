@@ -12,12 +12,12 @@ by danielgrijalvas. The dataset contains 7,668 movies from 1980 to 2020 (7,668 o
 [Click here](./movie_industry/README.md) for more details.
 
 ## Overview
-From the beginning of the film industry to the present, many movies from different studios are released every year. <br>
-Producing and shooting one movie requires a huge budget. In terms of business, if we invest in something, <br>
-what is expected is "profit," and so is the film industry. However, the difference is in the factors that affect the revenue of movies, <br>
-such as feedbacks, ratings, reviews, film directors, screenwriters, and many more. <br> 
-We selected this dataset to analyze the factors affecting the profits of individual films, changes in movie budgets, duration of the movie, <br> 
-and the revenue of movies over the past four decades. This dataset is obtained from Kaggle, cleaned in Microsoft Excel, and analyzed by <br>
+From the beginning of the film industry to the present, many movies from different studios are released every year.
+Producing and shooting one movie requires a huge budget. In terms of business, if we invest in something,
+what is expected is "profit," and so is the film industry. However, the difference is in the factors that affect the revenue of movies,
+such as feedbacks, ratings, reviews, film directors, screenwriters, and many more.
+We selected this dataset to analyze the factors affecting the profits of individual films, changes in movie budgets, duration of the movie,
+and the revenue of movies over the past four decades. This dataset is obtained from Kaggle, cleaned in Microsoft Excel, and analyzed by
 R language in R Studio. In addition, the data was analyzed to determine the correlation of the data.
 
 ### Steps
