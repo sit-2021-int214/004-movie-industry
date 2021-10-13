@@ -12,13 +12,13 @@ by danielgrijalvas. The dataset contains 7,668 movies from 1980 to 2020 (7,668 o
 [Click here](./movie_industry/README.md) for more details.
 
 ## Overview
-
-From the beginning of the movie industry to today, many movies from different studios have been released every year. <br>
-The production and filming of one movie; a considerable budget is required. In terms of business, if we invest in something, <br>
-the expected from that investment is "profit." The film industry is the same. However, what is different is the factor that affects profit, <br> 
-such as feedback, ratings, reviews, film director, screenwriter, and many more. We chose this dataset to analyze because <br> 
-it contains the necessary data for analysis. The amount of data dating back 40 years is more than 7000 rows, <br> 
-and importantly columns contain a variety of important topics and can be analyzed.
+From the beginning of the film industry to the present, many movies from different studios are released every year. <br>
+Producing and shooting one movie requires a huge budget. In terms of business, if we invest in something, <br>
+what is expected is "profit," and so is the film industry. However, the difference is in the factors that affect the revenue of movies, <br>
+such as feedbacks, ratings, reviews, film directors, screenwriters, and many more. <br> 
+We selected this dataset to analyze the factors affecting the profits of individual films, changes in movie budgets, duration of the movie, <br> 
+and the revenue of movies over the past four decades. This dataset is obtained from Kaggle, cleaned in Microsoft Excel, and analyzed by <br>
+R language in R Studio. In addition, the data was analyzed to determine the correlation of the data.
 
 ### Steps
 
@@ -61,13 +61,13 @@ The work is part of INT214 (Statistics for Information technology) <br>
 semester 1/2021 School of Information Technology KMUTT
 
 ### Team: 39,42,46,48,53 Group
-| No. | Name              | Student ID   |
-|:---:|-------------------|--------------|
-|  1  | นายเด่นภูมิ นาคกล่ำ    | 63130500039  |
-|  2  | นายทรงกลด เพรชจำรัส  | 63130500042  |
-|  3  | นายธนกฤต ไพฑูรย์     | 63130500046 |
-|  4  | นายธนพนธ์ สุขเกษม     | 63130500048 |
-|  5  | นายธนาธร รสหวาน     | 63130500053 |
+| No. | Name                 | Student ID   |
+|:---:|----------------------|--------------|
+|  1  | Denphum Nakglam      | 63130500039  |
+|  2  | Songglod Petchamras  | 63130500042  |
+|  3  | Thanakrit Paithun    | 63130500046 |
+|  4  | Thanaphon Sukkasem   | 63130500048 |
+|  5  | Thanatorn Roswan     | 63130500053 |
 
 ### Instructor
 - ATCHARA TRAN-U-RAIKUL
