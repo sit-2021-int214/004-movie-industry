@@ -22,3 +22,9 @@ movies <- movies %>%
 head(movies)
 summary(movies)
 glimpse(movies)
+
+# Data Exploration (5 Pts)
+# Data Cleaning and Data Transformation (10 Pts)
+# Data Analysis with Descriptive Statistics (15 Pts)
+# Other + Document (5 Pts)
+
