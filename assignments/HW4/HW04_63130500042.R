@@ -32,13 +32,14 @@ scatter_p <- dt %>%
     filter(Number_Of_Pages < 1500 & Price < 150) %>%
     filter(Type == "Hardcover" | Type == "Paperback") %>%
     ggplot() +
-    aes(x = Price, y = Number_Of_Pages) +
+    aes(x = Number_Of_Pages, y = Price) +
     aes(color = Rating, size = Reviews) +
     geom_point() + 
     scale_color_distiller(palette = "RdPu") +
-    facet_wrap(~Type, scales = "free") +
-    geom_vline(xintercept = mean(dt$Price), linetype = "dashed") +
-    geom_hline(yintercept = mean(dt$Number_Of_Pages), linetype = "dashed") +
+    facet_wrap(~Type) +
+    geom_hline(yintercept = mean(dt$Price), linetype = "dashed", alpha = 0.5) +
+    geom_vline(xintercept = mean(dt$Number_Of_Pages), linetype = "dashed", alpha = 0.5) +
+    stat_ellipse() +
     ggtitle("test") +
     theme_bw()
 scatter_p
