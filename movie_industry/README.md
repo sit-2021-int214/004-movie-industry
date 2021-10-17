@@ -18,7 +18,7 @@ There are 7668 movies in the dataset (1980 - 2020). Each movie has the following
 
 - rating: *rating of the movie (R, PG, etc.)*
 
-- released: *release date (YYYY-MM-DD)*
+- released: *release date (YYYY-MM-DD) with release country*
 
 - runtime: *duration of the movie*
 
