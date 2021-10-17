@@ -3,13 +3,20 @@ lapply(packages, library, character.only = T)
 
 dt <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
 
-glimpse(dt)
+head(dt)
+# 2 columns have an inappropriate data type
 
-print(colSums(is.na(dt)))
+dbl_col <- c("Reviews", "Number_Of_Pages")
+dt <- dt %>%
+    dplyr::mutate_at(.vars = dbl_col, .funs = as.integer)
+
+glimpse(dt)
+colSums(is.na(dt))
 # no N/A value
 
-# 1
+summary(dt)
 
+# 1
 # 2
 # 3
 # 4
