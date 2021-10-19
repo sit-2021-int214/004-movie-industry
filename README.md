@@ -42,14 +42,15 @@ R language in R Studio. In addition, the data was analyzed to determine the corr
 
 1. [Define a question](#)
 2. [Exploratory Data Analysis](#)
-3. [Data Visualization](#)
+3. Final -> [Data Visualization](#)
 
 ## Resources
 
 ### Important Files in Repository
 
-- Exploratory Data Analysis: [eda_stage.R](./movie_industry/eda_stage.R)
+- Exploratory stage: [explore_stage.R](./movie_industry/explore_stage.R)
 - Cleaning Dataset stage: [cleaning_stage.R](./movie_industry/cleaning_stage.R)
+- Data Analysis stage: [analysis_stage.R](#)
 - Original Dataset: [movies_original.csv](./movie_industry/csv/original_dataset/movies_original.csv)
 - Cleaned Dataset: [movies_cleaned.csv](./movie_industry/csv/cleaned_dataset/movies_cleaned.csv)
 
@@ -62,10 +63,10 @@ The work is part of INT214 (Statistics for Information technology) <br>
 semester 1/2021 School of Information Technology KMUTT
 
 ### Team: 39,42,46,48,53 Group
-| No. | Name                 | Student ID   |
-|:---:|----------------------|--------------|
-|  1  | Denphum Nakglam      | 63130500039  |
-|  2  | Songglod Petchamras  | 63130500042  |
+| No. | Name                 | Student ID  |
+|:---:|----------------------|-------------|
+|  1  | Denphum Nakglam      | 63130500039 |
+|  2  | Songglod Petchamras  | 63130500042 |
 |  3  | Thanakrit Paithun    | 63130500046 |
 |  4  | Thanaphon Sukkasem   | 63130500048 |
 |  5  | Thanatorn Roswan     | 63130500053 |
