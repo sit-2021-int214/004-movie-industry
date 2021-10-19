@@ -48,9 +48,9 @@ R language in R Studio. In addition, the data was analyzed to determine the corr
 
 ### Important Files in Repository
 
-- Exploratory Data Analysis: [code_eda.R](#) 
-- Original Dataset: [movies_original.csv](./movie_industry/csv/movies_original.csv)
-- Clean Dataset: [movies_clean.csv](./movie_industry/csv/movies_clean.csv)
+- Exploratory Data Analysis: [eda_stage.R](./movie_industry/eda_stage.R) 
+- Original Dataset: [movies_original.csv](./movie_industry/csv/original_dataset/movies_original.csv)
+- Clean Dataset: [movies_cleaned.csv](./movie_industry/csv/cleaned_dataset/movies_clean.csv)
 
 ### References
 
