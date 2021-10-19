@@ -48,7 +48,7 @@ R language in R Studio. In addition, the data was analyzed to determine the corr
 
 ### Important Files in Repository
 
-- Exploratory stage: [explore_stage.R](./movie_industry/explore_stage.R)
+- Exploratory stage: [explore_stage.R](./movie_industry/data_exploration)
 - Cleaning Dataset stage: [cleaning_stage.R](./movie_industry/cleaning_stage.R)
 - Data Analysis stage: [analysis_stage.R](#)
 - Original Dataset: [movies_original.csv](./movie_industry/csv/original_dataset/movies_original.csv)
