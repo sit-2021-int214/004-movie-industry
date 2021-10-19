@@ -1,5 +1,5 @@
 - [x] [Data Exploration](./data_exploration) (5 Pts)
-- [x] [Data Cleaning and Data Transformation](./cleaning_stage.R) (10 Pts)
+- [x] [Data Cleaning and Data Transformation](./data_cleaning) (10 Pts)
 - [ ] [Data Analysis with Descriptive Statistics](./data_analysis) (15 Pts)
 - [ ] Other + Documents (5 Pts)
 
