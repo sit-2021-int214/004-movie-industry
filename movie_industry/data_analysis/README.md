@@ -1,5 +1,5 @@
 # Data Analysis with Descriptive Statistics 
-6 topics
+n topics
 
 1. Descriptive Statistics
 ```R
