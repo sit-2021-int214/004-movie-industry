@@ -17,7 +17,7 @@ Producing and shooting one movie requires a huge budget. In terms of business, i
 what is expected is "profit," and so is the film industry. However, the difference is in the factors that affect the revenue of movies,
 such as feedbacks, ratings, reviews, film directors, screenwriters, and many more.
 We selected this dataset to analyze the factors affecting the profits of individual films, changes in movie budgets, duration of the movie,
-and the revenue of movies over the past four decades. This dataset is obtained from Kaggle, cleaned in Microsoft Excel, and analyzed by
+and the revenue of movies over the past four decades. This dataset is obtained from Kaggle, explored in Microsoft Excel, cleaned and analyzed by
 R language in R Studio. In addition, the data was analyzed to determine the correlation of the data.
 
 ### Steps
