@@ -9,7 +9,7 @@ This dataset about the movie industry was scraped from IMDb and published on [Ka
 and [GitHub](https://github.com/danielgrijalva/movie-stats) <br>
 by danielgrijalvas. The dataset contains 7,668 movies from 1980 to 2020 (7,668 observations and 15 variables). <br>
 
-[Click here](./movie_industry/README.md) for more details.
+[Click here](./movie_industry/csv/original_dataset/README.md) for more details.
 
 ## Overview
 From the beginning of the film industry to the present, many movies from different studios are released every year.

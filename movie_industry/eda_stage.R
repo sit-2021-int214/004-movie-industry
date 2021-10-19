@@ -18,9 +18,3 @@ head(movies)
 summary(movies)
 
 colSums(is.na(movies))
-
-# Data Exploration (5 Pts) [/]
-# Data Cleaning and Data Transformation (10 Pts) -> cleaning_stage.R [/]
-# Data Analysis with Descriptive Statistics (15 Pts) []
-# Other + Document (5 Pts) []
-
