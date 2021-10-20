@@ -19,7 +19,6 @@ For check what happened after cleaning the dataset
 ```R
 movies <- read_csv(file = "./movie_industry/csv/cleaned_dataset/movies_cleaned.csv")
 ```
-If you prefer to see the cleaning stage [click here](#)
 
 ### Check the data type
 
