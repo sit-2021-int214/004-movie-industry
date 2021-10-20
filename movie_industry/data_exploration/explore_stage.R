@@ -9,9 +9,8 @@ glimpse(movies)
 movies <- movies %>%
     mutate(year = as.factor(format(year, format = "%Y"))) %>%
     mutate(released.country = as.factor(released.country)) %>%
-    mutate_at(.vars = c("genre", "rating"), .funs = as.factor) %>%
-    mutate_at(.vars = c("votes", "runtime"), .funs = as.integer) %>%
-    mutate(country = as.factor(country))
+    mutate_at(.vars = c("genre", "rating", "country"), .funs = as.factor) %>%
+    mutate_at(.vars = c("votes", "runtime"), .funs = as.integer)
     
 glimpse(movies)
 head(movies)

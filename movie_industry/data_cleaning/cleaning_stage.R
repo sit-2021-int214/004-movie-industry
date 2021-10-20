@@ -15,9 +15,8 @@ original <- original %>%
     mutate_at(c("rating", "writer", "star", "country", "company", "released.country"),
               ~replace_na(., "unknown")) %>%
     mutate(released.country = as.factor(released.country)) %>%
-    mutate_at(.vars = c("genre", "rating"), .funs = as.factor) %>%
-    mutate_at(.vars = c("votes", "runtime"), .funs = as.integer) %>%
-    mutate(country = as.factor(country))
+    mutate_at(.vars = c("genre", "rating", "country"), .funs = as.factor) %>%
+    mutate_at(.vars = c("votes", "runtime"), .funs = as.integer)
 
 original <- mutate_if(original, is.numeric, ~replace_na(., 0))
 
