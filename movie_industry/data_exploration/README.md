@@ -56,4 +56,6 @@ colSums(is.na(movies))
 
 ### N/A value in "released.date"
 
-we still keep N/A value because...
+Because the data type of this column is a date, we want to simplify, which means that no other data can be replaced for understanding other than the date data type.
+So we still keep the N/A value.
+
