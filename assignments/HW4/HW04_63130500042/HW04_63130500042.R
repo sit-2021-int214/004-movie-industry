@@ -8,7 +8,8 @@ head(dt)
 
 dbl_col <- c("Reviews", "Number_Of_Pages")
 dt <- dt %>%
-    dplyr::mutate_at(.vars = dbl_col, .funs = as.integer)
+    mutate_at(.vars = dbl_col, .funs = as.integer) %>%
+    mutate(Type = as.factor(Type))
 
 glimpse(dt)
 colSums(is.na(dt))
