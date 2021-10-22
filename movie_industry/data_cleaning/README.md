@@ -65,9 +65,33 @@ glimpse(original)
 colSums(is.na(original))
 ```
 
+### Check duplicate data
+```R
+dup_movies_name <- original %>%
+    select(name) %>%
+    group_by(name) %>%
+    filter(n() > 1) %>%
+    unique()
+```
+
+### Verify data
+These are not a duplicate data
+```R
+dup_movies <- original[FALSE, ]
+for (movie in dup_movies_name$name) {
+    result <- original %>%
+        filter(name == movie)
+    dup_movies <- rbind(dup_movies, result)
+    result <- original %>%
+        select(name, released.date, director, company, runtime, gross) %>%
+        filter(name == movie)
+    print(result)
+}
+View(dup_movies)
+```
+
 ### Export data
-After finishing a cleaning step, and then export the file as .csv format
+After finishing a cleaning step and checking duplicate, then export the file as .csv format
 ```R
 write_csv(original, "movies_clean.csv")
 ```
-
