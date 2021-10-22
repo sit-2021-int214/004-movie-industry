@@ -8,18 +8,16 @@ glimpse(movies)
 
 # convert data type
 movies <- movies %>%
-    mutate(year = as.factor(format(year, format = "%Y"))) %>%
+    mutate(year = format(year, format = "%Y")) %>%
     mutate(released.country = as.factor(released.country)) %>%
     mutate_at(.vars = c("genre", "rating", "country"), .funs = as.factor) %>%
     mutate_at(.vars = c("votes", "runtime"), .funs = as.integer)
-
 glimpse(movies)
 
 # check N/A
-colSums(is.na(movies))
+na_col <- colSums(is.na(movies))
+na_col[na_col > 0]
 
 # analysis section
 
-# 1
-# 2
-# 3
+

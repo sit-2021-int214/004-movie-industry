@@ -8,7 +8,7 @@ glimpse(movies)
 
 # convert data type
 movies <- movies %>%
-    mutate(year = as.factor(format(year, format = "%Y"))) %>%
+    mutate(year = format(year, format = "%Y")) %>%
     mutate(released.country = as.factor(released.country)) %>%
     mutate_at(.vars = c("genre", "rating", "country"), .funs = as.factor) %>%
     mutate_at(.vars = c("votes", "runtime"), .funs = as.integer)
