@@ -40,9 +40,11 @@ R language in R Studio. In addition, the data was analyzed to determine the corr
 
 ## Table of Contents
 
-1. [Define a question](#)
-2. [Exploratory Data Analysis](#)
-3. Final -> [Data Visualization](#)
+1. [Define a question](https://docs.google.com/document/d/1w2onje5-9L69HuW4t2Cg_gM9JM1zD9pZ5xbpaB-OaY4/edit?usp=sharing)
+2. [Exploratory Data](./movie_industry/data_exploration)
+2. [Cleaning Data and Transformation](./movie_industry/data_cleaning)
+4. [Data Analysis](./movie_industry/data_analysis)
+5. Final -> [Data Visualization](#)
 
 ## Resources
 
