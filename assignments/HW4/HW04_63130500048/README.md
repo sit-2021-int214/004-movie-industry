@@ -22,7 +22,8 @@ library('dplyr','readr','ggplot2')
 cs_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
 ```
 
-#### ตรวจสอบข้อมูล
+#### ตรวจสอบข้อมูลเบื้องต้น
+
 ```
 > cs_book %>% glimpse()
 Rows: 271
@@ -36,6 +37,8 @@ $ Type            <chr> "Hardcover", "Hardcover", "Kindle Edition", "Hardcover",
 $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14.188235, 14.232353, 14.364706, 14.502941, 14.641176, 15.229412,~
 
 ```
+  มีข้อมูลทั้งหมด
+
 
 
 
