@@ -7,6 +7,7 @@ Choose Dataset:
 
 
 ### Outlines
+
 1. Explore the dataset
 2. Learning function from Tidyverse
 3. Transform data with dplyr and finding insight the data
@@ -25,7 +26,8 @@ cs_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statisti
 ```
 
 ### ตรวจสอบข้อมูลเบื้องต้น
-ด้วยคำสั่ง `glimpse()`
+
+**1. คำสั่ง `glimpse()`**
 ```
 cs_book %>% glimpse()
 ```
@@ -42,8 +44,37 @@ $ Type            <chr> "Hardcover", "Hardcover", "Kindle Edition", "Hardcover",
 $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14.188235, 14.232353, 14.364706, 14.502941, 14.641176, 15.229412,~
 
 ```
+**2. คำสั่ง `summary()`**
+```
+cs_book %>% summary()
+```
+ได้ผลลัพธ์
+```
+     Rating        Reviews           Book_title       
+ Min.   :3.000   Length:271         Length:271        
+ 1st Qu.:3.915   Class :character   Class :character  
+ Median :4.100   Mode  :character   Mode  :character  
+ Mean   :4.067                                        
+ 3rd Qu.:4.250                                        
+ Max.   :5.000                                        
+ Description        Number_Of_Pages      Type          
+ Length:271         Min.   :  50.0   Length:271        
+ Class :character   1st Qu.: 289.0   Class :character  
+ Mode  :character   Median : 384.0   Mode  :character  
+                    Mean   : 475.1                     
+                    3rd Qu.: 572.5                     
+                    Max.   :3168.0                     
+     Price        
+ Min.   :  9.324  
+ 1st Qu.: 30.751  
+ Median : 46.318  
+ Mean   : 54.542  
+ 3rd Qu.: 67.854  
+ Max.   :235.650  
+```
 
 ### **จากการสำรวจข้อมูลเรียบร้อยแล้วมีข้อมูลทั้งหมด** 
+
 - จำนวนแถว 271 แถว
 - จำนวนคอลัมน์ 7 คอลัมน์
 
@@ -59,6 +90,7 @@ $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14
 | Price           |double   |ราคาของหนังสือ              |
 
 **ตรวจสอบข้อมูลว่ามีช่องว่างหรือไม่**
+
 ```
 is.na(cs_book) %>% table()
 ```
@@ -71,12 +103,39 @@ FALSE
 
 ## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
 
-#### 1. NULL
+### **1. ประเภทของหนังสือที่ได้คะแนนเฉลี่ยโดยเรียงจากคะแนนสูงไปต่ำ**
 
 ```
+top_type <- cs_book %>% 
+  select(Type, Rating) %>% 
+  group_by(Type) %>% 
+  summarise(mean_rating = mean(Rating)) %>% 
+  arrange(desc(mean_rating))
+
+top_type
+```
+**ได้ผลลัพธ์**
+```
+# A tibble: 6 x 2
+  Type                  mean_rating
+  <chr>                       <dbl>
+1 Boxed Set - Hardcover        4.49
+2 ebook                        4.29
+3 Paperback                    4.06
+4 Hardcover                    4.06
+5 Kindle Edition               4.01
+6 Unknown Binding              3.99
 ```
 
+### **2.**
 
+```
+
+```
+**ได้ผลลัพธ์**
+```
+
+```
 
 
 
