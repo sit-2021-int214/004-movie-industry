@@ -103,7 +103,7 @@ FALSE
 
 ## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
 
-### **1. ประเภทของหนังสือที่ได้คะแนนเฉลี่ยโดยเรียงจากคะแนนสูงไปต่ำ**
+### **1. จัดเรียงประเภทของหนังสือตามคะแนนเฉลี่ยที่ได้รับโดยเรียงจากคะแนนสูงไปต่ำ**
 
 ```
 top_type <- cs_book %>% 
@@ -126,6 +126,14 @@ top_type
 5 Kindle Edition               4.01
 6 Unknown Binding              3.99
 ```
+>### Function **dplyr** ในข้อนี้
+>
+>select() : Select variables by name
+>
+>summarise() : Reduce multiple values down to a single value
+>
+>arrange() : Arrange rows by variables
+
 
 ### **2.**
 
@@ -136,6 +144,30 @@ top_type
 ```
 
 ```
+>### Function **dplyr** ในข้อนี้
+>
+>
+>
+>
+>
+>
+
+### **3.**
+
+```
+
+```
+**ได้ผลลัพธ์**
+```
+
+```
+>### Function **dplyr** ในข้อนี้
+>
+>
+>
+>
+>
+>
 
 
 
