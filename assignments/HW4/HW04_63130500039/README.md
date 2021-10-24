@@ -13,7 +13,7 @@ Choose Dataset:
 
 ## Part 1: Explore the dataset
 
-```
+```R
 # Library
 library(dplyr, readr, ggplot2)
 
@@ -27,7 +27,7 @@ In this dataset has 271 rows and 7 columns are Rating, Reviews, Book_title, Desc
 
 - Function `filter()` from package [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html#select-columns-with-select). It using for filter dataset that you want or using for filter `summarise()`.
 
-```
+```R
 starwars %>% filter(species == "Human")
 
 starwars %>% group_by(eye_color) %>% summarise(ec = n()) %>% filter(ec == max(ec))
@@ -37,7 +37,7 @@ starwars %>% group_by(eye_color) %>% summarise(ec = n()) %>% filter(ec == max(ec
 
 3.1) Average rating of each book type
 
-```
+```R
 ComSci_rating_type <- ComSci_book %>% 
   select(Type, Rating) %>% 
   group_by(Type) %>% 
@@ -61,7 +61,7 @@ Result:
 
 3.2) Most type of top 270 book
 
-```
+```R
 ComSci_most_type <- ComSci_book %>% 
   group_by(Type) %>% 
   summarise(most_type = n()) %>%
@@ -80,7 +80,7 @@ Result:
 
 3.3) Type of book that rating has under overall average
 
-```
+```R
 avgRating <- ComSci_book %>%
   summarise(avg_rating = mean(Rating, na.rm = T))
 
@@ -106,7 +106,7 @@ Result:
 
 3.4) Price at quantiles 25% of each type except type "Boxed Set - Hardcover" 
 
-```
+```R
 ComSci_quantile_price <- ComSci_book %>% 
   select(Type, Price) %>% 
   group_by(Type) %>% 
@@ -130,7 +130,7 @@ Result:
 
 3.5) Amount of book type and total price of each type
 
-```
+```R
 ComSci_amount_type <- ComSci_book %>% 
   group_by(Type) %>%
   summarise(Amount_type = n(), Price = round(sum(Price), digits = 0))
@@ -153,7 +153,7 @@ Result:
 
 3.6) Overall average rating and overall average pages
 
-```
+```R
 rating_pages_avg <- ComSci_book %>% 
   summarise(Avg_rating = round(mean(Rating), digits = 0), Avg_pages = round(mean(Number_Of_Pages), digits = 0))
 
@@ -178,7 +178,8 @@ Result:
 
 ## Part 4: Visualization with GGplot2
 ### 1.) Graph show scatter plot of rating and price.
-```
+
+```R
 sc <- ComSci_book %>%
   ggplot(aes(x = Rating, y = Number_Of_Pages)) + 
   geom_point(aes(color = Type)) +
@@ -194,7 +195,8 @@ Result:
 ![scatter](./chart/scatterplot.png)
 
 ### 2.) Graph show pie chart of amount of type.
-```
+
+```R
 pie <- ComSci_book %>% 
   ggplot(aes(x = "" , fill = factor(Type))) +
   geom_bar(width = 1) +
