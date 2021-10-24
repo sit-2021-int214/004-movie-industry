@@ -22,10 +22,13 @@ library('dplyr','readr','ggplot2')
 cs_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
 ```
 
-#### ตรวจสอบข้อมูลเบื้องต้น
-
+### ตรวจสอบข้อมูลเบื้องต้น
+ด้วยคำสั่ง `glimpse()`
 ```
-> cs_book %>% glimpse()
+cs_book %>% glimpse()
+```
+ได้ผลลัพธ์
+```
 Rows: 271
 Columns: 7
 $ Rating          <dbl> 4.17, 4.01, 3.33, 3.97, 4.06, 3.84, 4.09, 4.15, 3.87, 4.62, 4.03, 3.78, 3.73, 3.87, 3.87, 3.95, 3.85, 3.94, 3.75, 4.10,~
@@ -37,10 +40,20 @@ $ Type            <chr> "Hardcover", "Hardcover", "Kindle Edition", "Hardcover",
 $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14.188235, 14.232353, 14.364706, 14.502941, 14.641176, 15.229412,~
 
 ```
-  มีข้อมูลทั้งหมด
+### **มีข้อมูลทั้งหมด** 
+- จำนวนแถว 271 แถว
+- จำนวนคอลัมน์ 7 คอลัมน์
 
-
-
+ในแต่ละคอลัมน์ประกอบไปด้วยข้อมูล
+|      Name       | Datatype|   
+|-----------------|---------|
+| Rating          |double   |
+| Reviews         |character|
+| Book_title      |character|
+| Description     |character|
+| Number_Of_Pages |integer  |
+| Type            |character|
+| Price           |double   |
 
 
 ## Part 2: Learning function from Tidyverse
