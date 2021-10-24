@@ -25,7 +25,7 @@ In this dataset has 271 rows and 7 columns are Rating, Reviews, Book_title, Desc
 
 ## Part 2: Learning function from Tidyverse
 
-- Function `filter()` from package [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html#select-columns-with-select)). It using for filter dataset that you want or using for filter `summarise()`.
+- Function `filter()` from package [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html#select-columns-with-select). It using for filter dataset that you want or using for filter `summarise()`.
 
 ```
 starwars %>% filter(species == "Human")
