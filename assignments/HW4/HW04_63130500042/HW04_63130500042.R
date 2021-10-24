@@ -1,4 +1,4 @@
-packages <- c("dplyr","readr","ggplot2","plotly")
+packages <- c("dplyr", "readr", "ggplot2", "scales", "stringr")
 lapply(packages, library, character.only = T)
 
 dt <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
@@ -8,34 +8,60 @@ head(dt)
 
 dbl_col <- c("Reviews", "Number_Of_Pages")
 dt <- dt %>%
-    mutate_at(.vars = dbl_col, .funs = as.integer) %>%
+    mutate_at(.vars = dbl_col, 
+              .funs = as.integer) %>%
     mutate(Type = as.factor(Type))
 
+# verify & explore
 glimpse(dt)
-colSums(is.na(dt))
-# no N/A value
 
+# check N/A value
+colSums(is.na(dt))
+
+# explore & summary
 summary(dt)
 
 # 1
-dt %>%
-    dplyr::filter(Rating > quantile(dt$Rating, 0.75)) %>%
-    dplyr::select(Type) %>%
-    dplyr::group_by(Type) %>%
-    count(.) %>%
-    dplyr::rename(amount = n) %>%
-    dplyr::arrange(desc(amount))
-    
+result <- dt %>%
+    filter(Rating > quantile(dt$Rating, 0.75)) %>%
+    group_by(Type) %>%
+    summarise(amount = n()) %>%
+    arrange(desc(amount))
+
+result %>% summarise(total = sum(amount))
+
+# view
+result
+
 # 2
-dt
-    
+dt %>%
+    filter(str_detect(Book_title, pattern = "(C|c)\\+\\+")) %>%
+    select(-Description, -Reviews, -Type) %>%
+    mutate(price.per.page = Price/Number_Of_Pages) %>%
+    mutate(Price = scales::dollar(Price)) %>%
+    arrange(price.per.page) %>%
+    head(1)
+
 # 3
+dt %>%
+    filter(str_detect(Book_title, pattern = "(P|p)ython")) %>%
+    select(-Description, -Reviews, -Type) %>%
+    mutate(Price = scales::dollar(Price)) %>%
+    arrange(desc(Rating)) %>%
+    head(1)
+    
 # 4
+dt %>%
+    filter(str_detect(Book_title, pattern = "(G|g)ame")) %>%
+    select(-Description, -Reviews, -Type) %>%
+    arrange(desc(Price)) %>%
+    mutate(Price = scales::dollar(Price)) %>%
+    head(1)
+
 # 5
 # 6
 
 hist_p <- dt %>% 
-    # filter(Price < 150) %>% 
     ggplot() +
     aes(x = Rating) + 
     geom_histogram(binwidth = 0.2) +
@@ -45,8 +71,9 @@ hist_p <- dt %>%
     scale_y_continuous(breaks = seq(0, 100, 10)) +
     ggtitle("test") +
     theme_bw()
+
+# view graph
 hist_p
-ggplotly(hist_p)
 
 scatter_p <- dt %>%
     filter(Number_Of_Pages < 1500 & Price < 150) %>%
@@ -64,5 +91,6 @@ scatter_p <- dt %>%
     stat_ellipse() +
     ggtitle("test") +
     theme_bw()
+
+# view graph
 scatter_p
-ggplotly(scatter_p)
