@@ -187,7 +187,7 @@ sc <- ComSci_book %>%
   ylab("Pages") +
   ggtitle("Correlation of Rating and Price")
 
-sc+geom_smooth()          
+sc + geom_smooth()          
 
 ```
 Result:
