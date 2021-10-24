@@ -66,7 +66,9 @@ cat("Book title with the nearest price to median from left side is:" , nearest_l
 # ggplot2
 
 # show scatter plot of price and number of pages.
-Scatter1 <- CSBooks %>% filter(Number_Of_Pages < 1500) %>% ggplot(aes(x = Number_Of_Pages , y = Price)) +geom_point(aes(color = Type)) + xlab("Number of pages") + ggtitle("Correlation of Number of pages and Price")
+Scatter1 <- CSBooks %>% filter(Number_Of_Pages < 1500) %>% 
+  ggplot(aes(x = Number_Of_Pages , y = Price)) +
+  geom_point(aes(color = Type)) + xlab("Number of pages") + ggtitle("Correlation of Number of pages and Price")
 
 
 # show bar plot of average price each type of book.
