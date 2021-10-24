@@ -35,7 +35,7 @@ starwars %>% group_by(eye_color) %>% summarise(ec = n()) %>% filter(ec == max(ec
 
 ## Part 3: Transform data with dplyr and finding insight the data
 
-3.1)Average rating of each book type
+3.1) Average rating of each book type
 
 ```
 ComSci_rating_type <- ComSci_book %>% 
@@ -59,7 +59,7 @@ Result:
 6 Unknown Binding         3.99
 ```
 
-3.2)Most type of top 270 book
+3.2) Most type of top 270 book
 
 ```
 ComSci_most_type <- ComSci_book %>% 
@@ -78,7 +78,7 @@ Result:
 1 Paperback       156
 ```
 
-3.3)Type of book that rating has under overall average
+3.3) Type of book that rating has under overall average
 
 ```
 avgRating <- ComSci_book %>%
@@ -104,7 +104,7 @@ Result:
 4 Unknown Binding      3.99
 ```
 
-3.4)Price at quantiles 25% of each type except type "Boxed Set - Hardcover" 
+3.4) Price at quantiles 25% of each type except type "Boxed Set - Hardcover" 
 
 ```
 ComSci_quantile_price <- ComSci_book %>% 
@@ -128,7 +128,7 @@ Result:
 5 Unknown Binding    36.7
 ```
 
-3.5)Amount of book type and total price of each type
+3.5) Amount of book type and total price of each type
 
 ```
 ComSci_amount_type <- ComSci_book %>% 
@@ -151,7 +151,7 @@ Result:
 6 Unknown Binding                 2    74
 ```
 
-3.6)Overall average rating and overall average pages
+3.6) Overall average rating and overall average pages
 
 ```
 rating_pages_avg <- ComSci_book %>% 
