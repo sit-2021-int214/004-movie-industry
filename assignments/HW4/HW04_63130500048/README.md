@@ -16,7 +16,9 @@ Choose Dataset:
 
 ```
 # Library
-library('dplyr','readr','ggplot2')
+library(dplyr)
+library(readr)
+library(ggplot2)
 
 # Dataset
 cs_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
@@ -40,48 +42,57 @@ $ Type            <chr> "Hardcover", "Hardcover", "Kindle Edition", "Hardcover",
 $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14.188235, 14.232353, 14.364706, 14.502941, 14.641176, 15.229412,~
 
 ```
-### **มีข้อมูลทั้งหมด** 
+
+### **จากการสำรวจข้อมูลเรียบร้อยแล้วมีข้อมูลทั้งหมด** 
 - จำนวนแถว 271 แถว
 - จำนวนคอลัมน์ 7 คอลัมน์
 
 ในแต่ละคอลัมน์ประกอบไปด้วยข้อมูล
-|      Name       | Datatype|   
-|-----------------|---------|
-| Rating          |double   |
-| Reviews         |character|
-| Book_title      |character|
-| Description     |character|
-| Number_Of_Pages |integer  |
-| Type            |character|
-| Price           |double   |
+|      Name       | Datatype| Description              |
+|-----------------|---------|--------------------------|
+| Rating          |double   |คะแนนที่ผู้อ่านประเมินให้กับหนังสือ|
+| Reviews         |character|จำนวนคนรีวิวหนังสือ           |
+| Book_title      |character|ชื่อของหนังสือ                |
+| Description     |character|รายละเอียดของหนังสือ         |
+| Number_Of_Pages |integer  |จำนวนหน้าของหนังสือ         |
+| Type            |character|ประเภทของหนังสือ            |
+| Price           |double   |ราคาของหนังสือ              |
 
-
-## Part 2: Learning function from Tidyverse
-
-- Function `select()` from package [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html#select-columns-with-select)). It using for select columns
-
+**ตรวจสอบข้อมูลว่ามีช่องว่างหรือไม่**
 ```
-starwars %>% select(name,height)
+is.na(cs_book) %>% table()
 ```
-** You can sepearate this part or combine in part of `Transform data with dplyr and finding insight the data`
-
-## Part 3: Transform data with dplyr and finding insight the data
-
-//Explain here
-
+ได้ผลลัพธ์
 ```
-#Code here
+FALSE 
+ 1897 
 ```
 
-Result:
+
+## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
+
+#### 1. NULL
 
 ```
-#Copy Result from console to here
 ```
-//Explain
 
-- list 1
-- list 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Part 4: Visualization with GGplot2
 ### 1.) Graph show relation between height and mass
