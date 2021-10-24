@@ -76,7 +76,7 @@ Scatter1+geom_smooth(method="lm")
 # show bar plot of average price each type of book.
 
 Barplot <- ggplot(avg_price_each , aes(x = Type,y = Price)) + 
-           geom_bar(stat = 'identity') + ggtitle("Average price each type")
+           geom_bar(stat = 'identity' , fill = "steelblue") + ggtitle("Average price each type")
 Barplot
 
 
