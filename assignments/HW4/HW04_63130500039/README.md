@@ -167,7 +167,7 @@ Result:
 1          4       475
 ```
 
-###Explain
+### Explain
 
 - result show type of book and average rating of each type
 - Paperback is the most book of "Top 270 Computer Science / Programing Books" 
