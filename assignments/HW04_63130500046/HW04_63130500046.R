@@ -59,7 +59,8 @@ right_side
 nearest_ls <- CSBooks %>% select(Book_title , Price) %>% filter(Price == max(left_side$Price))
 nearest_rs <- CSBooks %>% select(Book_title , Price) %>% filter(Price == max(right_side$Price))     
 
-cat("Book title with the nearest price to median from left side is:" , nearest_ls$Book_title ,"and right side is:" , nearest_rs$Book_title)
+cat("Book title with the nearest price to median from left side is:" , 
+    nearest_ls$Book_title ,"and right side is:" , nearest_rs$Book_title)
 
 
 
@@ -70,9 +71,12 @@ Scatter1 <- CSBooks %>% filter(Number_Of_Pages < 1500) %>%
   ggplot(aes(x = Number_Of_Pages , y = Price)) +
   geom_point(aes(color = Type)) + xlab("Number of pages") + ggtitle("Correlation of Number of pages and Price")
 
+Scatter1+geom_smooth(method="lm")
 
 # show bar plot of average price each type of book.
 
-Barplot <- ggplot(avg_price_each , aes(x = Type,y = Price)) + geom_bar(stat = 'identity') + ggtitle("Average price each type")
+Barplot <- ggplot(avg_price_each , aes(x = Type,y = Price)) + 
+           geom_bar(stat = 'identity') + ggtitle("Average price each type")
 Barplot
+
 
