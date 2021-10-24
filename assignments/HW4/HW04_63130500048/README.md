@@ -22,7 +22,7 @@ library('dplyr','readr','ggplot2')
 cs_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
 ```
 
-###ตรวจสอบข้อมูล
+#### ตรวจสอบข้อมูล
 ```
 > cs_book %>% glimpse()
 Rows: 271
