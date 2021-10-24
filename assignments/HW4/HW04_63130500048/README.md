@@ -103,6 +103,8 @@ FALSE
 
 ## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
 
+---
+
 ### **1. จัดเรียงประเภทของหนังสือตามคะแนนเฉลี่ยที่ได้รับโดยเรียงจากคะแนนสูงไปต่ำ**
 
 ```
@@ -126,7 +128,7 @@ top_type
 5 Kindle Edition               4.01
 6 Unknown Binding              3.99
 ```
->### Function **dplyr** ในข้อนี้
+>### Function from **Tidyverse** ในข้อนี้
 >
 >select() : Select variables by name
 >
@@ -134,8 +136,69 @@ top_type
 >
 >arrange() : Arrange rows by variables
 
+---
+### **2.ราคาของหนังสือประเภท paperback ในแต่ละ percentiles**
 
-### **2.**
+```
+price_paperback <- cs_book %>%
+  filter(Type == 'Paperback') %>% 
+  select(Price) %>% 
+  summary()
+
+price_paperback
+```
+**ได้ผลลัพธ์**
+```
+     Price       
+ Min.   : 14.19  
+ 1st Qu.: 30.33  
+ Median : 43.34  
+ Mean   : 45.77  
+ 3rd Qu.: 55.22  
+ Max.   :212.10  
+```
+>### Function from **Tidyverse** ในข้อนี้
+>
+>filter(): Return rows with matching conditions
+>
+>select() : Select variables by name
+>
+>
+
+---
+
+### **3.เปอร์เซ็นต์ของประเภทหนังสือแต่ละประเภทต่อจำนวนทั้งหมด**
+
+```
+book_totalPercent <- cs_book  %>%
+  select(Type) %>%
+  group_by(Type) %>%
+  summarise(pct = n()) %>%
+  mutate(pct = formattable::percent(pct/sum(pct)))
+book_totalPercent
+```
+**ได้ผลลัพธ์**
+```
+# A tibble: 6 x 2
+  Type                  pct       
+  <chr>                 <formttbl>
+1 Boxed Set - Hardcover 0.37%     
+2 ebook                 2.58%     
+3 Hardcover             35.06%    
+4 Kindle Edition        3.69%     
+5 Paperback             57.56%    
+6 Unknown Binding       0.74% 
+```
+>### Function from **Tidyverse** ในข้อนี้
+>
+>select() : Select variables by name
+>
+>summarise(): Reduce multiple values down to a single value
+>
+>mutate(): Create or transform variables
+
+---
+### **4.**
 
 ```
 
@@ -144,32 +207,13 @@ top_type
 ```
 
 ```
->### Function **dplyr** ในข้อนี้
+>### Function from **Tidyverse** ในข้อนี้
 >
 >
 >
 >
 >
 >
-
-### **3.**
-
-```
-
-```
-**ได้ผลลัพธ์**
-```
-
-```
->### Function **dplyr** ในข้อนี้
->
->
->
->
->
->
-
-
 
 
 
