@@ -17,11 +17,11 @@ prog_book %>%
   select(Book_title,Rating) %>% 
   arrange(desc(Rating))
 
-## 3.1 Show the top 10 books according to the book rating.
-prog_book %>% select(Rating,Book_title,Price) %>% arrange(Rating) %>% head(3)
-
+## 3.1 Displays the top 10 books of the books with the highest rating.
 prog_book %>%
-  select(Rating,Book_title,Type) %>%
+  select(Rating,Book_title) %>%
   arrange(desc(Rating)) %>%
-  top_n(5) 
+  top_n(10) 
+
+## 3.2 
 
