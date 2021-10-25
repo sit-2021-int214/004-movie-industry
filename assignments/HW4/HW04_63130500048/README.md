@@ -343,3 +343,5 @@ Result:
 
 ## Part B: Creating Interaction Dashboard with BI Tools
 Link to Power BI : [Click here](https://app.powerbi.com/view?r=eyJrIjoiNDU4MDg3OWItOTUyMy00ZDY5LWE5NDEtMWIzYjA2NGFhYjQwIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection)
+
+![048 Power Bi](https://github.com/sit-2021-int214/004-movie-industry/blob/5e1040c8918a6ed547d9de67c32df7e242ef6156/assignments/HW4/HW04_63130500048/PowerBI_pic.PNG)
