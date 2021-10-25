@@ -8,9 +8,9 @@ Choose Dataset:
 
 ### Outlines
 
-1. [Explore the dataset](#part-1:-explore-the-dataset)
-2. [Learning function from Tidyverse](#part-2-&-part-3-:-learning-function-from-tidyverse-&-Transform-data-with-dplyr-and-finding-insight-the-data)
-3. [Transform data with dplyr and finding insight the data](#part-2-&-part-3-:-learning-function-from-tidyverse-&-transform-data-with-dplyr-and-finding-insight-the-data)
+1. [Explore the dataset](#part-1-explore-the-dataset)
+2. [Learning function from Tidyverse](#part-2-&-part-3-learning-function-from-tidyverse-&-Transform-data-with-dplyr-and-finding-insight-the-data)
+3. [Transform data with dplyr and finding insight the data](#part-2-&-part-3-learning-function-from-tidyverse-&-transform-data-with-dplyr-and-finding-insight-the-data)
 4. [Visualization with GGplot2](#part-4-visualization-with-ggplot2)
 
 ## Part 1: Explore the dataset
@@ -110,7 +110,7 @@ FALSE
 
 
 
-## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
+## Part 2 & Part 3 Learning function from Tidyverse & Transform data with dplyr and finding insight the data
 
 ---
 
