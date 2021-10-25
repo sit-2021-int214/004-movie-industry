@@ -183,265 +183,32 @@ prog_book %>%
 ```
 แสดงราคาที่ถูกที่สุดเเละเเพงที่สุดของหนังสือประเภท Paperback 
 
-### 3.6
+### 3.6 Displays books type Kindle Edition  that are rating above average by descending order
 
 #### Code
 ```{R}
-prog_book %>% select(Book_title,Rating) %>%
-  filter(Rating < mean(Rating)) %>%
+prog_book %>% summarise(mean(Rating))
+
+prog_book %>% select(Book_title,Rating,Type) %>%
+  filter(Rating > mean(Rating) & Type == "Kindle Edition") %>%
   arrange(desc(Rating))
 ```
 
 #### Result
 ```
-                                                                                                                                   Book_title
-1                                                                                                                            How Google Works
-2                                         A Smarter Way to Learn JavaScript: The new approach that uses technology to cut your effort in half
-3                                                                        The Strangest Man: The Hidden Life of Paul Dirac, Mystic of the Atom
-4                                                             Geometric Algebra for Computer Science: An Object-Oriented Approach to Geometry
-5                                                                                                               Best of Game Programming Gems
-6                                                                                                  The Goal: A Process of Ongoing Improvement
-7                                                                                                           Implementing Domain-Driven Design
-8                                                                                                                            Machine Learning
-9                                                                         The Pattern on the Stone: The Simple Ideas that Make Computers Work
-10                                                                                                                    Computability and Logic
-11                                                                                     The Mythical Man-Month: Essays on Software Engineering
-12                                                                                            Sync: The Emerging Science of Spontaneous Order
-13                                                                                                                        The Society of Mind
-14                                                                                         Programming Ruby: The Pragmatic Programmers' Guide
-15                                                                                                                     Engineering a Compiler
-16                                                                                                                    Game Programming Gems 5
-17                                                                                                      Geometric Tools for Computer Graphics
-18                                                                                          Does God Play Dice?: The New Mathematics of Chaos
-19                                                                                                                    Elements of Programming
-20                                                                                            Practical Foundations for Programming Languages
-21                                                                                Introduction to Automata Theory, Languages, and Computation
-22                                                                                              The Information: A History, a Theory, a Flood
-23                                                           Data and Goliath: The Hidden Battles to Collect Your Data and Control Your World
-24                                                                                                                Chaos: Making a New Science
-25                                                                                                                    Game Programming Gems 2
-26                                     Python Programming Books Set: Python Programming for Beginners & Complete Guide for Python Programming
-27                                               The Shape of Inner Space: String Theory and the Geometry of the Universe's Hidden Dimensions
-28                                                                                                            Building an FPS Game with Unity
-29                                                                                       Beginning Game Programming: A Gamedev.Net Collection
-30                                                                       How to Design Programs: An Introduction to Programming and Computing
-31                                                                                  Mathematics for 3D Game Programming and Computer Graphics
-32                                                                                                                      Game Programming Gems
-33                                                                                   The Hidden Connections: A Science for Sustainable Living
-34                                                                                                                              Learning Perl
-35                                                                        Ghost in the Wires: My Adventures as the World's Most Wanted Hacker
-36                                                                                 How to Create a Mind: The Secret of Human Thought Revealed
-37                                                                                                             Seven Languages in Seven Weeks
-38                                                                                                         Programming in Lua, Fourth Edition
-39                                                                                        Fearless Change: Patterns for Introducing New Ideas
-40                                                                                                        Essentials of Programming Languages
-41                                                                                                            Computability and Unsolvability
-42                                                                                        PHP and MySQL Web Development (Developer's Library)
-43                                                                                                                            Learning Python
-44                                                                                   Pro TypeScript: Application-Scale JavaScript Development
-45                                                                                                           Structured Computer Organization
-46                                                                Kingpin: How One Hacker Took Over the Billion-Dollar Cybercrime Underground
-47                                                                                                                            Programming PHP
-48                          Linked: How Everything Is Connected to Everything Else and What It Means for Business, Science, and Everyday Life
-49                                                                                                 xUnit Test Patterns: Refactoring Test Code
-50                                                                                                        An Introduction to Database Systems
-51                                                                                              Agile Retrospectives: Making Good Teams Great
-52                                                                                    Data Science from Scratch: First Principles with Python
-53                                                                                                Design and Validation of Computer Protocols
-54                                                                                                             Data Structures and Algorithms
-55                                                         The Calculus of Computation: Decision Procedures with Applications to Verification
-56                                                                                      Object-Oriented Analysis and Design with Applications
-57                                                                                                Six Degrees: The Science of a Connected Age
-58                                                              Python Programming For Beginners: Quick And Easy Guide For Python Programmers
-59                                                                                              Effective Programming: More Than Writing Code
-60                                                                                                      Elements of the Theory of Computation
-61                                                                                                      Computational Science and Engineering
-62                                                                            Think Complexity: Complexity Science and Computational Modeling
-63                                                                                          Soft Skills: The Software Developer's Life Manual
-64                                                                       Think Like a Programmer: An Introduction to Creative Problem Solving
-65                                                     Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy
-66                                                                                              Superintelligence: Paths, Dangers, Strategies
-67                                                  The Art of the Start: The Time-Tested, Battle-Hardened Guide for Anyone Starting Anything
-68                                                                                                                  Learn Python The Hard Way
-69                                                                                                                  Domain-Specific Languages
-70                                                                                      File Structures: An Object-Oriented Approach with C++
-71                                                  Nine Algorithms That Changed the Future: The Ingenious Ideas That Drive Today's Computers
-72                                                                                                          Making Games with Python & Pygame
-73                                                                                                                   Computational Complexity
-74                                                                         The Quark and the Jaguar: Adventures in the Simple and the Complex
-75                                                                                                                           The Meme Machine
-76                                                                                        Agile Web Development with Rails: A Pragmatic Guide
-77                                                                                                      A Discipline for Software Engineering
-78                                                                                       Automate This: How Algorithms Came to Rule Our World
-79                                                           The Scrumban [R]Evolution: Getting the Most Out of Agile, Scrum, and Lean Kanban
-80                                                                                                                              The Rails Way
-81                                                                                                                         Basic Proof Theory
-82                                                                                      REST in Practice: Hypermedia and Systems Architecture
-83                                                                  Big Data: Principles and best practices of scalable realtime data systems
-84                                                                                                                    Game Programming Gems 6
-85                                                                                                                    Game Programming Gems 3
-86                                                                      UML Distilled: A Brief Guide to the Standard Object Modeling Language
-87                                                The Master Algorithm: How the Quest for the Ultimate Learning Machine Will Remake Our World
-88                                                                                                                  How Google Tests Software
-89                                                                                      Functional Programming Application and Implementation
-90                                                                                           Lambda-Calculus and Combinators: An Introduction
-91                                                                                                                   Database System Concepts
-92                                                                                                                    Game Programming Gems 4
-93                                                                           Learn Java the Easy Way : A Hands-On Introduction to Programming
-94  3D Game Engine Architecture: Engineering Real-Time Applications with Wild Magic (The Morgan Kaufmann Series in Interactive 3d Technology)
-95                                                                  Our Final Invention: Artificial Intelligence and the End of the Human Era
-96                                                                                     The Design of Design: Essays from a Computer Scientist
-97                                                                                                                                   Ship It!
-98                                                                                                               Machine Learning for Hackers
-99                                                                    Big Data: A Revolution That Will Transform How We Live, Work, and Think
-100                                                                                                                        Doing Data Science
-101                                                                                                Augmented Reality: Principles and Practice
-102                                                                                                             Manage Your Project Portfolio
-103                                                                                                     Sams Teach Yourself MySQL in 24 Hours
-104                                                                                              The Architecture of Open Source Applications
-105                                                                                                                 Managing Data Using Excel
-106                                                                                                                        Game Engine Gems 1
-107                                                                97 Things Every Programmer Should Know: Collective Wisdom from the Experts
-108                                                                               The Golden Ticket: P, Np, and the Search for the Impossible
-109                                                                          Genetic Programming II: Automatic Discovery of Reusable Programs
-110                                                                                                                             Learning Ruby
-111                                                                                                                   The Boost C++ Libraries
-112                                                                                                  The Unified Modeling Language User Guide
-113                                                                                              Haskell: The Craft of Functional Programming
-114                                                                               Optimized C++: Proven Techniques for Heightened Performance
-115      3D Game Engine Design: A Practical Approach to Real-Time Computer Graphics (The Morgan Kaufmann Series in Interactive 3D Technology)
-116                                                                                                      Sams Teach Yourself Perl in 24 Hours
-117                                                                                                            Unity Virtual Reality Projects
-118                                                                                              Responsive Web Design Overview For Beginners
-119                                                                                                Sams Teach Yourself JavaScript in 24 Hours
-120                                                                                                                          Beginning Java 2
-121                                                                                                             Game Programming Golden Rules
-122                                                                                       Advanced Game Programming: A Gamedev.Net Collection
-123                                                 Cross-Platform Game Programming (Game Development) (Charles River Media Game Development)
-124                                                                                   Lambda-Calculus, Combinators and Functional Programming
-    Rating
-1     4.06
-2     4.06
-3     4.06
-4     4.06
-5     4.05
-6     4.05
-7     4.05
-8     4.05
-9     4.04
-10    4.04
-11    4.04
-12    4.03
-13    4.03
-14    4.03
-15    4.03
-16    4.03
-17    4.03
-18    4.02
-19    4.02
-20    4.02
-21    4.02
-22    4.01
-23    4.01
-24    4.01
-25    4.01
-26    4.00
-27    4.00
-28    4.00
-29    4.00
-30    4.00
-31    4.00
-32    4.00
-33    3.98
-34    3.98
-35    3.97
-36    3.97
-37    3.97
-38    3.97
-39    3.97
-40    3.97
-41    3.96
-42    3.96
-43    3.96
-44    3.96
-45    3.96
-46    3.95
-47    3.95
-48    3.94
-49    3.94
-50    3.94
-51    3.93
-52    3.93
-53    3.93
-54    3.93
-55    3.92
-56    3.92
-57    3.91
-58    3.91
-59    3.91
-60    3.91
-61    3.90
-62    3.89
-63    3.88
-64    3.88
-65    3.87
-66    3.87
-67    3.87
-68    3.87
-69    3.87
-70    3.87
-71    3.86
-72    3.86
-73    3.86
-74    3.85
-75    3.84
-76    3.84
-77    3.84
-78    3.83
-79    3.83
-80    3.83
-81    3.83
-82    3.82
-83    3.82
-84    3.82
-85    3.82
-86    3.79
-87    3.78
-88    3.78
-89    3.78
-90    3.78
-91    3.77
-92    3.77
-93    3.76
-94    3.76
-95    3.75
-96    3.75
-97    3.73
-98    3.73
-99    3.71
-100   3.70
-101   3.70
-102   3.68
-103   3.68
-104   3.67
-105   3.67
-106   3.67
-107   3.65
-108   3.60
-109   3.59
-110   3.58
-111   3.58
-112   3.56
-113   3.52
-114   3.48
-115   3.45
-116   3.38
-117   3.37
-118   3.33
-119   3.32
-120   3.22
-121   3.20
-122   3.00
-123   3.00
-124   3.00
+  mean(Rating)
+1     4.067417
 ```
+ค่าเฉลี่ยคะเเนน Rating ของหนังสือประเภท Kindle Edition คือ 4.067417
+```
+                                                                   Book_title Rating           Type
+1                                The Principles of Object-Oriented JavaScript   4.35 Kindle Edition
+2                    Simulation of Digital Communication Systems using Matlab   4.34 Kindle Edition
+3                                                Make Your Own Neural Network   4.34 Kindle Edition
+4 Make Your Own Neural Network: An In-depth Visual Introduction For Beginners   4.15 Kindle Edition
+```
+หนังสือที่มีคะแนน Rating มากกว่าค่าเฉลี่ยมี 4 เล่ม
+- The Principles of Object-Oriented JavaScript มี 4.35 คะแนน
+- Simulation of Digital Communication Systems using Matlab มี 4.34 คะแนน
+- Make Your Own Neural Network มี 4.34 คะแนน
+- Make Your Own Neural Network: An In-depth Visual Introduction For Beginners มี 4.15 คะแนน

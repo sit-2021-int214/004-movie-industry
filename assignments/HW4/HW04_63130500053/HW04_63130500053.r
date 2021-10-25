@@ -41,7 +41,9 @@ prog_book %>%
   filter(Type == "Paperback") %>%
   summarise(most_expensive = max(Price),most_cheapest = min(Price))
 
-##3.6 
-prog_book %>% select(Book_title,Rating) %>%
-  filter(Rating < mean(Rating)) %>%
+##3.6 Displays books type Kindle Edition  that are rating above average by descending order
+prog_book %>% summarise(mean(Rating))
+
+prog_book %>% select(Book_title,Rating,Type) %>%
+  filter(Rating > mean(Rating) & Type == "Kindle Edition") %>%
   arrange(desc(Rating))
