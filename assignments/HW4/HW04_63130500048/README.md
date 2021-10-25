@@ -310,7 +310,7 @@ book_pageless200
 
 
 
-## Part 4 Visualization with GGplot2
+## Part 4: Visualization with GGplot2
 ### **1.) กราฟแสดงช่วงราคาของหนังสือแต่ละประเภท**
 ```
 pricePerType_boxplot <-  ggplot(cs_book, aes(x=Type, y=Price, fill=Type)) + geom_boxplot() 
@@ -326,5 +326,15 @@ Result:
 
 ---
 
+### **2.) กราฟแสดงช่วงราคาของหนังสือแต่ละประเภท**
+```
+countbyPrice_areaplot <- ggplot(cs_book,aes(x=Price)) +  geom_area(stat = "bin",color = "#e76f51", fill="#ffd7ba", size = 1.5) + geom_vline(aes(xintercept=mean(Price)),color="#ee9b00", linetype="dashed", size=2, alpha = 0.6)
+```
+Result: 
 
+![countbyPrice_areaplot](https://github.com/sit-2021-int214/004-movie-industry/blob/40c311042ecdca19aaef695d30b35a445c50b771/assignments/HW4/HW04_63130500048/countbyPrice_areaplot1.PNG)
 
+**จากกราฟด้านบนจะเห็นจำนวนของหนังสือตามราคาจากน้อยไปมาก**
+- ค่าเฉลี่ยของราคาอยู่ที่ประมาณ 55 
+- ช่วงราคาที่มีจำนวนหนังสือมากที่สุดคือช่วง 40 - 45 
+- หลังจากราคา 60 ขึ้นไปมีจำนวนหนังสือที่อยู่ในช่วงนี้น้อยลง อย่างมีนัยยะสำคัญ
