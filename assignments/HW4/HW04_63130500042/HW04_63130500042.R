@@ -6,9 +6,8 @@ dt <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/ma
 head(dt)
 # 2 columns have an inappropriate data type
 
-dbl_col <- c("Reviews", "Number_Of_Pages")
 dt <- dt %>%
-    mutate_at(.vars = dbl_col, 
+    mutate_at(.vars = c("Reviews", "Number_Of_Pages"), 
               .funs = as.integer) %>%
     mutate(Type = as.factor(Type))
 
@@ -28,42 +27,73 @@ result <- dt %>%
     summarise(amount = n()) %>%
     arrange(desc(amount))
 
-result %>% summarise(total = sum(amount))
-
 # view
 result
 
+# output
+result %>% summarise(total = sum(amount))
+
 # 2
-dt %>%
+cplus_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(C|c)\\+\\+")) %>%
     select(-Description, -Reviews, -Type) %>%
     mutate(price.per.page = Price/Number_Of_Pages) %>%
+    arrange(price.per.page)
+
+# view
+cplus_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+cplus_table %>% 
     mutate(Price = scales::dollar(Price)) %>%
-    arrange(price.per.page) %>%
-    head(1)
+    filter(price.per.page == min(price.per.page))
 
 # 3
-dt %>%
+py_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(P|p)ython")) %>%
     select(-Description, -Reviews, -Type) %>%
-    mutate(Price = scales::dollar(Price)) %>%
-    arrange(desc(Rating)) %>%
-    head(1)
-    
+    arrange(desc(Rating))
+
+# view
+py_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+py_table %>% 
+    filter(Rating < quantile(Rating, 0.25)) %>%
+    mutate(Price = scales::dollar(Price))
+
 # 4
-dt %>%
+game_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(G|g)ame")) %>%
     select(-Description, -Reviews, -Type) %>%
     arrange(desc(Price)) %>%
-    mutate(Price = scales::dollar(Price)) %>%
-    head(1)
+    mutate(Price = scales::dollar(Price))
+
+# view
+game_table
+
+# output
+head(game_table, 1)
+
 
 # 5
-# 6
+algo_table <- dt %>%
+    filter(str_detect(Book_title, pattern = "(A|a)lgorithm")) %>%
+    select(-Description, -Reviews)
+    
+# view
+algo_table
 
+# output
+DescTools::Mode(algo_table$Type)
+
+# 6
+dt %>%
+    
+
+# graph 1
 hist_p <- dt %>% 
-    ggplot() +
-    aes(x = Rating) + 
+    ggplot(aes(x = Rating)) + 
     geom_histogram(binwidth = 0.2) +
     aes(fill = Type) +
     geom_vline(xintercept = mean(dt$Rating), linetype = "dashed") +
@@ -75,11 +105,11 @@ hist_p <- dt %>%
 # view graph
 hist_p
 
+# graph 2
 scatter_p <- dt %>%
     filter(Number_Of_Pages < 1500 & Price < 150) %>%
     filter(Type == "Hardcover" | Type == "Paperback") %>%
-    ggplot() +
-    aes(x = Number_Of_Pages, y = Price) +
+    ggplot(aes(x = Number_Of_Pages, y = Price)) +
     aes(color = Rating, size = Reviews) +
     geom_point() + 
     scale_color_distiller(palette = "RdPu") +
