@@ -47,3 +47,13 @@ prog_book %>% summarise(mean(Rating))
 prog_book %>% select(Book_title,Rating,Type) %>%
   filter(Rating > mean(Rating) & Type == "Kindle Edition") %>%
   arrange(desc(Rating))
+
+
+## Graph
+prog_book %>% 
+  filter(Rating > mean(Rating))%>% 
+  ggplot(aes(x=Rating,y=Price))+geom_point(aes(color= Price ))+geom_smooth()
+
+prog_book %>% ggplot(aes(x=Rating,y=Price))+geom_point()
+prototype() %>% ggplot(aes(x=Rating))+geom_histogram(colour = 5, fill = "white",binwidth = 10)
+
