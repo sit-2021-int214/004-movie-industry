@@ -71,7 +71,7 @@ sc <- ComSci_book %>%
   ylab("Pages") +
   ggtitle("Correlation of Rating and Price")
 
-sc+geom_smooth()          
+sc + geom_smooth()          
 
 #pie chart of amount of type
 pie <- ComSci_book %>% 
