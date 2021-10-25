@@ -101,6 +101,15 @@ FALSE
 ```
 
 
+
+
+
+
+
+
+
+
+
 ## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
 
 ---
@@ -302,19 +311,20 @@ book_pageless200
 
 
 ## Part 4: Visualization with GGplot2
-### 1.) Graph show relation between height and mass
+### **1.) กราฟแสดงช่วงราคาของหนังสือแต่ละประเภท**
 ```
-scat_plot <- starwars %>% filter(mass<500) %>% ggplot(aes(x=height,y=mass))+
-  geom_point(aes(color=gender))
-
-scat_plot+geom_smooth()
+pricePerType_boxplot <-  ggplot(cs_book, aes(x=Type, y=Price, fill=Type)) + geom_boxplot() 
 ```
 Result:
 
-![Graph 1](graph1.png)
+![Graph 1](pricePerType_boxplot.png)
 
-**Guideline:
-Embed Image by using this syntax in markdown file
-````
-![Name](imageFile)
-````
+**จากกราฟด้านบนจะเห็นช่วงราคาของหนังสือแต่ละประเภท**
+- ประเภท Hardcover มีหนังสือราคาต่ำที่สุด และราคาสูงที่สุดเช่นกัน 
+- ประเภท Boxset-Hardcover มีการกระจายของราคาต่ำที่สุด และประเภท Hardcover มีการกระจายของราคามากที่สุด
+- ราคาเฉลี่ยของ ebook, Paperback และ Kindle Edition มีราคาใกล้เคียงกัน
+
+---
+
+
+
