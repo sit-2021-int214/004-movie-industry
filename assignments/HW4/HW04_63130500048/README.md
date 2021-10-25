@@ -137,7 +137,7 @@ top_type
 >arrange() : Arrange rows by variables
 
 ---
-### **2.ราคาของหนังสือประเภท paperback ในแต่ละควอไทล์**
+### **2. ราคาของหนังสือประเภท paperback ในแต่ละ percentiles**
 
 ```
 price_paperback <- cs_book %>%
@@ -157,6 +157,12 @@ price_paperback
  3rd Qu.: 55.22  
  Max.   :212.10  
 ```
+แปลความหมายจากผลลัพธ์ 
+- Q0 (min) : ราคา 14.19
+- Q1 : ราคา 30.33
+- Q2 (median) : ราคา 43.34
+- Q3 : ราคา 55.22 
+- Q4 (max) : ราคา 212.10
 >### Function from **Tidyverse** ในข้อนี้
 >
 >filter(): Return rows with matching conditions
@@ -167,7 +173,7 @@ price_paperback
 
 ---
 
-### **3.เปอร์เซ็นต์ของประเภทหนังสือแต่ละประเภทต่อจำนวนทั้งหมด**
+### **3. เปอร์เซ็นต์ของประเภทหนังสือแต่ละประเภทต่อจำนวนทั้งหมด**
 
 ```
 book_totalPercent <- cs_book  %>%
@@ -198,24 +204,90 @@ book_totalPercent
 >mutate(): Create or transform variables
 
 ---
-### **4.**
+### **4. ราคาต่ำสุดและสูงสุดของหนังสือแต่ละประเภท**
 
 ```
-
+price_minmax <- cs_book %>%
+  select(Type,Price) %>%
+  group_by(Type) %>%
+  summarise(minPrice = min(Price), maxPrice = max(Price))
+price_minmax
 ```
 **ได้ผลลัพธ์**
 ```
+# A tibble: 6 x 3
+  Type                  minPrice maxPrice
+  <chr>                    <dbl>    <dbl>
+1 Boxed Set - Hardcover   220.      220. 
+2 ebook                    25.9      83.2
+3 Hardcover                 9.32    236. 
+4 Kindle Edition           11.3      51.5
+5 Paperback                14.2     212. 
+6 Unknown Binding          36.1      38.3
+```
+>### Function from **Tidyverse** ในข้อนี้
+>
+>select() : Select variables by name
+>
+>summarise(): Reduce multiple values down to a single value
+>
+>
+
+---
+
+### **5.รายชื่อและราคาของหนังสือที่ได้เรทติ้งดีที่สุด 10 อันดังแรก**
+
+```
+topRating_price <- cs_book %>% 
+  select(Book_title,Rating,Price) %>% 
+  arrange(desc(Rating)) %>% 
+  head(n=10)
+topRating_price
+```
+**ได้ผลลัพธ์**
+```
+                                                                                                 Book_title Rating     Price
+1                                                                                   Your First App: Node.js   5.00  25.85588
+2                                                   The Art of Computer Programming, Volumes 1-4a Boxed Set   4.77 220.38529
+3  Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems   4.72  45.56176
+4               Build Web Applications with Java: Learn every aspect to build web applications from scratch   4.67  42.27647
+5                                                  Fluent Python: Clear, Concise, and Effective Programming   4.67  64.09118
+6                                           ZX Spectrum Games Code Club: Twenty fun games to code and learn   4.62  14.64118
+7                             The Linux Programming Interface: A Linux and Unix System Programming Handbook   4.62  46.35882
+8                                                                          CLR via C# (Developer Reference)   4.58  66.32059
+9                       The Elements of Computing Systems: Building a Modern Computer from First Principles   4.54  41.25294
+10                                                                 Practical Object Oriented Design in Ruby   4.54  50.09412
 
 ```
 >### Function from **Tidyverse** ในข้อนี้
 >
+>select() : Select variables by name
 >
->
->
+>arrange() : Arrange rows by variables
 >
 >
 
+---
+### **6. จำนวนของหนังสือที่มีหน้าน้อยกว่า 200 หน้า**
 
+```
+book_pageless200 <- cs_book %>%
+  filter(Number_Of_Pages < 200) %>% 
+  summarize(num_books = n())
+book_pageless200
+```
+**ได้ผลลัพธ์**
+```
+  num_books
+1        22
+```
+>### Function from **Tidyverse** ในข้อนี้
+>
+>summarise(): Reduce multiple values down to a single value
+>
+>filter(): Return rows with matching conditions
+>
+>
 
 
 
