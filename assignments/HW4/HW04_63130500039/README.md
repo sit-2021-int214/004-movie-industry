@@ -192,11 +192,6 @@ sc + geom_smooth()
 ```
 Result:
 
-
-
-
-
-
 ![scatter](./chart/scatterplot.png)
 
 ### 2.) Graph show pie chart of amount of type.
@@ -216,10 +211,5 @@ pie + coord_polar(theta = "y", start=0)
 
 ```
 Result:
-
-
-
-
-
 
 ![piechart](./chart/pieChart.png)
