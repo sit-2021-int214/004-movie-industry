@@ -34,4 +34,14 @@ prog_book %>% count(Type)
 ## 3.4 Displays titles and descriptions of books that are type as Boxed Set - Hardcover.
 prog_book %>% 
   filter(Type == "Boxed Set - Hardcover") %>% 
-  select(Book_title, Description)
+  select(Book_title, Description) %>% glimpse()
+
+##3.5 Displays the cheapest and most expensive prices of Paperback books.
+prog_book %>%
+  filter(Type == "Paperback") %>%
+  summarise(most_expensive = max(Price),most_cheapest = min(Price))
+
+##3.6 
+prog_book %>% select(Book_title,Rating) %>%
+  filter(Rating < mean(Rating)) %>%
+  arrange(desc(Rating))
