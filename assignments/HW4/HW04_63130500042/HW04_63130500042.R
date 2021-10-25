@@ -6,9 +6,8 @@ dt <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/ma
 head(dt)
 # 2 columns have an inappropriate data type
 
-dbl_col <- c("Reviews", "Number_Of_Pages")
 dt <- dt %>%
-    mutate_at(.vars = dbl_col, 
+    mutate_at(.vars = c("Reviews", "Number_Of_Pages"), 
               .funs = as.integer) %>%
     mutate(Type = as.factor(Type))
 
@@ -23,63 +22,112 @@ summary(dt)
 
 # 1
 result <- dt %>%
-    filter(Rating > quantile(dt$Rating, 0.75)) %>%
+    filter(Rating < quantile(Rating, 0.1)) %>%
     group_by(Type) %>%
-    summarise(amount = n()) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price)) %>%
     arrange(desc(amount))
 
+# view
+result %>% mutate(avg.price = scales::dollar(avg.price))
+
+# output
 result %>% summarise(total = sum(amount))
 
-# view
-result
-
 # 2
-dt %>%
+cplus_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(C|c)\\+\\+")) %>%
     select(-Description, -Reviews, -Type) %>%
     mutate(price.per.page = Price/Number_Of_Pages) %>%
+    arrange(price.per.page)
+
+# view
+cplus_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+cplus_table %>% 
     mutate(Price = scales::dollar(Price)) %>%
-    arrange(price.per.page) %>%
-    head(1)
+    filter(price.per.page == min(price.per.page))
 
 # 3
-dt %>%
+py_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(P|p)ython")) %>%
     select(-Description, -Reviews, -Type) %>%
+    arrange(desc(Rating))
+
+# view
+py_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+py_table %>% 
+    filter(Rating < quantile(Rating, 0.25)) %>%
     mutate(Price = scales::dollar(Price)) %>%
-    arrange(desc(Rating)) %>%
-    head(1)
-    
+    arrange(Rating)
+
 # 4
-dt %>%
+game_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(G|g)ame")) %>%
-    select(-Description, -Reviews, -Type) %>%
-    arrange(desc(Price)) %>%
-    mutate(Price = scales::dollar(Price)) %>%
-    head(1)
+    select(-Description, -Reviews) %>%
+    arrange(desc(Price))
+
+# view
+game_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+game_table %>%
+    filter(boxplot.stats(game_table$Price)$out == Price) %>%
+    mutate(Price = scales::dollar(Price))
 
 # 5
-# 6
+algo_table <- dt %>%
+    filter(str_detect(Book_title, pattern = "(A|a)lgorithm")) %>%
+    select(-Description, -Reviews) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price))
 
+# view
+algo_table %>% mutate(avg.price = scales::dollar(avg.price))
+
+# output
+algo_table %>%
+    filter(amount == max(amount)) %>%
+    mutate(avg.price = scales::dollar(avg.price))
+
+# 6
+dt %>%
+    select(-Reviews, -Description) %>%
+    filter(Price > quantile(Price, 0.9)) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price)) %>%
+    arrange(desc(amount)) %>%
+    mutate(avg.price = scales::dollar(avg.price))
+    
+# plot 1
 hist_p <- dt %>% 
-    ggplot() +
-    aes(x = Rating) + 
+    ggplot(aes(x = Rating)) + 
     geom_histogram(binwidth = 0.2) +
     aes(fill = Type) +
     geom_vline(xintercept = mean(dt$Rating), linetype = "dashed") +
-    scale_x_continuous(breaks = seq(min(dt$Rating), max(dt$Rating), 0.2)) +
+    scale_x_continuous(breaks = seq(3, 5, 0.2)) +
     scale_y_continuous(breaks = seq(0, 100, 10)) +
-    ggtitle("test") +
+    labs(title = "Frequency of books in rating",
+         caption = "dashed line = mean line",
+         tag = "Fig. 1") +
     theme_bw()
 
-# view graph
+# view
 hist_p
 
+# plot 2
 scatter_p <- dt %>%
     filter(Number_Of_Pages < 1500 & Price < 150) %>%
     filter(Type == "Hardcover" | Type == "Paperback") %>%
-    ggplot() +
-    aes(x = Number_Of_Pages, y = Price) +
+    ggplot(aes(x = Number_Of_Pages, y = Price)) +
     aes(color = Rating, size = Reviews) +
     geom_point() + 
     scale_color_distiller(palette = "RdPu") +
@@ -89,8 +137,11 @@ scatter_p <- dt %>%
     scale_x_continuous(breaks = seq(0, 1200, 200)) +
     scale_y_continuous(breaks = seq(0, 150, 10)) +
     stat_ellipse() +
-    ggtitle("test") +
+    labs(title = "The correlation of Price and Number of Pages", 
+         subtitle = "Comparison between the correlation of Price and Number of Pages in Hardcover and Paperback",
+         caption = "dashed line = mean line",
+         tag = "Fig. 2") +
     theme_bw()
 
-# view graph
+# view view
 scatter_p
