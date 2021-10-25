@@ -80,7 +80,7 @@ $ Price      <dbl> 9.323529, 11.000000, 14.232353, 14.364706, 15.229412, 17.2294
 
 ```{R}
 prog_book %>%
-  select(Rating,Book_title,Type) %>%
+  select(Rating,Book_title) %>%
   arrange(desc(Rating)) %>%
   top_n(10) 
 ```
@@ -101,7 +101,71 @@ Selecting by Book_title
 9    3.79                  UML Distilled: A Brief Guide to the Standard Object Modeling Language
 10   3.37                                                         Unity Virtual Reality Projects
 ```
-//Explain
+แสดงหนังสือ 10 อันดับแรกของหนังสือที่มีคะแนน Rating สูงสุด โดยแสคงเเค่ Rating เเละ Book_title
 
-- list 1
-- list 2
+### 3.2 Displays the price of books with the highest and lowest ratings.
+
+```{R}
+prog_book %>%
+  filter(Rating == max(prog_book$Rating)| Rating == min(prog_book$Rating)) %>%
+  select(Rating,Book_title,Price)
+```
+
+#### Result
+
+```
+  Rating                                                                                Book_title    Price
+1      5                                                                   Your First App: Node.js 25.85588
+2      3                                       Advanced Game Programming: A Gamedev.Net Collection 59.08235
+3      3 Cross-Platform Game Programming (Game Development) (Charles River Media Game Development) 60.39118
+4      3                                   Lambda-Calculus, Combinators and Functional Programming 61.16765
+```
+แสดงราคาของหนังสือที่มีคะแนน Rating สูงสุดเเละต่ำสุด โดยเเสดงเเค่ Rating, Book_title เเละ Price
+
+### 3.3
+
+```{R}
+
+```
+
+#### Result
+
+```
+
+```
+
+### 3.4
+
+```{R}
+
+```
+
+#### Result
+
+```
+
+```
+
+### 3.5
+
+```{R}
+
+```
+
+#### Result
+
+```
+
+```
+
+### 3.6
+
+```{R}
+
+```
+
+#### Result
+
+```
+
+```

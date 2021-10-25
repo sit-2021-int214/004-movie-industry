@@ -23,5 +23,9 @@ prog_book %>%
   arrange(desc(Rating)) %>%
   top_n(10) 
 
-## 3.2 
+## 3.2 Displays the price of books with the highest and lowest ratings.
+prog_book %>%
+  filter(Rating == max(prog_book$Rating)| Rating == min(prog_book$Rating)) %>%
+  select(Rating,Book_title,Price)
 
+## 3.3   
