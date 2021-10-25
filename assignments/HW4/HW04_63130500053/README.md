@@ -57,6 +57,7 @@ In this dataset has 271 Rows and 7 Columns
 - Function `select()` from package [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html#select-columns-with-select). It using for select columns
 
 #### Filter hardcover prog_book with a score greater than 4 without Description and Number_Of_Pages columns.
+#### Code
 ```{R}
 prog_book %>% 
   filter(Type == "Hardcover" & Rating >= 4) %>% 
@@ -78,6 +79,7 @@ $ Price      <dbl> 9.323529, 11.000000, 14.232353, 14.364706, 15.229412, 17.2294
 
 ### 3.1 Displays the top 10 books of the books with the highest rating.
 
+#### Code
 ```{R}
 prog_book %>%
   select(Rating,Book_title) %>%
@@ -86,7 +88,6 @@ prog_book %>%
 ```
 
 #### Result
-
 ```
 Selecting by Book_title
    Rating                                                                             Book_title
@@ -105,6 +106,7 @@ Selecting by Book_title
 
 ### 3.2 Displays the price of books with the highest and lowest ratings.
 
+#### Code
 ```{R}
 prog_book %>%
   filter(Rating == max(prog_book$Rating)| Rating == min(prog_book$Rating)) %>%
@@ -112,7 +114,6 @@ prog_book %>%
 ```
 
 #### Result
-
 ```
   Rating                                                                                Book_title    Price
 1      5                                                                   Your First App: Node.js 25.85588
@@ -122,50 +123,92 @@ prog_book %>%
 ```
 แสดงราคาของหนังสือที่มีคะแนน Rating สูงสุดเเละต่ำสุด โดยเเสดงเเค่ Rating, Book_title เเละ Price
 
-### 3.3
+### 3.3 Displays How many types of books are there? And how many books are there in each type
 
+#### Code
 ```{R}
-
+prog_book %>% count(Type)
 ```
 
 #### Result
-
 ```
-
+                   Type   n
+1 Boxed Set - Hardcover   1
+2                 ebook   7
+3             Hardcover  95
+4        Kindle Edition  10
+5             Paperback 156
+6       Unknown Binding   2
 ```
+มีประเภทของหนังสืออยู่ทั้งหมด 6 ประเภท
+- Boxed Set - Hardcover มี 1 เล่ม
+- ebook มี 7 เล่ม
+- Hardcover มี 95 เล่ม
+- Kindle Edition มี 10 เล่ม
+- Paperback มี 156 เล่ม
+- Unknown Binding มี 2 เล่ม
 
-### 3.4
+### 3.4 Displays titles and descriptions of books that are type as Boxed Set - Hardcover.
 
+#### Code
 ```{R}
-
+prog_book %>% 
+  filter(Type == "Boxed Set - Hardcover") %>% 
+  select(Book_title, Description) %>% glimpse()
 ```
 
 #### Result
-
 ```
-
+Rows: 1
+Columns: 2
+$ Book_title  <chr> "The Art of Computer Programming, Volumes 1-3 Boxed Set"
+$ Description <chr> "Knuth's classic work has been widely acclaimed as one of the most influential works in the field of c~
 ```
+- มีหนังสือประเภท Boxed Set - Hardcover อยู่ 1 เล่ม
+- หนังสือชื่อ "The Art of Computer Programming, Volumes 1-3 Boxed Set"
 
-### 3.5
+### 3.5 Displays the cheapest and most expensive prices of Paperback books.
 
+#### Code
 ```{R}
-
+prog_book %>%
+  filter(Type == "Paperback") %>%
+  summarise(most_expensive = max(Price),most_cheapest = min(Price))
 ```
 
 #### Result
-
 ```
-
+  most_expensive most_cheapest
+1       212.0971      14.18824
 ```
+แสดงราคาที่ถูกที่สุดเเละเเพงที่สุดของหนังสือประเภท Paperback 
 
-### 3.6
+### 3.6 Displays books type Kindle Edition  that are rating above average by descending order
 
+#### Code
 ```{R}
+prog_book %>% summarise(mean(Rating))
 
+prog_book %>% select(Book_title,Rating,Type) %>%
+  filter(Rating > mean(Rating) & Type == "Kindle Edition") %>%
+  arrange(desc(Rating))
 ```
 
 #### Result
-
 ```
-
+  mean(Rating)
+1     4.067417
 ```
+ค่าเฉลี่ยคะเเนน Rating ของหนังสือประเภท Kindle Edition คือ 4.067417
+```
+                                                                   Book_title Rating           Type
+1                                The Principles of Object-Oriented JavaScript   4.35 Kindle Edition
+2                    Simulation of Digital Communication Systems using Matlab   4.34 Kindle Edition
+3                                                Make Your Own Neural Network   4.34 Kindle Edition
+4 Make Your Own Neural Network: An In-depth Visual Introduction For Beginners   4.15 Kindle Edition
+```
+หนังสือที่มีคะแนน Rating มากกว่าค่าเฉลี่ยมี 4 เล่ม
+- The Principles of Object-Oriented JavaScript มี 4.35 คะแนน
+- Simulation of Digital Communication Systems using Matlab มี 4.34 คะแนน
+- Make Your Own Neural Network มี 4.34 คะแนน
+- Make Your Own Neural Network: An In-depth Visual Introduction For Beginners มี 4.15 คะแนน

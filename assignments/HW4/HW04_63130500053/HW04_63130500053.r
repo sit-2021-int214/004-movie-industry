@@ -28,4 +28,22 @@ prog_book %>%
   filter(Rating == max(prog_book$Rating)| Rating == min(prog_book$Rating)) %>%
   select(Rating,Book_title,Price)
 
-## 3.3   
+## 3.3 Display How many types of books are there? And how many books are there in each type
+prog_book %>% count(Type)
+
+## 3.4 Displays titles and descriptions of books that are type as Boxed Set - Hardcover.
+prog_book %>% 
+  filter(Type == "Boxed Set - Hardcover") %>% 
+  select(Book_title, Description) %>% glimpse()
+
+##3.5 Displays the cheapest and most expensive prices of Paperback books.
+prog_book %>%
+  filter(Type == "Paperback") %>%
+  summarise(most_expensive = max(Price),most_cheapest = min(Price))
+
+##3.6 Displays books type Kindle Edition  that are rating above average by descending order
+prog_book %>% summarise(mean(Rating))
+
+prog_book %>% select(Book_title,Rating,Type) %>%
+  filter(Rating > mean(Rating) & Type == "Kindle Edition") %>%
+  arrange(desc(Rating))
