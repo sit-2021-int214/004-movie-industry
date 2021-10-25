@@ -332,4 +332,4 @@ countbyPrice_areaplot <- ggplot(cs_book,aes(x=Price)) +  geom_area(stat = "bin",
 ```
 Result: 
 
-![Graph 2](pricePerType_boxplot.png)
+![countbyPrice_areaplot](https://github.com/sit-2021-int214/004-movie-industry/blob/40c311042ecdca19aaef695d30b35a445c50b771/assignments/HW4/HW04_63130500048/countbyPrice_areaplot1.PNG)
