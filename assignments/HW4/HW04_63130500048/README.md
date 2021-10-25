@@ -11,7 +11,7 @@ Choose Dataset:
 1. [Explore the dataset](#part-1:-explore-the-dataset)
 2. [Learning function from Tidyverse](#part-2-&-part-3-:-learning-function-from-tidyverse-&-Transform-data-with-dplyr-and-finding-insight-the-data)
 3. [Transform data with dplyr and finding insight the data](#part-2-&-part-3-:-learning-function-from-tidyverse-&-transform-data-with-dplyr-and-finding-insight-the-data)
-4. [Visualization with GGplot2](#part-4:-visualization-with-ggplot2)
+4. [Visualization with GGplot2](#part-4-visualization-with-ggplot2)
 
 ## Part 1: Explore the dataset
 
@@ -310,7 +310,7 @@ book_pageless200
 
 
 
-## Part 4: Visualization with GGplot2
+## Part 4 Visualization with GGplot2
 ### **1.) กราฟแสดงช่วงราคาของหนังสือแต่ละประเภท**
 ```
 pricePerType_boxplot <-  ggplot(cs_book, aes(x=Type, y=Price, fill=Type)) + geom_boxplot() 
