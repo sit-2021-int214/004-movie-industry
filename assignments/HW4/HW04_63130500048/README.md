@@ -1,6 +1,6 @@
 # R-Assignment 4
 
-**Created by Name-Surname (ID: xxxxxxxxxx)**
+**Created by Thanaphon Sukkasem (ID: 63130500048)**
 
 Choose Dataset:
 - Top 270 Computer Science / Programing Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
@@ -8,10 +8,10 @@ Choose Dataset:
 
 ### Outlines
 
-1. Explore the dataset
-2. Learning function from Tidyverse
-3. Transform data with dplyr and finding insight the data
-4. Visualization with GGplot2
+1. [Explore the dataset](#part-1-explore-the-dataset)
+2. [Learning function from Tidyverse](#part-2-and-part-3-learning-function-from-tidyverse-and-Transform-data-with-dplyr-and-finding-insight-the-data)
+3. [Transform data with dplyr and finding insight the data](#part-2-and-part-3-learning-function-from-tidyverse-and-Transform-data-with-dplyr-and-finding-insight-the-data)
+4. [Visualization with GGplot2](#part-4-visualization-with-ggplot2)
 
 ## Part 1: Explore the dataset
 
@@ -101,7 +101,16 @@ FALSE
 ```
 
 
-## Part 2 & Part 3 : Learning function from Tidyverse & Transform data with dplyr and finding insight the data
+
+
+
+
+
+
+
+
+
+## Part 2 and Part 3: Learning function from Tidyverse and Transform data with dplyr and finding insight the data
 
 ---
 
@@ -301,20 +310,21 @@ book_pageless200
 
 
 
-## Part 4: Visualization with GGplot2
-### 1.) Graph show relation between height and mass
+## Part 4 Visualization with GGplot2
+### **1.) กราฟแสดงช่วงราคาของหนังสือแต่ละประเภท**
 ```
-scat_plot <- starwars %>% filter(mass<500) %>% ggplot(aes(x=height,y=mass))+
-  geom_point(aes(color=gender))
-
-scat_plot+geom_smooth()
+pricePerType_boxplot <-  ggplot(cs_book, aes(x=Type, y=Price, fill=Type)) + geom_boxplot() 
 ```
 Result:
 
-![Graph 1](graph1.png)
+![pricePerType_boxplot](https://github.com/sit-2021-int214/004-movie-industry/blob/1376c7b87fee9e4c3e22d5b00e0112112a85b0d7/assignments/HW4/HW04_63130500048/pricePerType_boxplot.PNG)
 
-**Guideline:
-Embed Image by using this syntax in markdown file
-````
-![Name](imageFile)
-````
+**จากกราฟด้านบนจะเห็นช่วงราคาของหนังสือแต่ละประเภท**
+- ประเภท Hardcover มีหนังสือราคาต่ำที่สุด และราคาสูงที่สุดเช่นกัน 
+- ประเภท Boxset-Hardcover มีการกระจายของราคาต่ำที่สุด และประเภท Hardcover มีการกระจายของราคามากที่สุด
+- ราคาเฉลี่ยของ ebook, Paperback และ Kindle Edition มีราคาใกล้เคียงกัน
+
+---
+
+
+
