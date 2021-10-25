@@ -1,17 +1,18 @@
-
+#Thanaphon Sukkasem 63130500048
 #Library
 library('dplyr','readr','ggplot2')
 
 #Dataset
 cs_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
 
-#Explore the dataset
+# Explore the dataset
 cs_book %>% glimpse()
 cs_book %>% summary()
 
 is.na(cs_book) %>% table()
 
-#Learning function from Tidyverse
+# Learning function from Tidyverse & Transform data with dplyr and finding insight the data
+
 
 #1.
 top_type <- cs_book %>% 
@@ -51,8 +52,16 @@ topRating_price <- cs_book %>%
 topRating_price
 
 #6.
-
 book_pageless200 <- cs_book %>%
   filter(Number_Of_Pages < 200) %>% 
   summarize(num_books = n())
 book_pageless200
+
+
+# Visualization with GGplot2
+
+pricePerType_boxplot <-  ggplot(cs_book, aes(x=Type, y=Price, fill=Type)) + geom_boxplot() 
+pricePerType_boxplot
+
+countbyPrice_areaplot <- ggplot(cs_book,aes(x=Price)) +  geom_area(stat = "bin",color = "#e76f51", fill="#ffd7ba", size = 1.5) + geom_vline(aes(xintercept=mean(Price)),color="#ee9b00", linetype="dashed", size=2, alpha = 0.6)
+countbyPrice_areaplot
