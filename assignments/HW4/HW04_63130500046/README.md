@@ -52,19 +52,42 @@ avg_price_each <- CSBooks %>% group_by(Type) %>% select(Price) %>% summarise(Pri
 avg_price_each
 
 ```
-
+Result:
+```R
+  Type                  Price
+  <chr>                 <dbl>
+1 Boxed Set - Hardcover 220. 
+2 ebook                  51.4
+3 Hardcover              70.1
+4 Kindle Edition         32.4
+5 Paperback              45.8
+6 Unknown Binding        37.2
+```
   3.2) The highest rating of Hardcover book type and title.
 ```R
 mr_hardcover <- CSBooks %>% select(Book_title, Type , Rating) %>% filter(Type =="Hardcover") %>% filter(Rating == max(Rating)) 
 
 cat("The Hardcover book type that has highest rating is" , mr_hardcover$Book_title,"and rating is",mr_hardcover$Rating)
 ```
-
+Result:
+```R
+The Hardcover book type that has highest rating is The Art of Computer Programming, Volumes 1-4a Boxed Set and rating is 4.77
+```
   3.3) The higest rating of book each type.
 ```R
 CSBooks %>% select(Book_title, Type , Rating) %>% group_by(Type) %>% summarise(Rating = max(Rating))
 ```
-
+Result:
+```R
+  Type                  Rating
+  <chr>                  <dbl>
+1 Boxed Set - Hardcover   4.49
+2 ebook                   5   
+3 Hardcover               4.77
+4 Kindle Edition          4.35
+5 Paperback               4.72
+6 Unknown Binding         4.11
+```
   3.4) Type of book that have average number of pages above overall average.
 ```R
 overall_avg <- CSBooks %>% summarise(Overall_avg = mean(Number_Of_Pages , na.rm = T))
@@ -76,11 +99,22 @@ avg_page <- CSBooks %>% select(Type ,Number_Of_Pages) %>% group_by(Type) %>%
 
 cat("Type of book that have average number of pages above overall average are" , avg_page$Type)
 ```
- 
+Result:
+```R
+Type                  avg_pages
+  <chr>                     <dbl>
+1 Boxed Set - Hardcover      896 
+2 Hardcover                  614.
+```
   3.5) non- Boxed set book with highest number of pages.
 ```R
 CSBooks %>% filter(Type != "Boxed Set") %>% select(Book_title , Type , Number_Of_Pages , Price) %>%
         filter(Number_Of_Pages == max(Number_Of_Pages))
+```
+Result:
+```R
+Book_title      Type Number_Of_Pages    Price
+1 The Art of Computer Programming, Volumes 1-4a Boxed Set Hardcover            3168 220.3853
 ```
   3.6) 2 Book with the price nearest left side and right side of the median price.
 ```R
@@ -95,6 +129,11 @@ nearest_rs <- CSBooks %>% select(Book_title , Price) %>% filter(Price == max(rig
 cat("Book title with the nearest price to median from left side is:" , 
     nearest_ls$Book_title ,"and right side is:" , nearest_rs$Book_title)
 
+```
+Result:
+```R
+Book title with the nearest price to median from left side is: Programming Ruby: The Pragmatic Programmers' Guide 
+and right side is: A Discipline for Software Engineering
 ```
 ## Part 4: Visualization with GGplot2
 
