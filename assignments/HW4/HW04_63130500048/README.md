@@ -338,3 +338,8 @@ Result:
 - ค่าเฉลี่ยของราคาอยู่ที่ประมาณ 55 
 - ช่วงราคาที่มีจำนวนหนังสือมากที่สุดคือช่วง 40 - 45 
 - หลังจากราคา 60 ขึ้นไปมีจำนวนหนังสือที่อยู่ในช่วงนี้น้อยลง อย่างมีนัยยะสำคัญ
+
+---
+
+## Part B: Creating Interaction Dashboard with BI Tools
+Link to Power BI : [Click here](https://app.powerbi.com/view?r=eyJrIjoiNDU4MDg3OWItOTUyMy00ZDY5LWE5NDEtMWIzYjA2NGFhYjQwIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection)
