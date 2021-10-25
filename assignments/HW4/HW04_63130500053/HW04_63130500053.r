@@ -28,4 +28,10 @@ prog_book %>%
   filter(Rating == max(prog_book$Rating)| Rating == min(prog_book$Rating)) %>%
   select(Rating,Book_title,Price)
 
-## 3.3   
+## 3.3 Display How many types of books are there? And how many books are there in each type
+prog_book %>% count(Type)
+
+## 3.4 Displays titles and descriptions of books that are type as Boxed Set - Hardcover.
+prog_book %>% 
+  filter(Type == "Boxed Set - Hardcover") %>% 
+  select(Book_title, Description)
