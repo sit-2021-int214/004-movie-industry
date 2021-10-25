@@ -22,13 +22,15 @@ summary(dt)
 
 # 1
 result <- dt %>%
-    filter(Rating > quantile(dt$Rating, 0.75)) %>%
+    filter(Rating < quantile(Rating, 0.1)) %>%
     group_by(Type) %>%
-    summarise(amount = n()) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price)) %>%
     arrange(desc(amount))
 
 # view
-result
+result %>% mutate(avg.price = scales::dollar(avg.price))
 
 # output
 result %>% summarise(total = sum(amount))
@@ -60,52 +62,68 @@ py_table %>% mutate(Price = scales::dollar(Price))
 # output
 py_table %>% 
     filter(Rating < quantile(Rating, 0.25)) %>%
-    mutate(Price = scales::dollar(Price))
+    mutate(Price = scales::dollar(Price)) %>%
+    arrange(Rating)
 
 # 4
 game_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(G|g)ame")) %>%
-    select(-Description, -Reviews, -Type) %>%
-    arrange(desc(Price)) %>%
-    mutate(Price = scales::dollar(Price))
+    select(-Description, -Reviews) %>%
+    arrange(desc(Price))
 
 # view
-game_table
+game_table %>% mutate(Price = scales::dollar(Price))
 
 # output
-head(game_table, 1)
-
+game_table %>%
+    filter(boxplot.stats(game_table$Price)$out == Price) %>%
+    mutate(Price = scales::dollar(Price))
 
 # 5
 algo_table <- dt %>%
     filter(str_detect(Book_title, pattern = "(A|a)lgorithm")) %>%
-    select(-Description, -Reviews)
-    
+    select(-Description, -Reviews) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price))
+
 # view
-algo_table
+algo_table %>% mutate(avg.price = scales::dollar(avg.price))
 
 # output
-DescTools::Mode(algo_table$Type)
+algo_table %>%
+    filter(amount == max(amount)) %>%
+    mutate(avg.price = scales::dollar(avg.price))
 
 # 6
 dt %>%
+    select(-Reviews, -Description) %>%
+    filter(Price > quantile(Price, 0.9)) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price)) %>%
+    arrange(desc(amount)) %>%
+    mutate(avg.price = scales::dollar(avg.price))
     
-
-# graph 1
+# plot 1
 hist_p <- dt %>% 
     ggplot(aes(x = Rating)) + 
     geom_histogram(binwidth = 0.2) +
     aes(fill = Type) +
     geom_vline(xintercept = mean(dt$Rating), linetype = "dashed") +
-    scale_x_continuous(breaks = seq(min(dt$Rating), max(dt$Rating), 0.2)) +
+    scale_x_continuous(breaks = seq(3, 5, 0.2)) +
     scale_y_continuous(breaks = seq(0, 100, 10)) +
-    ggtitle("test") +
+    labs(title = "Frequency of books in rating",
+         caption = "dashed line = mean line",
+         tag = "Fig. 1") +
     theme_bw()
 
-# view graph
+# view
 hist_p
 
-# graph 2
+# plot 2
 scatter_p <- dt %>%
     filter(Number_Of_Pages < 1500 & Price < 150) %>%
     filter(Type == "Hardcover" | Type == "Paperback") %>%
@@ -119,8 +137,11 @@ scatter_p <- dt %>%
     scale_x_continuous(breaks = seq(0, 1200, 200)) +
     scale_y_continuous(breaks = seq(0, 150, 10)) +
     stat_ellipse() +
-    ggtitle("test") +
+    labs(title = "The correlation of Price and Number of Pages", 
+         subtitle = "Comparison between the correlation of Price and Number of Pages in Hardcover and Paperback",
+         caption = "dashed line = mean line",
+         tag = "Fig. 2") +
     theme_bw()
 
-# view graph
+# view view
 scatter_p
