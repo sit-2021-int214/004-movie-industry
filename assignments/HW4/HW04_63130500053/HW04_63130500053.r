@@ -49,11 +49,16 @@ prog_book %>% select(Book_title,Rating,Type) %>%
   arrange(desc(Rating))
 
 
-## Graph
+## Graph 1
 prog_book %>% 
   filter(Rating > mean(Rating))%>% 
-  ggplot(aes(x=Rating,y=Price))+geom_point(aes(color= Price ))+geom_smooth()
+  ggplot(aes(x=Rating,y=Price))+geom_point(aes(color= Type ))+geom_smooth()
 
-prog_book %>% ggplot(aes(x=Rating,y=Price))+geom_point()
-prototype() %>% ggplot(aes(x=Rating))+geom_histogram(colour = 5, fill = "white",binwidth = 10)
+## Graph 2
+prog_book %>% 
+  ggplot(aes(x=Type)) + 
+  geom_bar(colour = 5, fill = "white") +
+  ggtitle("Books each Type") +
+  xlab("type of books") + ylab("quantity of books") 
+
 
