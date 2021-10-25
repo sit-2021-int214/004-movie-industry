@@ -137,7 +137,7 @@ top_type
 >arrange() : Arrange rows by variables
 
 ---
-### **2.ราคาของหนังสือประเภท paperback ในแต่ละ percentiles**
+### **2.ราคาของหนังสือประเภท paperback ในแต่ละควอไทล์**
 
 ```
 price_paperback <- cs_book %>%
