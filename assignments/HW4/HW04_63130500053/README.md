@@ -154,16 +154,18 @@ prog_book %>% count(Type)
 ```{R}
 prog_book %>% 
   filter(Type == "Boxed Set - Hardcover") %>% 
-  select(Book_title, Description)
+  select(Book_title, Description) %>% glimpse()
 ```
 
 #### Result
 ```
-                                              Book_title
-1 The Art of Computer Programming, Volumes 1-3 Boxed Set
-                                                                                                                                                                                                                                                                                                                                                                                      Description
-1 Knuth's classic work has been widely acclaimed as one of the most influential works in the field of computer science. For the first time, these books are available as a boxed, three-volume set. The handsome slipcase makes this set an ideal gift for the recent computer science graduate or professional programmer. Offering a description of classical computer science, this mu ...more
+Rows: 1
+Columns: 2
+$ Book_title  <chr> "The Art of Computer Programming, Volumes 1-3 Boxed Set"
+$ Description <chr> "Knuth's classic work has been widely acclaimed as one of the most influential works in the field of c~
 ```
+- มีหนังสือประเภท Boxed Set - Hardcover อยู่ 1 เล่ม
+- หนังสือชื่อ "The Art of Computer Programming, Volumes 1-3 Boxed Set"
 
 ### 3.5
 
