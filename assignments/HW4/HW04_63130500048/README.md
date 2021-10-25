@@ -317,7 +317,7 @@ pricePerType_boxplot <-  ggplot(cs_book, aes(x=Type, y=Price, fill=Type)) + geom
 ```
 Result:
 
-![Graph 1](assignments/HW4/HW04_63130500048/pricePerType_boxplot.PNG)
+![pricePerType_boxplot](https://github.com/sit-2021-int214/004-movie-industry/blob/1376c7b87fee9e4c3e22d5b00e0112112a85b0d7/assignments/HW4/HW04_63130500048/pricePerType_boxplot.PNG)
 
 **จากกราฟด้านบนจะเห็นช่วงราคาของหนังสือแต่ละประเภท**
 - ประเภท Hardcover มีหนังสือราคาต่ำที่สุด และราคาสูงที่สุดเช่นกัน 
