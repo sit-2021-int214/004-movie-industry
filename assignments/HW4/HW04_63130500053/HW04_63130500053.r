@@ -7,7 +7,9 @@ prog_book <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statis
 
 glimpse(prog_book)
 
-prog_book %>% filter(Type == "Hardcover" , Rating >= 4)
+prog_book %>% 
+  filter(Type == "Hardcover" & Rating >= 4) %>% 
+  glimpse()
 
 prog_book %>% 
   filter(Type == "Hardcover" & Rating >= 4) %>% 

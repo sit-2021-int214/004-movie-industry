@@ -59,17 +59,18 @@ In this dataset has 271 Rows and 7 Columns
 ```{R}
 prog_book %>% 
   filter(Type == "Hardcover" & Rating >= 4) %>% 
-  select(-Description,-Number_Of_Pages) %>%
   glimpse()
 ```
 #### Result
 ```
 Rows: 62
-Columns: 5
-$ Rating     <dbl> 4.17, 4.01, 4.09, 4.15, 4.03, 4.10, 4.13, 4.09, 4.27, 4.08, 4.06, 4.00, 4.28, 4.05, 4.54, 4.40, 4.02~
-$ Reviews    <chr> "3,829", "1,406", "5,938", "1,817", "160", "2,092", "86", "4", "2,629", "9", "302", "50", "3", "2", ~
-$ Book_title <chr> "The Elements of Style", "The Information: A History, a Theory, a Flood", "Start with Why: How Great~
-$ Type       <chr> "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcove~
-$ Price      <dbl> 9.323529, 11.000000, 14.232353, 14.364706, 15.229412, 17.229412, 21.814706, 23.235294, 24.258824, 25~
+Columns: 7
+$ Rating          <dbl> 4.17, 4.01, 4.09, 4.15, 4.03, 4.10, 4.13, 4.09, 4.27, 4.08, 4.06, 4.00, 4.28, 4.05, 4.54, 4.40,~
+$ Reviews         <chr> "3,829", "1,406", "5,938", "1,817", "160", "2,092", "86", "4", "2,629", "9", "302", "50", "3", ~
+$ Book_title      <chr> "The Elements of Style", "The Information: A History, a Theory, a Flood", "Start with Why: How ~
+$ Description     <chr> "This style manual offers practical advice on improving writing skills. Throughout, the emphasi~
+$ Number_Of_Pages <int> 105, 527, 256, 368, 352, 542, 416, 190, 345, 293, 539, 377, 336, 576, 325, 197, 262, 1506, 386,~
+$ Type            <chr> "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Hardcover", "Har~
+$ Price           <dbl> 9.323529, 11.000000, 14.232353, 14.364706, 15.229412, 17.229412, 21.814706, 23.235294, 24.25882~
 ```
 
