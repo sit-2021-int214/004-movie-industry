@@ -115,6 +115,8 @@ glimpse(movies)
 
 ### Check N/A
 
+Read about N/A value [click here](https://github.com/sit-2021-int214/004-movie-industry/tree/main/movie_industry/data_exploration#na-value-in-releaseddate)
+
 ``` r
 # check N/A
 na_col <- colSums(is.na(movies))
