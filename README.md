@@ -56,10 +56,6 @@ R language in R Studio. In addition, the data was analyzed to determine the corr
 - Original Dataset: [movies_original.csv](./movie_industry/csv/original_dataset/movies_original.csv)
 - Cleaned Dataset: [movies_cleaned.csv](./movie_industry/csv/cleaned_dataset/movies_cleaned.csv)
 
-### References
-
-// Link
-
 ## About Us
 The work is part of INT214 (Statistics for Information technology) <br>
 semester 1/2021 School of Information Technology KMUTT
