@@ -225,19 +225,6 @@ pre code {
 <pre class="r"><code>packages &lt;- c(&quot;dplyr&quot;, &quot;readr&quot;, &quot;scales&quot;)
 lapply(packages, library, character.only = T)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbiBbMV0gXCJzY2FsZXNcIiAgICBcInJlYWRyXCIgICAgIFwiZHBseXJcIiAgICAgXCJzdGF0c1wiICAgICBcImdyYXBoaWNzXCIgIFwiZ3JEZXZpY2VzXCJcbiBbN10gXCJ1dGlsc1wiICAgICBcImRhdGFzZXRzXCIgIFwibWV0aG9kc1wiICAgXCJiYXNlXCIgICAgIFxuXG5bWzJdXVxuIFsxXSBcInNjYWxlc1wiICAgIFwicmVhZHJcIiAgICAgXCJkcGx5clwiICAgICBcInN0YXRzXCIgICAgIFwiZ3JhcGhpY3NcIiAgXCJnckRldmljZXNcIlxuIFs3XSBcInV0aWxzXCIgICAgIFwiZGF0YXNldHNcIiAgXCJtZXRob2RzXCIgICBcImJhc2VcIiAgICAgXG5cbltbM11dXG4gWzFdIFwic2NhbGVzXCIgICAgXCJyZWFkclwiICAgICBcImRwbHlyXCIgICAgIFwic3RhdHNcIiAgICAgXCJncmFwaGljc1wiICBcImdyRGV2aWNlc1wiXG4gWzddIFwidXRpbHNcIiAgICAgXCJkYXRhc2V0c1wiICBcIm1ldGhvZHNcIiAgIFwiYmFzZVwiICAgICBcbiJ9 -->
-<pre><code>[[1]]
- [1] &quot;scales&quot;    &quot;readr&quot;     &quot;dplyr&quot;     &quot;stats&quot;     &quot;graphics&quot;  &quot;grDevices&quot;
- [7] &quot;utils&quot;     &quot;datasets&quot;  &quot;methods&quot;   &quot;base&quot;     
-
-[[2]]
- [1] &quot;scales&quot;    &quot;readr&quot;     &quot;dplyr&quot;     &quot;stats&quot;     &quot;graphics&quot;  &quot;grDevices&quot;
- [7] &quot;utils&quot;     &quot;datasets&quot;  &quot;methods&quot;   &quot;base&quot;     
-
-[[3]]
- [1] &quot;scales&quot;    &quot;readr&quot;     &quot;dplyr&quot;     &quot;stats&quot;     &quot;graphics&quot;  &quot;grDevices&quot;
- [7] &quot;utils&quot;     &quot;datasets&quot;  &quot;methods&quot;   &quot;base&quot;     </code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -248,17 +235,6 @@ lapply(packages, library, character.only = T)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW92aWVzIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NpdC0yMDIxLWludDIxNC8wMDQtbW92aWUtaW5kdXN0cnkvbWFpbi9tb3ZpZV9pbmR1c3RyeS9jc3YvY2xlYW5lZF9kYXRhc2V0L21vdmllc19jbGVhbmVkLmNzdlwiKVxuYGBgIn0= -->
 <pre class="r"><code>movies &lt;- read_csv(&quot;https://raw.githubusercontent.com/sit-2021-int214/004-movie-industry/main/movie_industry/csv/cleaned_dataset/movies_cleaned.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzY2OCBDb2x1bW5zOiAxNlxuLS0gQ29sdW1uIHNwZWNpZmljYXRpb24gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg5KTogbmFtZSwgcmF0aW5nLCBnZW5yZSwgcmVsZWFzZWQuY291bnRyeSwgZGlyZWN0b3IsIHdyaXRlciwgc3RhciwgYy4uLlxuZGJsICAoNik6IHllYXIsIHNjb3JlLCB2b3RlcywgYnVkZ2V0LCBncm9zcywgcnVudGltZVxuZGF0ZSAoMSk6IHJlbGVhc2VkLmRhdGVcblxuaSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbmkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
-<pre><code>Rows: 7668 Columns: 16
--- Column specification ------------------------------------------------------
-Delimiter: &quot;,&quot;
-chr  (9): name, rating, genre, released.country, director, writer, star, c...
-dbl  (6): year, score, votes, budget, gross, runtime
-date (1): released.date
-
-i Use `spec()` to retrieve the full column specification for this data.
-i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -270,26 +246,6 @@ i Specify the column types or set `show_col_types = FALSE` to quiet this message
 <pre class="r"><code># observe dataset and data type
 glimpse(movies)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNyw2NjhcbkNvbHVtbnM6IDE2XG4kIG5hbWUgICAgICAgICAgICAgPGNocj4gXCJUaGUgU2hpbmluZ1wiLCBcIlRoZSBCbHVlIExhZ29vblwiLCBcIlN0YXIgV2FyczogRXBpc29+XG4kIHJhdGluZyAgICAgICAgICAgPGNocj4gXCJSXCIsIFwiUlwiLCBcIlBHXCIsIFwiUEdcIiwgXCJSXCIsIFwiUlwiLCBcIlJcIiwgXCJSXCIsIFwiUEdcIiwgXCJSXCJ+XG4kIGdlbnJlICAgICAgICAgICAgPGNocj4gXCJEcmFtYVwiLCBcIkFkdmVudHVyZVwiLCBcIkFjdGlvblwiLCBcIkNvbWVkeVwiLCBcIkNvbWVkeVwiLH5cbiQgeWVhciAgICAgICAgICAgICA8ZGJsPiAxOTgwLCAxOTgwLCAxOTgwLCAxOTgwLCAxOTgwLCAxOTgwLCAxOTgwLCAxOTgwLCAxOTh+XG4kIHJlbGVhc2VkLmRhdGUgICAgPGRhdGU+IDE5ODAtMDYtMTMsIDE5ODAtMDctMDIsIDE5ODAtMDYtMjAsIDE5ODAtMDctMDIsIDE5flxuJCByZWxlYXNlZC5jb3VudHJ5IDxjaHI+IFwiVW5pdGVkIFN0YXRlc1wiLCBcIlVuaXRlZCBTdGF0ZXNcIiwgXCJVbml0ZWQgU3RhdGVzXCIsIH5cbiQgc2NvcmUgICAgICAgICAgICA8ZGJsPiA4LjQsIDUuOCwgOC43LCA3LjcsIDcuMywgNi40LCA3LjksIDguMiwgNi44LCA3LjAsIDZ+XG4kIHZvdGVzICAgICAgICAgICAgPGRibD4gOTI3MDAwLCA2NTAwMCwgMTIwMDAwMCwgMjIxMDAwLCAxMDgwMDAsIDEyMzAwMCwgMTg4flxuJCBkaXJlY3RvciAgICAgICAgIDxjaHI+IFwiU3RhbmxleSBLdWJyaWNrXCIsIFwiUmFuZGFsIEtsZWlzZXJcIiwgXCJJcnZpbiBLZXJzaG5lflxuJCB3cml0ZXIgICAgICAgICAgIDxjaHI+IFwiU3RlcGhlbiBLaW5nXCIsIFwiSGVucnkgRGUgVmVyZSBTdGFjcG9vbGVcIiwgXCJMZWlnaCBCflxuJCBzdGFyICAgICAgICAgICAgIDxjaHI+IFwiSmFjayBOaWNob2xzb25cIiwgXCJCcm9va2UgU2hpZWxkc1wiLCBcIk1hcmsgSGFtaWxsXCIsIH5cbiQgY291bnRyeSAgICAgICAgICA8Y2hyPiBcIlVuaXRlZCBLaW5nZG9tXCIsIFwiVW5pdGVkIFN0YXRlc1wiLCBcIlVuaXRlZCBTdGF0ZXNcIix+XG4kIGJ1ZGdldCAgICAgICAgICAgPGRibD4gMS45ZSswNywgNC41ZSswNiwgMS44ZSswNywgMy41ZSswNiwgNi4wZSswNiwgNS41ZSswflxuJCBncm9zcyAgICAgICAgICAgIDxkYmw+IDQ2OTk4NzcyLCA1ODg1MzEwNiwgNTM4Mzc1MDY3LCA4MzQ1MzUzOSwgMzk4NDYzNDQsIH5cbiQgY29tcGFueSAgICAgICAgICA8Y2hyPiBcIldhcm5lciBCcm9zLlwiLCBcIkNvbHVtYmlhIFBpY3R1cmVzXCIsIFwiTHVjYXNmaWxtXCIsIFwiflxuJCBydW50aW1lICAgICAgICAgIDxkYmw+IDE0NiwgMTA0LCAxMjQsIDg4LCA5OCwgOTUsIDEzMywgMTI5LCAxMjcsIDEwMCwgMTE2LH5cbiJ9 -->
-<pre><code>Rows: 7,668
-Columns: 16
-$ name             &lt;chr&gt; &quot;The Shining&quot;, &quot;The Blue Lagoon&quot;, &quot;Star Wars: Episo~
-$ rating           &lt;chr&gt; &quot;R&quot;, &quot;R&quot;, &quot;PG&quot;, &quot;PG&quot;, &quot;R&quot;, &quot;R&quot;, &quot;R&quot;, &quot;R&quot;, &quot;PG&quot;, &quot;R&quot;~
-$ genre            &lt;chr&gt; &quot;Drama&quot;, &quot;Adventure&quot;, &quot;Action&quot;, &quot;Comedy&quot;, &quot;Comedy&quot;,~
-$ year             &lt;dbl&gt; 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980, 198~
-$ released.date    &lt;date&gt; 1980-06-13, 1980-07-02, 1980-06-20, 1980-07-02, 19~
-$ released.country &lt;chr&gt; &quot;United States&quot;, &quot;United States&quot;, &quot;United States&quot;, ~
-$ score            &lt;dbl&gt; 8.4, 5.8, 8.7, 7.7, 7.3, 6.4, 7.9, 8.2, 6.8, 7.0, 6~
-$ votes            &lt;dbl&gt; 927000, 65000, 1200000, 221000, 108000, 123000, 188~
-$ director         &lt;chr&gt; &quot;Stanley Kubrick&quot;, &quot;Randal Kleiser&quot;, &quot;Irvin Kershne~
-$ writer           &lt;chr&gt; &quot;Stephen King&quot;, &quot;Henry De Vere Stacpoole&quot;, &quot;Leigh B~
-$ star             &lt;chr&gt; &quot;Jack Nicholson&quot;, &quot;Brooke Shields&quot;, &quot;Mark Hamill&quot;, ~
-$ country          &lt;chr&gt; &quot;United Kingdom&quot;, &quot;United States&quot;, &quot;United States&quot;,~
-$ budget           &lt;dbl&gt; 1.9e+07, 4.5e+06, 1.8e+07, 3.5e+06, 6.0e+06, 5.5e+0~
-$ gross            &lt;dbl&gt; 46998772, 58853106, 538375067, 83453539, 39846344, ~
-$ company          &lt;chr&gt; &quot;Warner Bros.&quot;, &quot;Columbia Pictures&quot;, &quot;Lucasfilm&quot;, &quot;~
-$ runtime          &lt;dbl&gt; 146, 104, 124, 88, 98, 95, 133, 129, 127, 100, 116,~</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -316,26 +272,6 @@ movies &lt;- movies %&gt;%
 <pre class="r"><code># verify data type
 glimpse(movies)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNyw2NjhcbkNvbHVtbnM6IDE2XG4kIG5hbWUgICAgICAgICAgICAgPGNocj4gXCJUaGUgU2hpbmluZ1wiLCBcIlRoZSBCbHVlIExhZ29vblwiLCBcIlN0YXIgV2FyczogRXBpc29+XG4kIHJhdGluZyAgICAgICAgICAgPGZjdD4gUiwgUiwgUEcsIFBHLCBSLCBSLCBSLCBSLCBQRywgUiwgUEcsIFBHLCBQRywgUiwgUiwgflxuJCBnZW5yZSAgICAgICAgICAgIDxmY3Q+IERyYW1hLCBBZHZlbnR1cmUsIEFjdGlvbiwgQ29tZWR5LCBDb21lZHksIEhvcnJvciwgQX5cbiQgeWVhciAgICAgICAgICAgICA8Y2hyPiBcIjE5ODBcIiwgXCIxOTgwXCIsIFwiMTk4MFwiLCBcIjE5ODBcIiwgXCIxOTgwXCIsIFwiMTk4MFwiLCBcIjE5flxuJCByZWxlYXNlZC5kYXRlICAgIDxkYXRlPiAxOTgwLTA2LTEzLCAxOTgwLTA3LTAyLCAxOTgwLTA2LTIwLCAxOTgwLTA3LTAyLCAxOX5cbiQgcmVsZWFzZWQuY291bnRyeSA8ZmN0PiBVbml0ZWQgU3RhdGVzLCBVbml0ZWQgU3RhdGVzLCBVbml0ZWQgU3RhdGVzLCBVbml0ZWR+XG4kIHNjb3JlICAgICAgICAgICAgPGRibD4gOC40LCA1LjgsIDguNywgNy43LCA3LjMsIDYuNCwgNy45LCA4LjIsIDYuOCwgNy4wLCA2flxuJCB2b3RlcyAgICAgICAgICAgIDxpbnQ+IDkyNzAwMCwgNjUwMDAsIDEyMDAwMDAsIDIyMTAwMCwgMTA4MDAwLCAxMjMwMDAsIDE4OH5cbiQgZGlyZWN0b3IgICAgICAgICA8Y2hyPiBcIlN0YW5sZXkgS3Vicmlja1wiLCBcIlJhbmRhbCBLbGVpc2VyXCIsIFwiSXJ2aW4gS2Vyc2huZX5cbiQgd3JpdGVyICAgICAgICAgICA8Y2hyPiBcIlN0ZXBoZW4gS2luZ1wiLCBcIkhlbnJ5IERlIFZlcmUgU3RhY3Bvb2xlXCIsIFwiTGVpZ2ggQn5cbiQgc3RhciAgICAgICAgICAgICA8Y2hyPiBcIkphY2sgTmljaG9sc29uXCIsIFwiQnJvb2tlIFNoaWVsZHNcIiwgXCJNYXJrIEhhbWlsbFwiLCB+XG4kIGNvdW50cnkgICAgICAgICAgPGZjdD4gVW5pdGVkIEtpbmdkb20sIFVuaXRlZCBTdGF0ZXMsIFVuaXRlZCBTdGF0ZXMsIFVuaXRlflxuJCBidWRnZXQgICAgICAgICAgIDxkYmw+IDEuOWUrMDcsIDQuNWUrMDYsIDEuOGUrMDcsIDMuNWUrMDYsIDYuMGUrMDYsIDUuNWUrMH5cbiQgZ3Jvc3MgICAgICAgICAgICA8ZGJsPiA0Njk5ODc3MiwgNTg4NTMxMDYsIDUzODM3NTA2NywgODM0NTM1MzksIDM5ODQ2MzQ0LCB+XG4kIGNvbXBhbnkgICAgICAgICAgPGNocj4gXCJXYXJuZXIgQnJvcy5cIiwgXCJDb2x1bWJpYSBQaWN0dXJlc1wiLCBcIkx1Y2FzZmlsbVwiLCBcIn5cbiQgcnVudGltZSAgICAgICAgICA8aW50PiAxNDYsIDEwNCwgMTI0LCA4OCwgOTgsIDk1LCAxMzMsIDEyOSwgMTI3LCAxMDAsIDExNix+XG4ifQ== -->
-<pre><code>Rows: 7,668
-Columns: 16
-$ name             &lt;chr&gt; &quot;The Shining&quot;, &quot;The Blue Lagoon&quot;, &quot;Star Wars: Episo~
-$ rating           &lt;fct&gt; R, R, PG, PG, R, R, R, R, PG, R, PG, PG, PG, R, R, ~
-$ genre            &lt;fct&gt; Drama, Adventure, Action, Comedy, Comedy, Horror, A~
-$ year             &lt;chr&gt; &quot;1980&quot;, &quot;1980&quot;, &quot;1980&quot;, &quot;1980&quot;, &quot;1980&quot;, &quot;1980&quot;, &quot;19~
-$ released.date    &lt;date&gt; 1980-06-13, 1980-07-02, 1980-06-20, 1980-07-02, 19~
-$ released.country &lt;fct&gt; United States, United States, United States, United~
-$ score            &lt;dbl&gt; 8.4, 5.8, 8.7, 7.7, 7.3, 6.4, 7.9, 8.2, 6.8, 7.0, 6~
-$ votes            &lt;int&gt; 927000, 65000, 1200000, 221000, 108000, 123000, 188~
-$ director         &lt;chr&gt; &quot;Stanley Kubrick&quot;, &quot;Randal Kleiser&quot;, &quot;Irvin Kershne~
-$ writer           &lt;chr&gt; &quot;Stephen King&quot;, &quot;Henry De Vere Stacpoole&quot;, &quot;Leigh B~
-$ star             &lt;chr&gt; &quot;Jack Nicholson&quot;, &quot;Brooke Shields&quot;, &quot;Mark Hamill&quot;, ~
-$ country          &lt;fct&gt; United Kingdom, United States, United States, Unite~
-$ budget           &lt;dbl&gt; 1.9e+07, 4.5e+06, 1.8e+07, 3.5e+06, 6.0e+06, 5.5e+0~
-$ gross            &lt;dbl&gt; 46998772, 58853106, 538375067, 83453539, 39846344, ~
-$ company          &lt;chr&gt; &quot;Warner Bros.&quot;, &quot;Columbia Pictures&quot;, &quot;Lucasfilm&quot;, &quot;~
-$ runtime          &lt;int&gt; 146, 104, 124, 88, 98, 95, 133, 129, 127, 100, 116,~</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -346,48 +282,6 @@ $ runtime          &lt;int&gt; 146, 104, 124, 88, 98, 95, 133, 129, 127, 100, 11
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShtb3ZpZXMpXG5gYGAifQ== -->
 <pre class="r"><code>summary(movies)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBuYW1lICAgICAgICAgICAgICAgICByYXRpbmcgICAgICAgICAgIGdlbnJlICAgICAgICAgIHllYXIgICAgICAgICAgXG4gTGVuZ3RoOjc2NjggICAgICAgIFIgICAgICAgIDozNjk3ICAgQ29tZWR5ICAgOjIyNDUgICBMZW5ndGg6NzY2OCAgICAgICBcbiBDbGFzcyA6Y2hhcmFjdGVyICAgUEctMTMgICAgOjIxMTIgICBBY3Rpb24gICA6MTcwNSAgIENsYXNzIDpjaGFyYWN0ZXIgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBQRyAgICAgICA6MTI1MiAgIERyYW1hICAgIDoxNTE4ICAgTW9kZSAgOmNoYXJhY3RlciAgXG4gICAgICAgICAgICAgICAgICAgIE5vdCBSYXRlZDogMjgzICAgQ3JpbWUgICAgOiA1NTEgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgRyAgICAgICAgOiAxNTMgICBCaW9ncmFwaHk6IDQ0MyAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICB1bmtub3duICA6ICA3NyAgIEFkdmVudHVyZTogNDI3ICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIChPdGhlcikgIDogIDk0ICAgKE90aGVyKSAgOiA3NzkgICAgICAgICAgICAgICAgICAgICBcbiByZWxlYXNlZC5kYXRlICAgICAgICAgICAgICByZWxlYXNlZC5jb3VudHJ5ICAgICBzY29yZSAgICAgIFxuIE1pbi4gICA6MTk4MC0wMS0xOCAgIFVuaXRlZCBTdGF0ZXMgOjY3MzUgICAgTWluLiAgIDowLjAwMCAgXG4gMXN0IFF1LjoxOTkxLTEwLTA0ICAgVW5pdGVkIEtpbmdkb206IDE5NyAgICAxc3QgUXUuOjUuODAwICBcbiBNZWRpYW4gOjIwMDEtMDQtMjAgICBGcmFuY2UgICAgICAgIDogMTQ4ICAgIE1lZGlhbiA6Ni41MDAgIFxuIE1lYW4gICA6MjAwMS0wMy0xNiAgIEF1c3RyYWxpYSAgICAgOiAgNDggICAgTWVhbiAgIDo2LjM4OCAgXG4gM3JkIFF1LjoyMDEwLTExLTEyICAgR2VybWFueSAgICAgICA6ICA0NiAgICAzcmQgUXUuOjcuMTAwICBcbiBNYXguICAgOjIwMjAtMTItMjUgICBKYXBhbiAgICAgICAgIDogIDQ0ICAgIE1heC4gICA6OS4zMDAgIFxuIE5BJ3MgICA6NTkgICAgICAgICAgIChPdGhlcikgICAgICAgOiA0NTAgICAgICAgICAgICAgICAgICAgXG4gICAgIHZvdGVzICAgICAgICAgICBkaXJlY3RvciAgICAgICAgICAgIHdyaXRlciAgICAgICAgICAgICAgc3RhciAgICAgICAgICBcbiBNaW4uICAgOiAgICAgIDAgICBMZW5ndGg6NzY2OCAgICAgICAgTGVuZ3RoOjc2NjggICAgICAgIExlbmd0aDo3NjY4ICAgICAgIFxuIDFzdCBRdS46ICAgOTEwMCAgIENsYXNzIDpjaGFyYWN0ZXIgICBDbGFzcyA6Y2hhcmFjdGVyICAgQ2xhc3MgOmNoYXJhY3RlciAgXG4gTWVkaWFuIDogIDMzMDAwICAgTW9kZSAgOmNoYXJhY3RlciAgIE1vZGUgIDpjaGFyYWN0ZXIgICBNb2RlICA6Y2hhcmFjdGVyICBcbiBNZWFuICAgOiAgODgwNzQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIDNyZCBRdS46ICA5MzAwMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gTWF4LiAgIDoyNDAwMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICBjb3VudHJ5ICAgICAgICAgYnVkZ2V0ICAgICAgICAgICAgICBncm9zcyAgICAgICAgICBcbiBVbml0ZWQgU3RhdGVzIDo1NDc1ICAgTWluLiAgIDogICAgICAgIDAgICBNaW4uICAgOjAuMDAwZSswMCAgXG4gVW5pdGVkIEtpbmdkb206IDgxNiAgIDFzdCBRdS46ICAgICAgICAwICAgMXN0IFF1LjozLjg2MWUrMDYgIFxuIEZyYW5jZSAgICAgICAgOiAyNzkgICBNZWRpYW4gOiAxMjAwMDAwMCAgIE1lZGlhbiA6MS44OTZlKzA3ICBcbiBDYW5hZGEgICAgICAgIDogMTkwICAgTWVhbiAgIDogMjU1MTM1MDQgICBNZWFuICAgOjcuNjU3ZSswNyAgXG4gR2VybWFueSAgICAgICA6IDExNyAgIDNyZCBRdS46IDMyMDAwMDAwICAgM3JkIFF1Ljo3LjI2MmUrMDcgIFxuIEF1c3RyYWxpYSAgICAgOiAgOTIgICBNYXguICAgOjM1NjAwMDAwMCAgIE1heC4gICA6Mi44NDdlKzA5ICBcbiAoT3RoZXIpICAgICAgIDogNjk5ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICBjb21wYW55ICAgICAgICAgICAgIHJ1bnRpbWUgICAgIFxuIExlbmd0aDo3NjY4ICAgICAgICBNaW4uICAgOiAgMC4wICBcbiBDbGFzcyA6Y2hhcmFjdGVyICAgMXN0IFF1LjogOTUuMCAgXG4gTW9kZSAgOmNoYXJhY3RlciAgIE1lZGlhbiA6MTA0LjAgIFxuICAgICAgICAgICAgICAgICAgICBNZWFuICAgOjEwNy4yICBcbiAgICAgICAgICAgICAgICAgICAgM3JkIFF1LjoxMTYuMCAgXG4gICAgICAgICAgICAgICAgICAgIE1heC4gICA6MzY2LjAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiJ9 -->
-<pre><code>     name                 rating           genre          year          
- Length:7668        R        :3697   Comedy   :2245   Length:7668       
- Class :character   PG-13    :2112   Action   :1705   Class :character  
- Mode  :character   PG       :1252   Drama    :1518   Mode  :character  
-                    Not Rated: 283   Crime    : 551                     
-                    G        : 153   Biography: 443                     
-                    unknown  :  77   Adventure: 427                     
-                    (Other)  :  94   (Other)  : 779                     
- released.date              released.country     score      
- Min.   :1980-01-18   United States :6735    Min.   :0.000  
- 1st Qu.:1991-10-04   United Kingdom: 197    1st Qu.:5.800  
- Median :2001-04-20   France        : 148    Median :6.500  
- Mean   :2001-03-16   Australia     :  48    Mean   :6.388  
- 3rd Qu.:2010-11-12   Germany       :  46    3rd Qu.:7.100  
- Max.   :2020-12-25   Japan         :  44    Max.   :9.300  
- NA&#39;s   :59           (Other)       : 450                   
-     votes           director            writer              star          
- Min.   :      0   Length:7668        Length:7668        Length:7668       
- 1st Qu.:   9100   Class :character   Class :character   Class :character  
- Median :  33000   Mode  :character   Mode  :character   Mode  :character  
- Mean   :  88074                                                           
- 3rd Qu.:  93000                                                           
- Max.   :2400000                                                           
-                                                                           
-           country         budget              gross          
- United States :5475   Min.   :        0   Min.   :0.000e+00  
- United Kingdom: 816   1st Qu.:        0   1st Qu.:3.861e+06  
- France        : 279   Median : 12000000   Median :1.896e+07  
- Canada        : 190   Mean   : 25513504   Mean   :7.657e+07  
- Germany       : 117   3rd Qu.: 32000000   3rd Qu.:7.262e+07  
- Australia     :  92   Max.   :356000000   Max.   :2.847e+09  
- (Other)       : 699                                          
-   company             runtime     
- Length:7668        Min.   :  0.0  
- Class :character   1st Qu.: 95.0  
- Mode  :character   Median :104.0  
-                    Mean   :107.2  
-                    3rd Qu.:116.0  
-                    Max.   :366.0  
-                                   </code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -405,7 +299,7 @@ $ runtime          &lt;int&gt; 146, 104, 124, 88, 98, 95, 133, 129, 127, 100, 11
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9wLm4gPC0gbW92aWVzICU+JVxuICAgIGZpbHRlcihncm9zcyA+IDApICU+JVxuICAgIGdyb3VwX2J5KGdlbnJlKSAlPiVcbiAgICBzdW1tYXJpc2UoY291bnQgPSBuKCkpICU+JVxuICAgIGZpbHRlcihnZW5yZSA9PSBcIkFjdGlvblwiKVxuXG5wb3AubiAlPiVcbiAgICBtdXRhdGUoY291bnQgPSBzY2FsZXM6OmNvbW1hKGNvdW50KSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9wLm4gPC0gbW92aWVzICU+JVxuICAgIGZpbHRlcihncm9zcyA+IDApICU+JVxuICAgIGdyb3VwX2J5KGdlbnJlKSAlPiVcbiAgICBzdW1tYXJpc2UoY291bnQgPSBuKCkpICU+JVxuICAgIGZpbHRlcihnZW5yZSA9PSBcIkFjdGlvblwiKVxuXG5wb3AubiAlPiVcbiAgICBtdXRhdGUoY291bnQgPSBzY2FsZXM6OmNvbW1hKGNvdW50KSlcblxucG9wLm4gPC0gcG9wLm4kY291bnRcbmBgYCJ9 -->
 <pre class="r"><code>pop.n &lt;- movies %&gt;%
     filter(gross &gt; 0) %&gt;%
     group_by(genre) %&gt;%
@@ -413,17 +307,8 @@ $ runtime          &lt;int&gt; 146, 104, 124, 88, 98, 95, 133, 129, 127, 100, 11
     filter(genre == &quot;Action&quot;)
 
 pop.n %&gt;%
-    mutate(count = scales::comma(count))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIHggMiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVNYV3ZDTUJTTmJXTm5ZV1BnMzlnS0t0dWVuU0srRElZTzVtc1dvd2JTcEtTcG0yLzc1YnJianh0bUMyM3Z1VG4zNU9iY3JPYWJTYkpKQ0NFaGlYb0JDU21FcEQ5N0g0MmZ4b1JFQWFBZWljaWcrdjhBYXdnQkpNUGJlcUYrcjBoOUpZNUNGUkRkd3p2RTdKUTdhWFNMQnRQdFVXaFhXdUVUV21ic1ArTlZtcjFsK2VHRUFqT1RpUzBpT3JNeXcySTZ0eXhqeUZ1d1RDcmt4UXVtSFNzOFhNckNHZXMxbDhaYVkxSG1yU3drUjJZTm1QTHdWRGpoQytPVnlaam0yRUIvemVYalFxTE9PamZXdGVEbTQyQ2xVZ0kzaVQ5RkphUTdwbEd1V0lHZWVTZDNqRU8zRUowN0szVDA4UHd5Nldwb2xnblVDREM1RjlxN1RMa3B0ZXVVRGF6NVRyRzBHbXJ3QzU4TFBBMHh2SFEyVDdiTXNYUUhub3VtdFN1NTJPVFZHRUVzcUc0SzdSVDNiRmN0TjNtcG10RURhaThWYVh0cEw1aVBnMmEzQ0h1aWFKWFFlNm45T1JYN0VqaTZPemhmZmJ3MHQxTGpYQkxJRnFrenpvODQ0VVpocG5IOC9BZU5NSWszSEFNQUFBPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["genre"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["count"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Action","2":"1,673"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wb3AubiA8LSBwb3AubiRjb3VudFxuYGBgIn0= -->
-<pre class="r"><code>
+    mutate(count = scales::comma(count))
+
 pop.n &lt;- pop.n$count</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -433,7 +318,7 @@ pop.n &lt;- pop.n$count</code></pre>
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9wLm1lYW4gPC0gbW92aWVzICU+JVxuICAgIGZpbHRlcihncm9zcyA+IDApICU+JVxuICAgIGdyb3VwX2J5KGdlbnJlKSAlPiVcbiAgICBzdW1tYXJpc2UocG9wLm1lYW4uZ3Jvc3MgPSBtZWFuKGdyb3NzKSkgJT4lXG4gICAgZmlsdGVyKGdlbnJlID09IFwiQWN0aW9uXCIpXG5cbnBvcC5tZWFuICU+JVxuICAgIG11dGF0ZShwb3AubWVhbi5ncm9zcyA9IHNjYWxlczo6ZG9sbGFyKHBvcC5tZWFuLmdyb3NzKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9wLm1lYW4gPC0gbW92aWVzICU+JVxuICAgIGZpbHRlcihncm9zcyA+IDApICU+JVxuICAgIGdyb3VwX2J5KGdlbnJlKSAlPiVcbiAgICBzdW1tYXJpc2UocG9wLm1lYW4uZ3Jvc3MgPSBtZWFuKGdyb3NzKSkgJT4lXG4gICAgZmlsdGVyKGdlbnJlID09IFwiQWN0aW9uXCIpXG5cbnBvcC5tZWFuICU+JVxuICAgIG11dGF0ZShwb3AubWVhbi5ncm9zcyA9IHNjYWxlczo6ZG9sbGFyKHBvcC5tZWFuLmdyb3NzKSlcblxucG9wLm1lYW4gPC0gcm91bmQocG9wLm1lYW4kcG9wLm1lYW4uZ3Jvc3MsIDIpXG5gYGAifQ== -->
 <pre class="r"><code>pop.mean &lt;- movies %&gt;%
     filter(gross &gt; 0) %&gt;%
     group_by(genre) %&gt;%
@@ -441,17 +326,8 @@ pop.n &lt;- pop.n$count</code></pre>
     filter(genre == &quot;Action&quot;)
 
 pop.mean %&gt;%
-    mutate(pop.mean.gross = scales::dollar(pop.mean.gross))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIHggMiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVNUVy9DTUF3Ti9hQlFiV2dTZjJGSHFBWmJKYTRNaExoTW1tRFN1R1lsbEVqNXFOTEF4bTIvSEpiUU9ocXRsTVoybmw5ZWJLL21tK2Q0RXlPRWZCUzBQT1NIeGtUdDJmdG9uSTRSQ2p6anRWQ0F1bmIvTWFpK01VelF2NzhlWE5jTnFNM0lrYkRTV0E5bTlTRTZ6VFNWb3ZhNjArMlJDSDFReEFVRTVmZy80cFhLWE9GaWZ3S0NtZVJrQzE0NFU1UkRjamhYbUdQQUxUQ25ESERSQWd1TlMrY3VhYW1sY3B4THFaUlVRUE4yS0drR3lLdURtWE5QcFNZdU1WcEpqa1VHQXRycmpBNFhGSGpXaFZTNmRqb2ZlMFVaSTNCSjlFa3NrV2dVTGN3WUxxRm1ycEk3bkJtMXhqbzNUdTRlUnkvcElIMmFETkxKcUVrbE1DZEE1VUV3SjhJVnUxZklJdUVFaXlSWDB0NTZrOTlWOGpzQkR0dGs3OWY4THVhcmdQNmxJU2JlWW8yVG5la0JxYVRlMEVXeXNHMDFaSjZkbkxDUjNGS05RTWVJRzFweGxya2VNVlFycWNmTjJWNTFWd0NLUWlnY0VUa1ZiandZL2lMUXlKNTUzZlZ4U2FHb2dDN0ZKbG9tV21yWDhEaVREQ0pWL2M5L25heWoyaW9EQUFBPSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["genre"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["pop.mean.gross"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Action","2":"$145,508,581"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wb3AubWVhbiA8LSByb3VuZChwb3AubWVhbiRwb3AubWVhbi5ncm9zcywgMilcbmBgYCJ9 -->
-<pre class="r"><code>
+    mutate(pop.mean.gross = scales::dollar(pop.mean.gross))
+
 pop.mean &lt;- round(pop.mean$pop.mean.gross, 2)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -461,24 +337,15 @@ pop.mean &lt;- round(pop.mean$pop.mean.gross, 2)</code></pre>
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9wLnNkIDwtIG1vdmllcyAlPiVcbiAgICBmaWx0ZXIoZ3Jvc3MgPiAwKSAlPiVcbiAgICBncm91cF9ieShnZW5yZSkgJT4lXG4gICAgc3VtbWFyaXNlKHBvcC5zZC5ncm9zcyA9IHNkKGdyb3NzKSkgJT4lXG4gICAgZmlsdGVyKGdlbnJlID09IFwiQWN0aW9uXCIpXG5wb3Auc2QgJT4lXG4gICAgbXV0YXRlKHBvcC5zZC5ncm9zcyA9IHNjYWxlczo6ZG9sbGFyKHBvcC5zZC5ncm9zcykpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9wLnNkIDwtIG1vdmllcyAlPiVcbiAgICBmaWx0ZXIoZ3Jvc3MgPiAwKSAlPiVcbiAgICBncm91cF9ieShnZW5yZSkgJT4lXG4gICAgc3VtbWFyaXNlKHBvcC5zZC5ncm9zcyA9IHNkKGdyb3NzKSkgJT4lXG4gICAgZmlsdGVyKGdlbnJlID09IFwiQWN0aW9uXCIpXG5wb3Auc2QgJT4lXG4gICAgbXV0YXRlKHBvcC5zZC5ncm9zcyA9IHNjYWxlczo6ZG9sbGFyKHBvcC5zZC5ncm9zcykpXG5cbnBvcC5zZCA8LSByb3VuZChwb3Auc2QkcG9wLnNkLmdyb3NzLCAyKVxuYGBgIn0= -->
 <pre class="r"><code>pop.sd &lt;- movies %&gt;%
     filter(gross &gt; 0) %&gt;%
     group_by(genre) %&gt;%
     summarise(pop.sd.gross = sd(gross)) %&gt;%
     filter(genre == &quot;Action&quot;)
 pop.sd %&gt;%
-    mutate(pop.sd.gross = scales::dollar(pop.sd.gross))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIHggMiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVNUVy9DTUF3Ti9ZQlJzV2tTZjJGSHFBUU1iVmZHaExoTW1tRFN1R1p0S0pIU3BFb0NHN2Y5Y3BoYjZtaTBVaHJiZVg1NXNiMTYzVXlpVFVRSThVblE4b2dmZ2tuYTgvZlJlRG9tSlBEQWE1R0FkTXY5QjFCOU1DRG8zMVlIMWJvQ3RRVTdNR0hBdW9mVngrZ3NzVnpKMnV2TzBnT1RkcStaQzBpZTAvK0lGNjR5VFl2ZEVRbm1LbWNwZXVGYzh4eVR3MWROYzRxNEJjMjVRRnhuUWFXbHhybExicXpTam5PcHRGWWFhZDcyaGllSXJCd3FuSHMwbHJuRXprcmxWQ1lvb0wxTytIREJrV2RkS0cxcjUrWmpwN2tRREMvcGZMS1NTRGFLRmlhQ0dxeVpxK1NXSnFBV3JGUGpwUGN3Zm53YVRFZlR3Zk5rMHFTU05HZEk1V0V3WTlJVnUxZW9JalpwbkdsVjNubVYzZFhxTzBhR3NzWGVML3pPOEYyQS9ya2hKVXFwcGZFV09zQXVRcS9vT3Fvb213cGtYamszWVNPNXBadFBCbWxEazVhODlYaVJXa2M5YXM3MkxqY0ZxQ2RFQmlZekx0MW9DUHJGc0lsMzhMYnFhWEdodWNRT1JSQTFzVlhXTlR0S2xNRElwZmFuUDJuZnF3WW1Bd0FBIn0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["genre"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["pop.sd.gross"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Action","2":"$247,515,833"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wb3Auc2QgPC0gcm91bmQocG9wLnNkJHBvcC5zZC5ncm9zcywgMilcbmBgYCJ9 -->
-<pre class="r"><code>
+    mutate(pop.sd.gross = scales::dollar(pop.sd.gross))
+
 pop.sd &lt;- round(pop.sd$pop.sd.gross, 2)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -514,9 +381,6 @@ sample.mean &lt;- round(sample.mean, 2)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2NhbGVzOjpkb2xsYXIoc2FtcGxlLm1lYW4pXG5gYGAifQ== -->
 <pre class="r"><code>scales::dollar(sample.mean)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiJDEzNSwyNzQsOTE3XCJcbiJ9 -->
-<pre><code>[1] &quot;$135,274,917&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="6" style="list-style-type: decimal">
@@ -547,9 +411,6 @@ sample.mean &lt;- round(sample.mean, 2)</code></pre>
 <pre class="r"><code>z.alpha &lt;- qnorm(alpha)
 z.alpha</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xLjY0NDg1NFxuIn0= -->
-<pre><code>[1] -1.644854</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="3" style="list-style-type: decimal">
@@ -561,9 +422,6 @@ z.alpha</code></pre>
 <pre class="r"><code>SE &lt;- pop.sd/sqrt(sample.n)
 SE</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDExMDY5MjQ1XG4ifQ== -->
-<pre><code>[1] 11069245</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="4" style="list-style-type: decimal">
@@ -575,9 +433,6 @@ SE</code></pre>
 <pre class="r"><code>z.c &lt;- (sample.mean - pop.mean)/SE
 z.c</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0wLjkyNDUxMzNcbiJ9 -->
-<pre><code>[1] -0.9245133</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="5" style="list-style-type: decimal">
@@ -589,9 +444,6 @@ z.c</code></pre>
 <pre class="r"><code>p.value &lt;- pnorm(z.c)
 p.value</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMTc3NjA5NlxuIn0= -->
-<pre><code>[1] 0.1776096</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="6" style="list-style-type: decimal">
@@ -607,9 +459,6 @@ if (z.c &gt;= z.alpha) {
     print(&quot;Reject Ho&quot;)
 }</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiRmFpbGVkIHRvIHJlamVjdCBIb1wiXG4ifQ== -->
-<pre><code>[1] &quot;Failed to reject Ho&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -622,18 +471,18 @@ if (p.value &gt;= alpha) {
     print(&quot;Reject Ho&quot;)
 }</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiRmFpbGVkIHRvIHJlamVjdCBIb1wiXG4ifQ== -->
-<pre><code>[1] &quot;Failed to reject Ho&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
-<div id="interval-estimate" class="section level2">
-<h2>Interval estimate</h2>
+<ol start="7" style="list-style-type: decimal">
+<li>Conclusion</li>
+</ol>
+<div id="interval-estimate" class="section level3">
+<h3>Interval estimate</h3>
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkh5cG90aGVzaXMgdGVzdGluZyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFByZXJlcXVpc2l0ZQ0KDQojIyMgTG9hZGluZyB0aGUgbmVjZXNzYXJ5IHBhY2thZ2VzDQoNCmBgYHtyIGxvYWQtcGtnfQ0KcGFja2FnZXMgPC0gYygiZHBseXIiLCAicmVhZHIiLCAic2NhbGVzIikNCmxhcHBseShwYWNrYWdlcywgbGlicmFyeSwgY2hhcmFjdGVyLm9ubHkgPSBUKQ0KYGBgDQoNCiMjIyBJbXBvcnQgdGhlIGRhdGFzZXQNCg0KYGBge3IgaW1wb3J0LWRhdGFzZXR9DQptb3ZpZXMgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zaXQtMjAyMS1pbnQyMTQvMDA0LW1vdmllLWluZHVzdHJ5L21haW4vbW92aWVfaW5kdXN0cnkvY3N2L2NsZWFuZWRfZGF0YXNldC9tb3ZpZXNfY2xlYW5lZC5jc3YiKQ0KYGBgDQoNCiMjIyBPYnNlcnZlIHRoZSBkYXRhc2V0DQoNCmBgYHtyIG9ic2VydmUtc3RhZ2V9DQojIG9ic2VydmUgZGF0YXNldCBhbmQgZGF0YSB0eXBlDQpnbGltcHNlKG1vdmllcykNCmBgYA0KDQojIyMgQ29udmVydCB0byB0aGUgYXBwcm9wcmlhdGUgZGF0YXR5cGUNCg0KYGBge3IgY29udmVydC1zdGFnZX0NCiMgY29udmVydCBkYXRhIHR5cGUNCm1vdmllcyA8LSBtb3ZpZXMgJT4lDQogICAgbXV0YXRlKHllYXIgPSBmb3JtYXQoeWVhciwgZm9ybWF0ID0gIiVZIikpICU+JQ0KICAgIG11dGF0ZShyZWxlYXNlZC5jb3VudHJ5ID0gYXMuZmFjdG9yKHJlbGVhc2VkLmNvdW50cnkpKSAlPiUNCiAgICBtdXRhdGVfYXQoLnZhcnMgPSBjKCJnZW5yZSIsICJyYXRpbmciLCAiY291bnRyeSIpLCAuZnVucyA9IGFzLmZhY3RvcikgJT4lDQogICAgbXV0YXRlX2F0KC52YXJzID0gYygidm90ZXMiLCAicnVudGltZSIpLCAuZnVucyA9IGFzLmludGVnZXIpDQpgYGANCg0KIyMjIFZlcmlmeWluZyB0aGUgZGF0YXR5cGUNCg0KYGBge3IgY2hlY2stc3RhZ2V9DQojIHZlcmlmeSBkYXRhIHR5cGUNCmdsaW1wc2UobW92aWVzKQ0KYGBgDQoNCiMjIyBTdW1tYXJ5IGRhdGFzZXQNCg0KYGBge3Igc3VtbWFyeX0NCnN1bW1hcnkobW92aWVzKQ0KYGBgDQoNCiMjIFByZXBhcmUgZm9yIEh5cG90aGVzaXMgdGVzdGluZw0KLSBEZWZpbmUgdGhlIHByb2JsZW1zDQotIERlZmluZSB0aGUgY29uZmlkZW5jZSBsZXZlbCBmb3IgeW91ciBwcm9ibGVtcw0KLSBOdWxsIGh5cG90aGVzaXMgJiBBbHRlcm5hdGl2ZSBoeXBvdGhlc2lzDQoNCioqUHJvYmxlbSoqDQoNCjEuIENvdW50IGFuIGFjdGlvbiBtb3ZpZSBpbiBkYXRhc2V0DQoNCmBgYHtyIHBvcHVsYXRpb259DQpwb3AubiA8LSBtb3ZpZXMgJT4lDQogICAgZmlsdGVyKGdyb3NzID4gMCkgJT4lDQogICAgZ3JvdXBfYnkoZ2VucmUpICU+JQ0KICAgIHN1bW1hcmlzZShjb3VudCA9IG4oKSkgJT4lDQogICAgZmlsdGVyKGdlbnJlID09ICJBY3Rpb24iKQ0KDQpwb3AubiAlPiUNCiAgICBtdXRhdGUoY291bnQgPSBzY2FsZXM6OmNvbW1hKGNvdW50KSkNCg0KcG9wLm4gPC0gcG9wLm4kY291bnQNCmBgYA0KDQoyLiBGaW5kaW5nIHRoZSBwb3B1bGF0aW9uIG1lYW4gZ3Jvc3Mgb2YgYW4gYWN0aW9uIG1vdmllDQoNCmBgYHtyIHBvcC1tZWFufQ0KcG9wLm1lYW4gPC0gbW92aWVzICU+JQ0KICAgIGZpbHRlcihncm9zcyA+IDApICU+JQ0KICAgIGdyb3VwX2J5KGdlbnJlKSAlPiUNCiAgICBzdW1tYXJpc2UocG9wLm1lYW4uZ3Jvc3MgPSBtZWFuKGdyb3NzKSkgJT4lDQogICAgZmlsdGVyKGdlbnJlID09ICJBY3Rpb24iKQ0KDQpwb3AubWVhbiAlPiUNCiAgICBtdXRhdGUocG9wLm1lYW4uZ3Jvc3MgPSBzY2FsZXM6OmRvbGxhcihwb3AubWVhbi5ncm9zcykpDQoNCnBvcC5tZWFuIDwtIHJvdW5kKHBvcC5tZWFuJHBvcC5tZWFuLmdyb3NzLCAyKQ0KYGBgDQoNCjMuIEZpbmRpbmcgdGhlIHBvcHVsYXRpb24gbWVhbiBncm9zcyBvZiBhbiBhY3Rpb24gbW92aWUNCg0KYGBge3IgcG9wLXNkfQ0KcG9wLnNkIDwtIG1vdmllcyAlPiUNCiAgICBmaWx0ZXIoZ3Jvc3MgPiAwKSAlPiUNCiAgICBncm91cF9ieShnZW5yZSkgJT4lDQogICAgc3VtbWFyaXNlKHBvcC5zZC5ncm9zcyA9IHNkKGdyb3NzKSkgJT4lDQogICAgZmlsdGVyKGdlbnJlID09ICJBY3Rpb24iKQ0KcG9wLnNkICU+JQ0KICAgIG11dGF0ZShwb3Auc2QuZ3Jvc3MgPSBzY2FsZXM6OmRvbGxhcihwb3Auc2QuZ3Jvc3MpKQ0KDQpwb3Auc2QgPC0gcm91bmQocG9wLnNkJHBvcC5zZC5ncm9zcywgMikNCmBgYA0KDQo0LiBEZWZpbmUgdGhlIHNhbXBsZSBzaXplDQoNCmBgYHtyIHNhbXBsZS1ufQ0Kc2FtcGxlLm4gPC0gNTAwDQpgYGANCg0KNS4gaW5kaW5nIHRoZSBzYW1wbGUgbWVhbiBncm9zcyBvZiBhbiBhY3Rpb24gbW92aWUNCg0KYGBge3IgZmluZC1zYW1wbGUtbWVhbn0NCnNhbXBsZS5kYXRhIDwtIG1vdmllcyAlPiUNCiAgICBmaWx0ZXIoZ3Jvc3MgPiAwKSAlPiUNCiAgICBmaWx0ZXIoZ2VucmUgPT0gIkFjdGlvbiIpICU+JQ0KICAgIHNlbGVjdChuYW1lLCBncm9zcykNCg0Kc2FtcGxlLm1lYW4gPC0gbWVhbihzYW1wbGUuZGF0YSRncm9zc1tzYW1wbGUoMTpucm93KHNhbXBsZS5kYXRhKSwgc2FtcGxlLm4pXSkNCnNhbXBsZS5tZWFuIDwtIHJvdW5kKHNhbXBsZS5tZWFuLCAyKQ0KYGBgDQoNCmBgYHtyIHNhbXBsZS1tZWFufQ0Kc2NhbGVzOjpkb2xsYXIoc2FtcGxlLm1lYW4pDQpgYGANCg0KNi4gRGVmaW5lIHRoZSBjb25maWRlbmNlIGxldmVsIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0aW5nIDxicj4NClNvLCB3ZSB3aWxsIHVzZSA5NSUgY29uZmlkZW5jZSBsZXZlbA0KDQpgYGB7ciBkZWZpbmUtYWxwaGF9DQphbHBoYSA8LSAwLjA1DQpgYGANCg0KIyMgSHlwb3RoZXNpcyB0ZXN0aW5nDQoNCjEuIFN0YXRlIHRoZSBudWxsIGFuZCBhbHRlcm5hdGl2ZSBoeXBvdGhlc2lzIGZyb20gdGhlIHByb2JsZW0NCiAgICANCiAgICAtIEhvOiB1ID49ICQxNDUuNTEgTWlsbGlvbiA8YnI+DQogICAgLSBIYTogdSA8ICQxNDUuNTEgTWlsbGlvbg0KICAgIA0KICAgIHRoaXMgaXMgdGhlIGxlZnQtdGFpbGVkIHRlc3QNCg0KMi4gZmluZGluZyB0aGUgeiBhbHBoYQ0KDQpgYGB7ciB6LWFscGhhfQ0Kei5hbHBoYSA8LSBxbm9ybShhbHBoYSkNCnouYWxwaGENCmBgYA0KDQozLiBDYWxjdWxhdGluZyB0aGUgc3RhbmRhcmQgZXJyb3INCg0KYGBge3Igc3RhbmRhcmQtZXJyb3J9DQpTRSA8LSBwb3Auc2Qvc3FydChzYW1wbGUubikNClNFDQpgYGANCg0KNC4gQ2FsY3VsYXRpbmcgdGhlIHouYw0KDQpgYGB7ciB6LWN9DQp6LmMgPC0gKHNhbXBsZS5tZWFuIC0gcG9wLm1lYW4pL1NFDQp6LmMNCmBgYA0KDQo1LiBGaW5kaW5nIHRoZSBwLXZhbHVlDQoNCmBgYHtyIHAtdmFsdWV9DQpwLnZhbHVlIDwtIHBub3JtKHouYykNCnAudmFsdWUNCmBgYA0KDQo2LiBUZXN0aW5nIHRoZSBoeXBvdGhlc2lzIGJ5IHotdGVzdCBvciBwLXZhbHVlDQoNCmBgYHtyIHotdGVzdH0NCiMgYnkgei10ZXN0DQppZiAoei5jID49IHouYWxwaGEpIHsNCiAgICBwcmludCgiRmFpbGVkIHRvIHJlamVjdCBIbyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJSZWplY3QgSG8iKQ0KfQ0KYGBgDQoNCmBgYHtyIHAtdmFsdWUtdGVzdH0NCiMgYnkgcC12YWx1ZQ0KaWYgKHAudmFsdWUgPj0gYWxwaGEpIHsNCiAgICBwcmludCgiRmFpbGVkIHRvIHJlamVjdCBIbyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJSZWplY3QgSG8iKQ0KfQ0KYGBgDQoNCiMjIEludGVydmFsIGVzdGltYXRlDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkh5cG90aGVzaXMgdGVzdGluZyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFByZXJlcXVpc2l0ZQ0KDQojIyMgTG9hZGluZyB0aGUgbmVjZXNzYXJ5IHBhY2thZ2VzDQoNCmBgYHtyIGxvYWQtcGtnfQ0KcGFja2FnZXMgPC0gYygiZHBseXIiLCAicmVhZHIiLCAic2NhbGVzIikNCmxhcHBseShwYWNrYWdlcywgbGlicmFyeSwgY2hhcmFjdGVyLm9ubHkgPSBUKQ0KYGBgDQoNCiMjIyBJbXBvcnQgdGhlIGRhdGFzZXQNCg0KYGBge3IgaW1wb3J0LWRhdGFzZXR9DQptb3ZpZXMgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zaXQtMjAyMS1pbnQyMTQvMDA0LW1vdmllLWluZHVzdHJ5L21haW4vbW92aWVfaW5kdXN0cnkvY3N2L2NsZWFuZWRfZGF0YXNldC9tb3ZpZXNfY2xlYW5lZC5jc3YiKQ0KYGBgDQoNCiMjIyBPYnNlcnZlIHRoZSBkYXRhc2V0DQoNCmBgYHtyIG9ic2VydmUtc3RhZ2V9DQojIG9ic2VydmUgZGF0YXNldCBhbmQgZGF0YSB0eXBlDQpnbGltcHNlKG1vdmllcykNCmBgYA0KDQojIyMgQ29udmVydCB0byB0aGUgYXBwcm9wcmlhdGUgZGF0YXR5cGUNCg0KYGBge3IgY29udmVydC1zdGFnZX0NCiMgY29udmVydCBkYXRhIHR5cGUNCm1vdmllcyA8LSBtb3ZpZXMgJT4lDQogICAgbXV0YXRlKHllYXIgPSBmb3JtYXQoeWVhciwgZm9ybWF0ID0gIiVZIikpICU+JQ0KICAgIG11dGF0ZShyZWxlYXNlZC5jb3VudHJ5ID0gYXMuZmFjdG9yKHJlbGVhc2VkLmNvdW50cnkpKSAlPiUNCiAgICBtdXRhdGVfYXQoLnZhcnMgPSBjKCJnZW5yZSIsICJyYXRpbmciLCAiY291bnRyeSIpLCAuZnVucyA9IGFzLmZhY3RvcikgJT4lDQogICAgbXV0YXRlX2F0KC52YXJzID0gYygidm90ZXMiLCAicnVudGltZSIpLCAuZnVucyA9IGFzLmludGVnZXIpDQpgYGANCg0KIyMjIFZlcmlmeWluZyB0aGUgZGF0YXR5cGUNCg0KYGBge3IgY2hlY2stc3RhZ2V9DQojIHZlcmlmeSBkYXRhIHR5cGUNCmdsaW1wc2UobW92aWVzKQ0KYGBgDQoNCiMjIyBTdW1tYXJ5IGRhdGFzZXQNCg0KYGBge3Igc3VtbWFyeX0NCnN1bW1hcnkobW92aWVzKQ0KYGBgDQoNCiMjIFByZXBhcmUgZm9yIEh5cG90aGVzaXMgdGVzdGluZw0KDQotICAgRGVmaW5lIHRoZSBwcm9ibGVtcw0KLSAgIERlZmluZSB0aGUgY29uZmlkZW5jZSBsZXZlbCBmb3IgeW91ciBwcm9ibGVtcw0KLSAgIE51bGwgaHlwb3RoZXNpcyAmIEFsdGVybmF0aXZlIGh5cG90aGVzaXMNCg0KKipQcm9ibGVtKioNCg0KMS4gIENvdW50IGFuIGFjdGlvbiBtb3ZpZSBpbiBkYXRhc2V0DQoNCmBgYHtyIHBvcHVsYXRpb259DQpwb3AubiA8LSBtb3ZpZXMgJT4lDQogICAgZmlsdGVyKGdyb3NzID4gMCkgJT4lDQogICAgZ3JvdXBfYnkoZ2VucmUpICU+JQ0KICAgIHN1bW1hcmlzZShjb3VudCA9IG4oKSkgJT4lDQogICAgZmlsdGVyKGdlbnJlID09ICJBY3Rpb24iKQ0KDQpwb3AubiAlPiUNCiAgICBtdXRhdGUoY291bnQgPSBzY2FsZXM6OmNvbW1hKGNvdW50KSkNCg0KcG9wLm4gPC0gcG9wLm4kY291bnQNCmBgYA0KDQoyLiAgRmluZGluZyB0aGUgcG9wdWxhdGlvbiBtZWFuIGdyb3NzIG9mIGFuIGFjdGlvbiBtb3ZpZQ0KDQpgYGB7ciBwb3AtbWVhbn0NCnBvcC5tZWFuIDwtIG1vdmllcyAlPiUNCiAgICBmaWx0ZXIoZ3Jvc3MgPiAwKSAlPiUNCiAgICBncm91cF9ieShnZW5yZSkgJT4lDQogICAgc3VtbWFyaXNlKHBvcC5tZWFuLmdyb3NzID0gbWVhbihncm9zcykpICU+JQ0KICAgIGZpbHRlcihnZW5yZSA9PSAiQWN0aW9uIikNCg0KcG9wLm1lYW4gJT4lDQogICAgbXV0YXRlKHBvcC5tZWFuLmdyb3NzID0gc2NhbGVzOjpkb2xsYXIocG9wLm1lYW4uZ3Jvc3MpKQ0KDQpwb3AubWVhbiA8LSByb3VuZChwb3AubWVhbiRwb3AubWVhbi5ncm9zcywgMikNCmBgYA0KDQozLiAgRmluZGluZyB0aGUgcG9wdWxhdGlvbiBtZWFuIGdyb3NzIG9mIGFuIGFjdGlvbiBtb3ZpZQ0KDQpgYGB7ciBwb3Atc2R9DQpwb3Auc2QgPC0gbW92aWVzICU+JQ0KICAgIGZpbHRlcihncm9zcyA+IDApICU+JQ0KICAgIGdyb3VwX2J5KGdlbnJlKSAlPiUNCiAgICBzdW1tYXJpc2UocG9wLnNkLmdyb3NzID0gc2QoZ3Jvc3MpKSAlPiUNCiAgICBmaWx0ZXIoZ2VucmUgPT0gIkFjdGlvbiIpDQpwb3Auc2QgJT4lDQogICAgbXV0YXRlKHBvcC5zZC5ncm9zcyA9IHNjYWxlczo6ZG9sbGFyKHBvcC5zZC5ncm9zcykpDQoNCnBvcC5zZCA8LSByb3VuZChwb3Auc2QkcG9wLnNkLmdyb3NzLCAyKQ0KYGBgDQoNCjQuICBEZWZpbmUgdGhlIHNhbXBsZSBzaXplDQoNCmBgYHtyIHNhbXBsZS1ufQ0Kc2FtcGxlLm4gPC0gNTAwDQpgYGANCg0KNS4gIGluZGluZyB0aGUgc2FtcGxlIG1lYW4gZ3Jvc3Mgb2YgYW4gYWN0aW9uIG1vdmllDQoNCmBgYHtyIGZpbmQtc2FtcGxlLW1lYW59DQpzYW1wbGUuZGF0YSA8LSBtb3ZpZXMgJT4lDQogICAgZmlsdGVyKGdyb3NzID4gMCkgJT4lDQogICAgZmlsdGVyKGdlbnJlID09ICJBY3Rpb24iKSAlPiUNCiAgICBzZWxlY3QobmFtZSwgZ3Jvc3MpDQoNCnNhbXBsZS5tZWFuIDwtIG1lYW4oc2FtcGxlLmRhdGEkZ3Jvc3Nbc2FtcGxlKDE6bnJvdyhzYW1wbGUuZGF0YSksIHNhbXBsZS5uKV0pDQpzYW1wbGUubWVhbiA8LSByb3VuZChzYW1wbGUubWVhbiwgMikNCmBgYA0KDQpgYGB7ciBzYW1wbGUtbWVhbn0NCnNjYWxlczo6ZG9sbGFyKHNhbXBsZS5tZWFuKQ0KYGBgDQoNCjYuICBEZWZpbmUgdGhlIGNvbmZpZGVuY2UgbGV2ZWwgZm9yIHRoZSBoeXBvdGhlc2lzIHRlc3RpbmcgPGJyPiBTbywgd2Ugd2lsbCB1c2UgOTUlIGNvbmZpZGVuY2UgbGV2ZWwNCg0KYGBge3IgZGVmaW5lLWFscGhhfQ0KYWxwaGEgPC0gMC4wNQ0KYGBgDQoNCiMjIEh5cG90aGVzaXMgdGVzdGluZw0KDQoxLiAgU3RhdGUgdGhlIG51bGwgYW5kIGFsdGVybmF0aXZlIGh5cG90aGVzaXMgZnJvbSB0aGUgcHJvYmxlbQ0KDQogICAgLSAgIEhvOiB1ID49IFwkMTQ1LjUxIE1pbGxpb24gPGJyPg0KICAgIC0gICBIYTogdSBcPCBcJDE0NS41MSBNaWxsaW9uDQoNCiAgICB0aGlzIGlzIHRoZSBsZWZ0LXRhaWxlZCB0ZXN0DQoNCjIuICBmaW5kaW5nIHRoZSB6IGFscGhhDQoNCmBgYHtyIHotYWxwaGF9DQp6LmFscGhhIDwtIHFub3JtKGFscGhhKQ0Kei5hbHBoYQ0KYGBgDQoNCjMuICBDYWxjdWxhdGluZyB0aGUgc3RhbmRhcmQgZXJyb3INCg0KYGBge3Igc3RhbmRhcmQtZXJyb3J9DQpTRSA8LSBwb3Auc2Qvc3FydChzYW1wbGUubikNClNFDQpgYGANCg0KNC4gIENhbGN1bGF0aW5nIHRoZSB6LmMNCg0KYGBge3Igei1jfQ0Kei5jIDwtIChzYW1wbGUubWVhbiAtIHBvcC5tZWFuKS9TRQ0Kei5jDQpgYGANCg0KNS4gIEZpbmRpbmcgdGhlIHAtdmFsdWUNCg0KYGBge3IgcC12YWx1ZX0NCnAudmFsdWUgPC0gcG5vcm0oei5jKQ0KcC52YWx1ZQ0KYGBgDQoNCjYuICBUZXN0aW5nIHRoZSBoeXBvdGhlc2lzIGJ5IHotdGVzdCBvciBwLXZhbHVlDQoNCmBgYHtyIHotdGVzdH0NCiMgYnkgei10ZXN0DQppZiAoei5jID49IHouYWxwaGEpIHsNCiAgICBwcmludCgiRmFpbGVkIHRvIHJlamVjdCBIbyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJSZWplY3QgSG8iKQ0KfQ0KYGBgDQoNCmBgYHtyIHAtdmFsdWUtdGVzdH0NCiMgYnkgcC12YWx1ZQ0KaWYgKHAudmFsdWUgPj0gYWxwaGEpIHsNCiAgICBwcmludCgiRmFpbGVkIHRvIHJlamVjdCBIbyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJSZWplY3QgSG8iKQ0KfQ0KYGBgDQoNCjcuICBDb25jbHVzaW9uDQoNCiMjIyBJbnRlcnZhbCBlc3RpbWF0ZQ0K</div>
 
 
 
