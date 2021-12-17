@@ -1,0 +1,240 @@
+---
+title: "R-Assignment 4"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+**Created by Songglod Petchamras (ID: 63130500042)**
+
+### Choose Dataset:
+- Top 270 Computer Science/Programming Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
+
+### Outlines
+1. Explore the dataset
+2. Learning function from Tidyverse
+3. Transform data with dplyr and finding insight the data
+4. Visualization with ggplot2
+
+## Part 1: Explore the dataset
+
+### Load necessary packages
+```{r load-pk}
+packages <- c("dplyr", "readr", "ggplot2", "scales", "stringr")
+lapply(packages, library, character.only = T)
+```
+
+### Load dataset
+```{r load-dataset}
+dt <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
+```
+
+### Check the head of dataset
+```{r check-head}
+head(dt)
+# 2 columns have an inappropriate data type
+```
+
+### Change data type
+```{r change-data-type}
+dt <- dt %>%
+    mutate_at(.vars = c("Reviews", "Number_Of_Pages"), 
+              .funs = as.integer) %>%
+    mutate(Type = as.factor(Type))
+```
+
+### Explore section
+```{r explore}
+# verify & explore
+glimpse(dt)
+```
+
+```{r check-na}
+# check N/A value
+colSums(is.na(dt))
+```
+
+```{r summary}
+# explore & summary
+summary(dt)
+```
+
+### In this dataset, it has 271 rows and 7 columns
+- Rating
+- Reviews
+- Book_title
+- Description
+- Number_of_pages
+- Type 
+- Price
+
+## Part 2: Learning function from Tidyverse
+
+- Function `geom_vline()` and `geom_hline()` from package [ggplot2](https://ggplot2.tidyverse.org/reference/geom_abline.html)
+- These geoms add reference lines (sometimes called rules) to a plot, either horizontal, vertical, or diagonal (specified by slope and intercept). These are useful for annotating plots.
+- Use cases are in **Part 4**
+
+## Part 3: Transform data with dplyr and finding insight the data
+
+1. Three book types (26 books) have ratings lower than all books accounted for 10% of all.
+- Paperback 19 books
+- Hardcover 6 books
+- Kindle Edition 1 book
+
+```{r 1}
+# 1
+result <- dt %>%
+    filter(Rating < quantile(Rating, 0.1)) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price)) %>%
+    arrange(desc(amount))
+
+# view
+result %>% mutate(avg.price = scales::dollar(avg.price))
+
+# output
+result %>% summarise(total = sum(amount))
+```
+
+2. These books have "C++" in the title (these all books are related to the C++ language). Based on the output, C++ Primer has the lowest price-per-page at $0.062/1 page.
+
+```{r 2}
+# 2
+cplus_table <- dt %>%
+    filter(str_detect(Book_title, pattern = "(C|c)\\+\\+")) %>%
+    select(-Description, -Reviews, -Type) %>%
+    mutate(price.per.page = Price/Number_Of_Pages) %>%
+    arrange(price.per.page)
+
+# view
+cplus_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+cplus_table %>% 
+    mutate(Price = scales::dollar(Price)) %>%
+    filter(price.per.page == min(price.per.page))
+```
+
+3. These books have “Python” in the title (these all books are related to the Python language). Based on the output, four books have ratings below 25% among all Python books.
+
+```{r 3}
+# 3
+py_table <- dt %>%
+    filter(str_detect(Book_title, pattern = "(P|p)ython")) %>%
+    select(-Description, -Reviews, -Type) %>%
+    arrange(desc(Rating))
+
+# view
+py_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+py_table %>% 
+    filter(Rating < quantile(Rating, 0.25)) %>%
+    mutate(Price = scales::dollar(Price)) %>%
+    arrange(Rating)
+```
+
+4. These books have "Game" in the title (All books are related to Game programming or design). Based on the output, "3D Game Engine Architecture: Engineering Real-Time Applications with Wild Magic" has the lowest rating of all at 3.76.
+
+```{r 4}
+# 4
+game_table <- dt %>%
+    filter(str_detect(Book_title, pattern = "(G|g)ame")) %>%
+    select(-Description, -Reviews) %>%
+    arrange(desc(Price))
+
+# view
+game_table %>% mutate(Price = scales::dollar(Price))
+
+# output
+game_table %>%
+    filter(boxplot.stats(game_table$Price)$out == Price) %>%
+    mutate(Price = scales::dollar(Price))
+```
+
+5. These books have "Algorithm" in the title (All books are related to algorithms). Based on the output, The most book type is the hardcover type.
+
+```{r 5}
+# 5
+algo_table <- dt %>%
+    filter(str_detect(Book_title, pattern = "(A|a)lgorithm")) %>%
+    select(-Description, -Reviews) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price))
+
+# view
+algo_table %>% mutate(avg.price = scales::dollar(avg.price))
+
+# output
+algo_table %>%
+    filter(amount == max(amount)) %>%
+    mutate(avg.price = scales::dollar(avg.price))
+```
+
+6. The number of books that have high prices is 27 books accounted for 10% of all.
+- Hardcover 21 books
+- Paperback 5 books
+- Boxed Set - Hardcover 1 book
+
+```{r 6}
+# 6
+dt %>%
+    select(-Reviews, -Description) %>%
+    filter(Price > quantile(Price, 0.9)) %>%
+    group_by(Type) %>%
+    summarise(amount = n(),
+              avg.rating = mean(Rating),
+              avg.price = mean(Price)) %>%
+    arrange(desc(amount)) %>%
+    mutate(avg.price = scales::dollar(avg.price))
+```
+
+## Part 4: Data Visualization with ggplot2
+
+1. The graph shows the frequency of books in rating, most of all books have ratings between 4.0 and 4.2
+
+```{r fig.1}
+# fig. 1
+dt %>% 
+    ggplot(aes(x = Rating)) + 
+    geom_histogram(binwidth = 0.2) +
+    aes(fill = Type) +
+    geom_vline(xintercept = mean(dt$Rating), linetype = "dashed") +
+    scale_x_continuous(breaks = seq(3, 5, 0.2)) +
+    scale_y_continuous(breaks = seq(0, 100, 10)) +
+    labs(title = "Frequency of books in rating",
+         caption = "dashed line = mean line",
+         tag = "Fig. 1") +
+    theme_bw()
+```
+
+2. The graph shows the correlation of Price and Number of Pages compared between Hardcover and Paperback.
+- Hardcover: If have more pages, higher prices
+- Paperback: prices and number of pages, most of all stick as a group and below the mean line
+
+```{r fig.2}
+# fig. 2
+dt %>%
+    filter(Number_Of_Pages < 1500 & Price < 150) %>%
+    filter(Type == "Hardcover" | Type == "Paperback") %>%
+    ggplot(aes(x = Number_Of_Pages, y = Price)) +
+    aes(color = Rating, size = Reviews) +
+    geom_point() + 
+    scale_color_distiller(palette = "RdPu") +
+    facet_wrap(~Type) +
+    geom_hline(yintercept = mean(dt$Price), linetype = "dashed", alpha = 0.5) +
+    geom_vline(xintercept = mean(dt$Number_Of_Pages), linetype = "dashed", alpha = 0.5) +
+    scale_x_continuous(breaks = seq(0, 1200, 200)) +
+    scale_y_continuous(breaks = seq(0, 150, 10)) +
+    stat_ellipse() +
+    labs(title = "The correlation of Price and Number of Pages", 
+         subtitle = "Comparison between the correlation of Price and Number of Pages in Hardcover and Paperback",
+         caption = "dashed line = mean line",
+         tag = "Fig. 2") +
+    theme_bw()
+```

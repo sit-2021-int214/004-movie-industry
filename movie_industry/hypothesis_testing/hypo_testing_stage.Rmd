@@ -1,0 +1,193 @@
+---
+title: "Hypothesis testing"
+output: github_document
+---
+
+## Prerequisite
+
+### Loading the necessary packages
+
+```{r load-pkg}
+packages <- c("dplyr", "readr", "scales")
+lapply(packages, library, character.only = T)
+```
+
+### Import the dataset
+
+```{r import-dataset}
+movies <- read_csv("https://raw.githubusercontent.com/sit-2021-int214/004-movie-industry/main/movie_industry/csv/cleaned_dataset/movies_cleaned.csv")
+```
+
+### Observe the dataset
+
+```{r observe-stage}
+# observe dataset and data type
+glimpse(movies)
+```
+
+### Convert to the appropriate datatype
+
+```{r convert-stage}
+# convert data type
+movies <- movies %>%
+    mutate(year = format(year, format = "%Y")) %>%
+    mutate(released.country = as.factor(released.country)) %>%
+    mutate_at(.vars = c("genre", "rating", "country"), .funs = as.factor) %>%
+    mutate_at(.vars = c("votes", "runtime"), .funs = as.integer)
+```
+
+### Verifying the datatype
+
+```{r check-stage}
+# verify data type
+glimpse(movies)
+```
+
+### Summary dataset
+
+```{r summary}
+summary(movies)
+```
+
+## Prepare for Hypothesis testing
+
+-   Define the problems
+-   Define the confidence level for your problems
+-   Null hypothesis & Alternative hypothesis
+
+**Problem** <br>
+The film director claims that making an action movie can earn \$145.51 million or more, but the marketing department calculates the earnings of 500 random action movies over the years. The average earned only \$129.58 million. The population standard deviation is \$247.52 million. At a significance level of 95%, is it possible that the marketing department could reject the director from making the action film?
+
+1.  Count an action movie in dataset
+
+```{r population}
+pop.n <- movies %>%
+    filter(gross > 0) %>%
+    group_by(genre) %>%
+    summarise(count = n()) %>%
+    filter(genre == "Action")
+
+pop.n %>%
+    mutate(count = scales::comma(count))
+
+pop.n <- pop.n$count
+```
+
+2.  Finding the population mean gross of an action movie
+
+```{r pop-mean}
+pop.mean <- movies %>%
+    filter(gross > 0) %>%
+    group_by(genre) %>%
+    summarise(pop.mean.gross = mean(gross)) %>%
+    filter(genre == "Action")
+
+pop.mean %>%
+    mutate(pop.mean.gross = scales::dollar(pop.mean.gross))
+
+pop.mean <- round(pop.mean$pop.mean.gross, 2)
+```
+
+3.  Finding the population mean gross of an action movie
+
+```{r pop-sd}
+pop.sd <- movies %>%
+    filter(gross > 0) %>%
+    group_by(genre) %>%
+    summarise(pop.sd.gross = sd(gross)) %>%
+    filter(genre == "Action")
+pop.sd %>%
+    mutate(pop.sd.gross = scales::dollar(pop.sd.gross))
+
+pop.sd <- round(pop.sd$pop.sd.gross, 2)
+```
+
+4.  Define the sample size
+
+```{r sample-n}
+sample.n <- 500
+```
+
+5.  Finding the sample mean gross of an action movie
+
+```{r find-sample-mean}
+# sample.data <- movies %>%
+#     filter(gross > 0) %>%
+#     filter(genre == "Action") %>%
+#     select(name, gross)
+# 
+# sample.mean <- mean(sample.data$gross[sample(1:nrow(sample.data), sample.n)])
+# sample.mean <- round(sample.mean, 2)
+```
+
+```{r sample-mean}
+scales::dollar(sample.mean)
+```
+
+6.  Define the confidence level for the hypothesis testing <br> So, we will use 95% confidence level
+
+```{r define-alpha}
+alpha <- 0.05
+```
+
+## Hypothesis testing
+
+1.  State the null and alternative hypothesis from the problem
+
+    -   Ho: u >= \$145.51 Million <br>
+    -   Ha: u \< \$145.51 Million
+
+    this is the left-tailed test
+
+2.  finding the z alpha
+
+```{r z-alpha}
+z.alpha <- qnorm(alpha)
+z.alpha
+```
+
+3.  Calculating the standard error
+
+```{r standard-error}
+SE <- pop.sd/sqrt(sample.n)
+SE
+```
+
+4.  Calculating the z.c
+
+```{r z-c}
+z.c <- (sample.mean - pop.mean)/SE
+z.c
+```
+
+5.  Finding the p-value
+
+```{r p-value}
+p.value <- pnorm(z.c)
+p.value
+```
+
+6.  Testing the hypothesis by z-test or p-value
+
+```{r z-test}
+# by z-test
+if (z.c >= z.alpha) {
+    print("Failed to reject Ho")
+} else {
+    print("Reject Ho")
+}
+```
+
+```{r p-value-test}
+# by p-value
+if (p.value >= alpha) {
+    print("Failed to reject Ho")
+} else {
+    print("Reject Ho")
+}
+```
+
+7.  Conclusion
+
+The marketing department cannot refuse a director's request to make an action movie.
+
