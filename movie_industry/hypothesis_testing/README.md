@@ -218,7 +218,7 @@ pop.mean %>%
 pop.mean <- round(pop.mean$pop.mean.gross, 2)
 ```
 
-3.  Finding the population mean gross of an action movie
+3.  Finding the population standard deviation gross of an action movie
 
 ``` r
 pop.sd <- movies %>%
