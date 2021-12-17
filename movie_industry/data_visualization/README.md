@@ -1,1 +1,1 @@
-You can click here -> [Data Visualization](https://app.powerbi.com/view?r=eyJrIjoiYzFjMjUxODItYmMzOS00MDZlLTg0NmItYTI4Y2ZhMzYwNDViIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection) to check our BI dashboard
+You can [click here](https://app.powerbi.com/view?r=eyJrIjoiYzFjMjUxODItYmMzOS00MDZlLTg0NmItYTI4Y2ZhMzYwNDViIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection) to check our BI dashboard
