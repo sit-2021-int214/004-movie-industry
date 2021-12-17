@@ -261,7 +261,7 @@ sample.mean <- round(sample.mean, 2)
 scales::dollar(sample.mean)
 ```
 
-    ## [1] "$156,075,920"
+    ## [1] "$129,582,717"
 
 6.  Define the confidence level for the hypothesis testing <br> So, we
     will use 95% confidence level
@@ -304,7 +304,7 @@ z.c <- (sample.mean - pop.mean)/SE
 z.c
 ```
 
-    ## [1] 0.9546577
+    ## [1] -1.438749
 
 5.  Finding the p-value
 
@@ -313,7 +313,7 @@ p.value <- pnorm(z.c)
 p.value
 ```
 
-    ## [1] 0.8301246
+    ## [1] 0.07511084
 
 6.  Testing the hypothesis by z-test or p-value
 
