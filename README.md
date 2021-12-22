@@ -1,5 +1,7 @@
 # 004-Movie Industry
+
 ### Original Dataset from
+
 - Kaggle: [danielgrijalvas/movies](https://www.kaggle.com/danielgrijalvas/movies)
 - GitHub: [danielgrijalvas/movie-stats](https://github.com/danielgrijalva/movie-stats)
 
@@ -12,6 +14,7 @@ by danielgrijalvas. The dataset contains 7,668 movies from 1980 to 2020 (7,668 o
 [Click here](./movie_industry/csv/original_dataset) for more details.
 
 ## Overview
+
 From the beginning of the film industry to the present, many movies from different studios are released every year.
 Producing and shooting one movie requires a huge budget. In terms of business, if we invest in something,
 what is expected is "profit," and so is the film industry. However, the difference is in the factors that affect the revenue of movies,
@@ -21,18 +24,18 @@ and the revenue of movies over the past four decades. This dataset is obtained f
 R language in R Studio. In addition, the data was analyzed to determine the correlation of the data.
 
 ### Steps
-
-1. Define a question
-2. Search datasets from Kaggle
-3. Retrieve the relevant dataset from Kaggle 
-4. Explore the dataset from the original dataset
-5. Data Cleaning and Data Transformation
-6. Exploratory Data Analysis
+1. Define questions
+2. Explore data from the original dataset
+3. Data Cleaning and Data Transformation
+4. Exploratory Data Analysis
+5. Analytical Inferential Statistics
+6. Data Visualization
 
 ### Tools
 
 - [R Studio Desktop](https://www.rstudio.com/)
 - [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel)
+- [Power BI](https://powerbi.microsoft.com/en-us/desktop/)
 
 ### Languages
 
@@ -40,27 +43,37 @@ R language in R Studio. In addition, the data was analyzed to determine the corr
 
 ## Table of Contents
 
-1. [Define a question](https://docs.google.com/document/d/1w2onje5-9L69HuW4t2Cg_gM9JM1zD9pZ5xbpaB-OaY4/edit?usp=sharing)
+1. [Define questions](https://docs.google.com/document/d/1w2onje5-9L69HuW4t2Cg_gM9JM1zD9pZ5xbpaB-OaY4/edit?usp=sharing)
 2. [Exploratory Data](./movie_industry/data_exploration)
 2. [Cleaning Data and Transformation](./movie_industry/data_cleaning)
 4. [Data Analysis](./movie_industry/data_analysis)
-5. Final -> [Data Visualization](#)
+5. [Analytical Inferential Statistics](./movie_industry/hypothesis_testing)
+6. [Data Visualization (BI Dashboard)](https://app.powerbi.com/view?r=eyJrIjoiYzFjMjUxODItYmMzOS00MDZlLTg0NmItYTI4Y2ZhMzYwNDViIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection)
 
 ## Resources
 
 ### Important Files in Repository
 
-- Exploratory stage: [explore](./movie_industry/data_exploration)
-- Cleaning Dataset stage: [cleaning](./movie_industry/data_cleaning)
-- Data Analysis stage: [analysis](./movie_industry/data_analysis)
 - Original Dataset: [movies_original.csv](./movie_industry/csv/original_dataset/movies_original.csv)
 - Cleaned Dataset: [movies_cleaned.csv](./movie_industry/csv/cleaned_dataset/movies_cleaned.csv)
 
+### Important Folders in Repository
+
+| Folder               | Link                                              |
+|----------------------|:-------------------------------------------------:|
+| Exploratory Dataset  | [Click here](./movie_industry/data_exploration)   |
+| Cleaning Dataset     | [Click here](./movie_industry/data_cleaning)      |
+| Data Analysis        | [Click here](./movie_industry/data_analysis)      | 
+| Hypothesis testing   | [Click here](./movie_industry/hypothesis_testing) |
+| Data Visualization   | [Click here](./movie_industry/data_visualization) |
+
 ## About Us
+
 The work is part of INT214 (Statistics for Information technology) <br>
 semester 1/2021 School of Information Technology KMUTT
 
 ### Team: 39,42,46,48,53 Group
+
 | No. | Name                 | Student ID  |
 |:---:|----------------------|-------------|
 |  1  | Denphum Nakglam      | 63130500039 |
@@ -70,6 +83,7 @@ semester 1/2021 School of Information Technology KMUTT
 |  5  | Thanatorn Roswan     | 63130500053 |
 
 ### Instructor
+
 - ATCHARA TRAN-U-RAIKUL
 - JATAWAT XIE (Git: [safesit23](https://github.com/safesit23))
 
