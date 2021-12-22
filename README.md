@@ -82,7 +82,7 @@ semester 1/2021 School of Information Technology KMUTT
 |  4  | Thanaphon Sukkasem   | 63130500048 |
 |  5  | Thanatorn Roswan     | 63130500053 |
 
-### Instructor
+### Instructors
 
 - ATCHARA TRAN-U-RAIKUL
 - JATAWAT XIE (Git: [safesit23](https://github.com/safesit23))
